@@ -9,9 +9,29 @@ namespace Football_Formation
 {
     public class Player : Person
     {
-        // public Position Position {get; set;}
+        public enum PositionType
+        {
+            Goalkeeper,
+            Defender,
+            Midfielder,
+            Forward
+        }
+        // public Position Position {get; set;} later
+        private PositionType _position;
         private int _price;
 
+        public PositionType Position
+        {
+            get {return _position;}
+            set
+            {
+                if (!Enum.IsDefined(typeof(PositionType), value))
+                {
+                    throw new ArgumentOutOfRangeException("Invalid position.");
+                }
+                _position = value;
+            }
+        }
         public int Price
         {
             get {return _price;}
@@ -24,15 +44,15 @@ namespace Football_Formation
                 _price = value;
             }
         }
-        public Player(string name, int age, int height, /*Position position */ int price)
+        public Player(string name, int age, int height, PositionType position, int price)
             : base(name, age, height)
         {
-           // Position = position;
+            Position = position;
             Price = price;
         }
         public override string ToString()
         {
-            return $"Name: {Name}, Age: {Age}, Height: {Height}, Position:, Price: {Price}$."; // {Position.MainPosition}
+            return $"Name: {Name}, Age: {Age}, Height: {Height}, Position: {Position}, Price: {Price}$."; // {Position.MainPosition}
         }
     }
 }

@@ -11,7 +11,7 @@ class Program
     {
         try
         {
-            Player pl = new Player("John Doe", 25, 180, 100000);
+            Player pl = new Player("John Doe", 25, 180, Player.PositionType.Defender, 100000);
             Console.WriteLine(pl);
         }
         catch (Exception ex)

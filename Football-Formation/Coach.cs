@@ -9,7 +9,7 @@ namespace Football_Formation
 {
     public class Coach : Person
     {
-        //public List<Formation> Formations {get; set;}
+        //public List<Formation> Formations {get; set;} later
         private int _experience;
 
         public int Experience
