@@ -16,20 +16,40 @@ namespace Football_Formation
             Midfielder,
             Forward
         }
-        // public Position Position {get; set;} later
-        private PositionType _position;
+        public struct AvailablePositions
+        {
+            public PositionType MainPosition {get; set;}
+            public List<PositionType> SecondaryPositions {get; set;}
+        }
+        private AvailablePositions _availablePositions;
         private int _price;
 
-        public PositionType Position
+        public PositionType MainPosition
         {
-            get {return _position;}
+            get {return _availablePositions.MainPosition;}
             set
             {
                 if (!Enum.IsDefined(typeof(PositionType), value))
                 {
                     throw new ArgumentOutOfRangeException("Invalid position.");
                 }
-                _position = value;
+                _availablePositions.MainPosition = value;
+            }
+        }
+        public List<PositionType> SecondaryPositions
+        {
+            get {return _availablePositions.SecondaryPositions;}
+            set
+            {
+                if (value == null || value.Count == 0)
+                {
+                    throw new ArgumentException("Secondary positions cannot be null or empty.");
+                }
+                if (value.Contains(_availablePositions.MainPosition))
+                {
+                    throw new ArgumentException("Secondary positions cannot contain the main position.");
+                }
+                _availablePositions.SecondaryPositions = value;
             }
         }
         public int Price
@@ -47,12 +67,12 @@ namespace Football_Formation
         public Player(string name, int age, int height, PositionType position, int price)
             : base(name, age, height)
         {
-            Position = position;
+            MainPosition = position;
             Price = price;
         }
         public override string ToString()
         {
-            return $"Name: {Name}, Age: {Age}, Height: {Height}, Position: {Position}, Price: {Price}$."; // {Position.MainPosition}
+            return $"Name: {Name}, Age: {Age}, Height: {Height}, Position: {MainPosition}, Price: {Price}$."; // {Position.MainPosition}
         }
     }
 }
