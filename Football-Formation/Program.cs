@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Football_Formation;
+using static Football_Formation.Player.PositionType;
 
 class Program
 {
