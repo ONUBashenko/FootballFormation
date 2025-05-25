@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using static Football_Formation.Player.PositionType;
@@ -20,62 +21,42 @@ namespace Football_Formation
     {
         // private List<Player> Players;
         private FormationType FormationName;
-        private SortedDictionary<Player.PositionType, bool> PositionsInFormation;
-        private SortedDictionary<Player.PositionType, Player> PlayersOnPositions;
+        private Dictionary<PositionInFormation, bool> PositionsInFormation;
+        private Dictionary<PositionInFormation, Player> PlayersOnPositions;
 
         public Formation(FormationType formationName)
         {
             FormationName = formationName;
         }
-        public void SetGoalkeeper(Player player)
+
+        public void AddInformation(PositionInFormation position, Player player)
         {
-            if (PositionsInFormation[Goalkeeper] == true)
+            if (!PositionsInFormation.ContainsKey(position))
             {
-                PlayersOnPositions.Add(Goalkeeper, player);
-                PositionsInFormation[Goalkeeper] = false;
+                throw new ArgumentException("There is no such position in this formation type.");
             }
-            else
+            if (PlayersOnPositions.ContainsKey(position))
             {
-                throw new Exception("Position is already occupied");
+                throw new ArgumentException("Player already assigned to this position.");
             }
-        }
-        public void SetDefender(Player player)
-        {
-            if (PositionsInFormation[Defender] == true)
-            {
-                PlayersOnPositions.Add(Defender, player);
-                PositionsInFormation[Defender] = false;
-            }
-            else
-            {
-                throw new Exception("Position is already occupied");
-            }
-        }
-        public void SetMidfilder(Player player)
-        {
-            if (PositionsInFormation[Midfielder] == true)
-            {
-                PlayersOnPositions.Add(Midfielder, player);
-                PositionsInFormation[Midfielder] = false;
-            }
-            else
-            {
-                throw new Exception("Position is already occupied");
-            }
-        }
-        public void SetForward(Player player)
-        {
-            if (PositionsInFormation[Forward] == true)
-            {
-                PlayersOnPositions.Add(Forward, player);
-                PositionsInFormation[Forward] = false;
-            }
-            else
-            {
-                throw new Exception("Position is already occupied");
-            }
+            PlayersOnPositions.Add(position, player);
         }
 
+        public void ChangePlayerOnPosition(PositionInFormation position, Player player)
+        {
+            if (!PositionsInFormation.ContainsKey(position))
+            {
+                throw new ArgumentException("There is no such position in this formation type.");
+            }
+            if (PlayersOnPositions.ContainsKey(position))
+            {
+                PlayersOnPositions[position] = player;
+            }
+            else
+            {
+                throw new ArgumentException("No player assigned to this position.");
+            }
+        }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
