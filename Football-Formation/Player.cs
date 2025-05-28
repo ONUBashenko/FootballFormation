@@ -11,45 +11,27 @@ namespace Football_Formation
     {
         public enum PositionType
         {
-            Goalkeeper,
-            Defender,
-            Midfielder,
-            Forward
+            GK,
+            LB,
+            CB,
+            RB,
+            CM,
+            LM,
+            RM,
+            LW,
+            RW,
+            ST
         }
-        public struct AvailablePositions
-        {
-            public PositionType MainPosition {get; set;}
-            public List<PositionType> SecondaryPositions {get; set;}
-        }
-        private AvailablePositions _availablePositions;
+        
+        private PositionType _position;
         private int _price;
 
-        public PositionType MainPosition
+        public PositionType Position
         {
-            get {return _availablePositions.MainPosition;}
-            set
+            get {return _position;}
+            set 
             {
-                if (!Enum.IsDefined(typeof(PositionType), value))
-                {
-                    throw new ArgumentOutOfRangeException("Invalid position.");
-                }
-                _availablePositions.MainPosition = value;
-            }
-        }
-        public List<PositionType> SecondaryPositions
-        {
-            get {return _availablePositions.SecondaryPositions;}
-            set
-            {
-                if (value == null || value.Count == 0)
-                {
-                    throw new ArgumentException("Secondary positions cannot be null or empty.");
-                }
-                if (value.Contains(_availablePositions.MainPosition))
-                {
-                    throw new ArgumentException("Secondary positions cannot contain the main position.");
-                }
-                _availablePositions.SecondaryPositions = value;
+                _position = value;
             }
         }
         public int Price
@@ -67,12 +49,12 @@ namespace Football_Formation
         public Player(string name, int age, int height, PositionType position, int price)
             : base(name, age, height)
         {
-            MainPosition = position;
+            Position = position;
             Price = price;
         }
         public override string ToString()
         {
-            return $"Name: {Name}, Age: {Age}, Height: {Height}, Position: {MainPosition}, Price: {Price}$."; // {Position.MainPosition}
+            return $"Name: {Name}, Age: {Age}, Height: {Height}, Position: {Position}, Price: {Price}$."; // {Position.MainPosition}
         }
     }
 }

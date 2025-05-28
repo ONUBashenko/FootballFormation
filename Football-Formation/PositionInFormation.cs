@@ -10,11 +10,12 @@ namespace Football_Formation
     {
         public enum SpecificType
         {
-            left,
-            right,
-            central,
-            attacking,
-            defensive
+            None,
+            Left,
+            Right,
+            Central,
+            Attacking,
+            Defensive
         }
 
         private Player.PositionType _positionName;
@@ -42,12 +43,12 @@ namespace Football_Formation
             get {return _playerOnPosition;}
             set
             {
-                if (PositionSpecific == SpecificType.right || PositionSpecific == SpecificType.left || PositionSpecific == SpecificType.central)
+                if (PositionSpecific == SpecificType.Right || PositionSpecific == SpecificType.Left || PositionSpecific == SpecificType.Central)
                 {
                     //if(value.MainPosition == Player.PositionType.Defender || value.MainPosition == Player.PositionType.Midfielder)
                     _playerOnPosition = value;
                 }
-                else if (PositionSpecific == SpecificType.attacking || PositionSpecific == SpecificType.defensive)
+                else if (PositionSpecific == SpecificType.Attacking || PositionSpecific == SpecificType.Defensive)
                 { 
                     //if(value.MainPosition == Player.PositionType.Midfielder)
                     _playerOnPosition = value;
@@ -57,7 +58,7 @@ namespace Football_Formation
             }
         }
 
-        public PositionInFormation(Player.PositionType positionName, SpecificType specific, Player playerOnPosition)
+        public PositionInFormation(Player.PositionType positionName, SpecificType specific = SpecificType.None, Player playerOnPosition = null)
         {
             PositionName = positionName;
             PositionSpecific = specific;
