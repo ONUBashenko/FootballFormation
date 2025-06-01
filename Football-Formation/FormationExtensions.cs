@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Football_Formation.FormationHelper;
+using static FootballFormation.Formation;
+using static FootballFormation.FormationHelper;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Football_Formation
+namespace FootballFormation
 {
     public class FormationExtensions
     {
@@ -13,88 +15,115 @@ namespace Football_Formation
         {
             var PositionsInFormation = new Dictionary<PositionInFormation, bool>();
 
-            PositionsInFormation[GK] = true;
-           // SetDefenders(PositionsInFormation /*, HowManyDefenders(formationName)*/);
-            //SetMidf
-           // SetForwards(PositionsInFormation /*, HowManyForwards(formationName)*/);
+            PositionsInFormation[Goalkeeper] = true;
+            SetDefenders(PositionsInFormation, formationName);
+            SetMidfielders(PositionsInFormation, formationName);
+            SetForwards(PositionsInFormation, formationName);
 
             return PositionsInFormation;
         }
 
-        public static List<int> GetNumbers(FormationType formationName)
+        public static List<int> GetNumberOfPlayersInLine(FormationType formationName)
         {
-            List<int> numbers = GetFormationString(formationName)
+            List<int> playersInLine = GetFormationString(formationName)
                 .Split('-')
                 .Select(int.Parse)
                 .ToList();
 
-            return numbers;
+            return playersInLine;
         }
 
 
-        public static int HowManyDefenders(List<int> Numbers)
+        public static int HowManyDefenders(List<int> playersInLine)
         {
-            return Numbers.First();
+            return playersInLine.First();
         }
-        public static int HowManyMidfielders(List<int> Numbers)
+        public static int HowManyMidfielders(List<int> playersInLine)
         {
-            return Numbers[1];
+            return playersInLine[1];
         }
-        public static int HowManyForwards(List<int> Numbers)
+        public static int HowManyForwards(List<int> playersInLine)
         {
-            return Numbers.Last();
+            return playersInLine.Last();
         }
 
         public static void SetDefenders(Dictionary<PositionInFormation, bool> PositionsInFormation, FormationType formationName)
         {
-            if (HowManyDefenders(GetNumbers(formationName)) == 3)
+            if (HowManyDefenders(GetNumberOfPlayersInLine(formationName)) == 3)
             {
-                PositionsInFormation[CB] = true; //left
-                PositionsInFormation[CB] = true; //central
-                PositionsInFormation[CB] = true; //right
+                PositionsInFormation[CenterBackLeft] = true; //left
+                PositionsInFormation[CenterBackCentral] = true; //central
+                PositionsInFormation[CenterBackRight] = true; //right
             }
-            else if (HowManyDefenders(GetNumbers(formationName)) == 4)
+            else if (HowManyDefenders(GetNumberOfPlayersInLine(formationName)) == 4)
             {
-                PositionsInFormation[LB] = true;
-                PositionsInFormation[CB] = true; //left
-                PositionsInFormation[CB] = true; //right
-                PositionsInFormation[RB] = true;
+                PositionsInFormation[LeftBack] = true;
+                PositionsInFormation[CenterBackLeft] = true; //left
+                PositionsInFormation[CenterBackRight] = true; //right
+                PositionsInFormation[RightBack] = true;
             }
-            else if (HowManyDefenders(GetNumbers(formationName)) == 5)
+            else if (HowManyDefenders(GetNumberOfPlayersInLine(formationName)) == 5)
             {
-                PositionsInFormation[LB] = true;
-                PositionsInFormation[CB] = true; //left
-                PositionsInFormation[CB] = true; //central
-                PositionsInFormation[CB] = true; //right
-                PositionsInFormation[RB] = true;
+                PositionsInFormation[LeftBack] = true;
+                PositionsInFormation[CenterBackLeft] = true;
+                PositionsInFormation[CenterBackCentral] = true;
+                PositionsInFormation[CenterBackRight] = true;
+                PositionsInFormation[RightBack] = true;
             }
         }
 
-        //public static void SetMidfielders(Dictionary<PositionInFormation, bool> PositionsInFormation, FormationType formationName)
+        public static void SetMidfielders(Dictionary<PositionInFormation, bool> PositionsInFormation, FormationType formationName)
+        {
+            if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 2)
+            {
+                PositionsInFormation[CenterMidfielderLeft] = true;
+                PositionsInFormation[CenterMidfielderRight] = true;
+            }
+            else if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 3)
+            {
+                PositionsInFormation[CenterMidfielderLeft] = true; //left
+                PositionsInFormation[CenterMidfielderCentral] = true; //central
+                PositionsInFormation[CenterMidfielderRight] = true; //right
+            }
+            else if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 4)
+            {
+                PositionsInFormation[LeftMidfielder] = true;
+                PositionsInFormation[CenterMidfielderLeft] = true; //left
+                PositionsInFormation[CenterMidfielderRight] = true; //right
+                PositionsInFormation[RightMidfielder] = true;
+            }
+            else if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 5)
+            {
+                PositionsInFormation[LeftMidfielder] = true;
+                PositionsInFormation[CenterMidfielderLeft] = true; //left
+                PositionsInFormation[CenterMidfielderRight] = true; //right
+                PositionsInFormation[RightMidfielder] = true;
+            }
+        }
 
         public static void SetForwards(Dictionary<PositionInFormation, bool> PositionsInFormation, FormationType formationName)
         {
-            if (HowManyForwards(GetNumbers(formationName)) == 1)
+            if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 1)
             {
-                PositionsInFormation[ST] = true;
+                PositionsInFormation[Striker] = true;
             }
-            else if (HowManyForwards(GetNumbers(formationName)) == 2)
+            else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 2)
             {
-                PositionsInFormation[ST] = true; //left
-                PositionsInFormation[ST] = true; //right
+                PositionsInFormation[LeftStriker] = true; //left
+                PositionsInFormation[RightStriker] = true; //right
             }
-            else if (HowManyForwards(GetNumbers(formationName)) == 3)
+            else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 3)
             {
-                PositionsInFormation[LW] = true;
-                PositionsInFormation[ST] = true;
-                PositionsInFormation[RW] = true;
+                PositionsInFormation[LeftWinger] = true;
+                PositionsInFormation[Striker] = true;
+                PositionsInFormation[RightWinger] = true;
             }
-            else if (HowManyForwards(GetNumbers(formationName)) == 4)
+            else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 4)
             {
-                PositionsInFormation[LW] = true;
-                PositionsInFormation[ST] = true; //left
-                PositionsInFormation[ST] = true; //right
-                PositionsInFormation[RW] = true;
+                PositionsInFormation[LeftWinger] = true;
+                PositionsInFormation[LeftStriker] = true; //left
+                PositionsInFormation[RightStriker] = true; //right
+                PositionsInFormation[RightWinger] = true;
             }
         }
     }
