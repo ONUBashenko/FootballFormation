@@ -11,7 +11,7 @@ using static FootballFormation.Formation;
 class Program
 {
     static void Main(string[] args)
-    {/*
+    {
         Player player = new Player("John Doe", 20, 190, GK, 20);
         Player player2 = new Player("Jane Smith", 28, 165, LB, 10);
         Player player3 = new Player("Alice Johnson", 22, 180, RB, 3);
@@ -68,6 +68,6 @@ class Program
         formation2.AddPlayerOnPosition(Formation.Striker, player22);
 
         Match match = new Match(team1, team2, formation1, formation2);
-        match.PrintMatchSummary(); */
+        match.PrintMatchSummary();
     }
 }
