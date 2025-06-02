@@ -15,7 +15,7 @@ namespace FootballFormation
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* switch (listBox1.SelectedItem.ToString())
+            switch (listBox1.SelectedItem.ToString())
             {
                 case "Players":
                     LoadPage(new PlayersPage());
@@ -29,7 +29,7 @@ namespace FootballFormation
                 case "Matches":
                     LoadPage(new MatchesPage());
                     break;
-            }*/
+            }
         }
 
 
