@@ -62,6 +62,7 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1074, 465);
             flowLayoutPanel1.TabIndex = 14;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // label1
             // 

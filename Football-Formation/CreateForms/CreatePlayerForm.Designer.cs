@@ -35,11 +35,14 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
-            comboBox1 = new ComboBox();
+            textBoxName = new TextBox();
+            comboBoxPosition = new ComboBox();
+            numericUpDownAge = new NumericUpDown();
+            numericUpDownHeight = new NumericUpDown();
+            numericUpDownPrice = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAge).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
             SuspendLayout();
             // 
             // buttonCancel
@@ -60,6 +63,7 @@
             buttonSave.TabIndex = 3;
             buttonSave.Text = "Save";
             buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // label1
             // 
@@ -112,52 +116,58 @@
             label5.TabIndex = 8;
             label5.Text = "Price";
             // 
-            // textBox1
+            // textBoxName
             // 
-            textBox1.Location = new Point(106, 125);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 9;
+            textBoxName.Location = new Point(106, 125);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(150, 27);
+            textBoxName.TabIndex = 9;
+            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
-            // textBox2
+            // comboBoxPosition
             // 
-            textBox2.Location = new Point(106, 168);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 10;
+            comboBoxPosition.FormattingEnabled = true;
+            comboBoxPosition.Location = new Point(452, 145);
+            comboBoxPosition.Name = "comboBoxPosition";
+            comboBoxPosition.Size = new Size(150, 28);
+            comboBoxPosition.TabIndex = 14;
+            comboBoxPosition.SelectedIndexChanged += comboBoxPosition_SelectedIndexChanged;
             // 
-            // textBox3
+            // numericUpDownAge
             // 
-            textBox3.Location = new Point(106, 219);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 11;
+            numericUpDownAge.Location = new Point(106, 169);
+            numericUpDownAge.Name = "numericUpDownAge";
+            numericUpDownAge.Size = new Size(150, 27);
+            numericUpDownAge.TabIndex = 15;
+            numericUpDownAge.ValueChanged += numericUpDownAge_ValueChanged;
             // 
-            // textBox5
+            // numericUpDownHeight
             // 
-            textBox5.Location = new Point(452, 200);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 13;
+            numericUpDownHeight.Location = new Point(106, 220);
+            numericUpDownHeight.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDownHeight.Name = "numericUpDownHeight";
+            numericUpDownHeight.Size = new Size(150, 27);
+            numericUpDownHeight.TabIndex = 16;
+            numericUpDownHeight.ValueChanged += numericUpDownHeight_ValueChanged;
             // 
-            // comboBox1
+            // numericUpDownPrice
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(452, 145);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 14;
+            numericUpDownPrice.Location = new Point(452, 201);
+            numericUpDownPrice.Name = "numericUpDownPrice";
+            numericUpDownPrice.Size = new Size(150, 27);
+            numericUpDownPrice.TabIndex = 17;
+            numericUpDownPrice.ValueChanged += numericUpDownPrice_ValueChanged;
             // 
             // CreatePlayerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(numericUpDownPrice);
+            Controls.Add(numericUpDownHeight);
+            Controls.Add(numericUpDownAge);
+            Controls.Add(comboBoxPosition);
+            Controls.Add(textBoxName);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -167,6 +177,10 @@
             Controls.Add(buttonCancel);
             Name = "CreatePlayerForm";
             Text = "CreatePlayerForm";
+            Load += CreatePlayerForm_Load;
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAge).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,10 +193,10 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox5;
-        private ComboBox comboBox1;
+        private TextBox textBoxName;
+        private ComboBox comboBoxPosition;
+        private NumericUpDown numericUpDownAge;
+        private NumericUpDown numericUpDownHeight;
+        private NumericUpDown numericUpDownPrice;
     }
 }

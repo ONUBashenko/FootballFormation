@@ -32,14 +32,17 @@
             buttonCancel = new Button();
             label5 = new Label();
             label2 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            textBoxName = new TextBox();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox4 = new TextBox();
-            checkedListBox1 = new CheckedListBox();
+            checkedListBoxFormations = new CheckedListBox();
+            numericUpDownAge = new NumericUpDown();
+            numericUpDownHeight = new NumericUpDown();
+            numericUpDownExperience = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAge).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownExperience).BeginInit();
             SuspendLayout();
             // 
             // buttonSave
@@ -50,6 +53,7 @@
             buttonSave.TabIndex = 5;
             buttonSave.Text = "Save";
             buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // buttonCancel
             // 
@@ -81,26 +85,13 @@
             label2.TabIndex = 10;
             label2.Text = "Formations";
             // 
-            // textBox3
+            // textBoxName
             // 
-            textBox3.Location = new Point(137, 213);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 19;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(137, 162);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 18;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(137, 119);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 17;
+            textBoxName.Location = new Point(137, 119);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(125, 27);
+            textBoxName.TabIndex = 17;
+            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
             // label6
             // 
@@ -133,31 +124,51 @@
             label8.TabIndex = 14;
             label8.Text = "Name";
             // 
-            // textBox4
+            // checkedListBoxFormations
             // 
-            textBox4.Location = new Point(562, 119);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 20;
+            checkedListBoxFormations.FormattingEnabled = true;
+            checkedListBoxFormations.Location = new Point(562, 207);
+            checkedListBoxFormations.Name = "checkedListBoxFormations";
+            checkedListBoxFormations.Size = new Size(142, 114);
+            checkedListBoxFormations.TabIndex = 21;
+            checkedListBoxFormations.SelectedIndexChanged += checkedListBoxFormations_SelectedIndexChanged;
             // 
-            // checkedListBox1
+            // numericUpDownAge
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(562, 207);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(142, 114);
-            checkedListBox1.TabIndex = 21;
+            numericUpDownAge.Location = new Point(137, 163);
+            numericUpDownAge.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDownAge.Name = "numericUpDownAge";
+            numericUpDownAge.Size = new Size(125, 27);
+            numericUpDownAge.TabIndex = 22;
+            numericUpDownAge.ValueChanged += numericUpDownAge_ValueChanged;
+            // 
+            // numericUpDownHeight
+            // 
+            numericUpDownHeight.Location = new Point(137, 214);
+            numericUpDownHeight.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDownHeight.Name = "numericUpDownHeight";
+            numericUpDownHeight.Size = new Size(125, 27);
+            numericUpDownHeight.TabIndex = 23;
+            numericUpDownHeight.ValueChanged += numericUpDownHeight_ValueChanged;
+            // 
+            // numericUpDownExperience
+            // 
+            numericUpDownExperience.Location = new Point(562, 120);
+            numericUpDownExperience.Name = "numericUpDownExperience";
+            numericUpDownExperience.Size = new Size(125, 27);
+            numericUpDownExperience.TabIndex = 24;
+            numericUpDownExperience.ValueChanged += numericUpDownExperience_ValueChanged;
             // 
             // CreateCoachForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(checkedListBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(numericUpDownExperience);
+            Controls.Add(numericUpDownHeight);
+            Controls.Add(numericUpDownAge);
+            Controls.Add(checkedListBoxFormations);
+            Controls.Add(textBoxName);
             Controls.Add(label6);
             Controls.Add(label7);
             Controls.Add(label8);
@@ -168,6 +179,9 @@
             Name = "CreateCoachForm";
             Text = "CreateCoachForm";
             Load += CreateCoachForm_Load;
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAge).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownExperience).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,13 +192,13 @@
         private Button buttonCancel;
         private Label label5;
         private Label label2;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textBoxName;
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox4;
-        private CheckedListBox checkedListBox1;
+        private CheckedListBox checkedListBoxFormations;
+        private NumericUpDown numericUpDownAge;
+        private NumericUpDown numericUpDownHeight;
+        private NumericUpDown numericUpDownExperience;
     }
 }

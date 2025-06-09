@@ -10,8 +10,9 @@ namespace FootballFormation.Classes
     {
         private string _name;
         private string _country;
-        private List<Player> _players;
         private Coach _teamCoach;
+        private List<Player> _players;
+        public static List<Team> teams = new List<Team>();
 
         public string Name
         {
@@ -65,12 +66,14 @@ namespace FootballFormation.Classes
             }
         }
 
-        public Team(string name, string country, Coach teamCoach)
+        public Team(string name, string country, Coach teamCoach, List<Player> players = null)
         {
             Name = name;
             Country = country;
             TeamCoach = teamCoach;
-            Players = new List<Player>();
+            Players = players  ?? new List<Player>();
+
+            teams.Add(this);
         }
 
         public void AddPlayer(Player player)
@@ -84,15 +87,7 @@ namespace FootballFormation.Classes
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Team Name: {Name}, Country: {Country}");
-            sb.AppendLine($"Coach: {TeamCoach.Name}, Experience: {TeamCoach.Experience} years");
-            sb.AppendLine("Players:");
-            foreach (var player in Players)
-            {
-                sb.AppendLine(player.ToString());
-            }
-            return sb.ToString();
+            return Name;
         }
     }
 }

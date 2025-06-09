@@ -105,24 +105,24 @@ namespace FootballFormation.Classes
         {
             if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 1)
             {
-                PositionsInFormation[Striker] = true;
+                PositionsInFormation[StrikerCentral] = true;
             }
             else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 2)
             {
-                PositionsInFormation[LeftStriker] = true; //left
-                PositionsInFormation[RightStriker] = true; //right
+                PositionsInFormation[StrikerLeft] = true; //left
+                PositionsInFormation[StrikerRight] = true; //right
             }
             else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 3)
             {
                 PositionsInFormation[LeftWinger] = true;
-                PositionsInFormation[Striker] = true;
+                PositionsInFormation[StrikerCentral] = true;
                 PositionsInFormation[RightWinger] = true;
             }
             else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 4)
             {
                 PositionsInFormation[LeftWinger] = true;
-                PositionsInFormation[LeftStriker] = true; //left
-                PositionsInFormation[RightStriker] = true; //right
+                PositionsInFormation[StrikerLeft] = true; //left
+                PositionsInFormation[StrikerRight] = true; //right
                 PositionsInFormation[RightWinger] = true;
             }
         }

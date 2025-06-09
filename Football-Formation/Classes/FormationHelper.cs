@@ -21,17 +21,17 @@ namespace FootballFormation.Classes
             {FormationType.FiveFourOne, "5-4-1" }
         };
 
-        /*private static readonly Dictionary<string, FormationType> ReverseDictionary = FormationDictionary
+        private static readonly Dictionary<string, FormationType> ReverseDictionary = FormationDictionary
             .ToDictionary(pair => pair.Value, pair => pair.Key);
-        */
+       
         public static string GetFormationString(FormationType formationName)
         {
             return FormationDictionary.TryGetValue(formationName, out var result) ? result : "Unknown";
         }
 
-       /* public static bool TryParseFormation(string formationString, out FormationType formationName)
+        public static bool TryParseFormation(string formationString, out FormationType formationName)
         {
             return ReverseDictionary.TryGetValue(formationString, out formationName);
-        } */
+        }
     }
 }

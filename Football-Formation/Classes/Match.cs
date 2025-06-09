@@ -14,12 +14,13 @@ namespace FootballFormation.Classes
         private Formation _homeFormation;
         private Formation _awayFormation;
         private Dictionary<string, Tuple<int, int>> _matchEvents;
+        public static List<Match> matches = new List<Match>();
 
         Random random = new Random();
 
         public Team HomeTeam
         {
-            get {return _homeTeam;}
+            get { return _homeTeam; }
             set
             {
                 if (value == null)
@@ -32,7 +33,7 @@ namespace FootballFormation.Classes
 
         public Team AwayTeam
         {
-            get {return _awayTeam;}
+            get { return _awayTeam; }
             set
             {
                 if (value == null)
@@ -45,7 +46,7 @@ namespace FootballFormation.Classes
 
         public Formation HomeFormation
         {
-            get {return _homeFormation;}
+            get { return _homeFormation; }
             set
             {
                 if (value == null)
@@ -58,7 +59,7 @@ namespace FootballFormation.Classes
 
         public Formation AwayFormation
         {
-            get {return _awayFormation;}
+            get { return _awayFormation; }
             set
             {
                 if (value == null)
@@ -71,7 +72,7 @@ namespace FootballFormation.Classes
 
         public Dictionary<string, Tuple<int, int>> MatchEvents
         {
-            get {return _matchEvents;}
+            get { return _matchEvents; }
             set
             {
                 if (value == null)
@@ -87,33 +88,26 @@ namespace FootballFormation.Classes
             AwayTeam = awayTeam;
             HomeFormation = homeFormation;
             AwayFormation = awayFormation;
-            MatchEvents = new Dictionary<string, Tuple<int, int>>
+            MatchEvents = GetMatchSummary();
+
+            matches.Add(this);
+        }
+
+
+        public Dictionary<string, Tuple<int, int>> GetMatchSummary()
+        {
+            var MatchSummary = new Dictionary<string, Tuple<int, int>>
             {
-                {"Goals", Tuple.Create(random.Next(0, 10), random.Next(0, 10))},
-                {"Shots", Tuple.Create(random.Next(0, 10), random.Next(0, 10))},
-                {"Shots on target", Tuple.Create(random.Next(0, 10), random.Next(0, 10))},
-                {"Corners", Tuple.Create(random.Next(0, 10), random.Next(0, 10))},
-                {"Fouls", Tuple.Create(random.Next(0, 10), random.Next(0, 10))},
-                {"Yellow cards", Tuple.Create(random.Next(0, 10), random.Next(0, 10))},
-                {"Red cards", Tuple.Create(random.Next(0, 10), random.Next(0, 10))}
+                { "Goals", Tuple.Create(random.Next(0, 10), random.Next(0, 10)) },
+                { "Shots", Tuple.Create(random.Next(0, 10), random.Next(0, 10)) },
+                { "Shots on target", Tuple.Create(random.Next(0, 10), random.Next(0, 10)) },
+                { "Corners", Tuple.Create(random.Next(0, 10), random.Next(0, 10)) },
+                { "Fouls", Tuple.Create(random.Next(0, 10), random.Next(0, 10)) },
+                { "Yellow cards", Tuple.Create(random.Next(0, 10), random.Next(0, 10)) },
+                { "Red cards", Tuple.Create(random.Next(0, 10), random.Next(0, 10)) }
             };
-        }
 
-        public override string ToString()
-        {
-            return $"{HomeTeam.Name} vs {AwayTeam.Name} - {GetFormationString(HomeFormation.FormationName)} vs {GetFormationString(AwayFormation.FormationName)}";
-        }
-
-        public void PrintMatchSummary()
-        {
-            Console.WriteLine($"Match Summary: {HomeTeam.Name} vs {AwayTeam.Name}");
-            Console.WriteLine($"Home Formation: {GetFormationString(HomeFormation.FormationName)}");
-            Console.WriteLine($"Away Formation: {GetFormationString(AwayFormation.FormationName)}");
-            Console.WriteLine("Match Events:");
-            foreach (var matchEvent in MatchEvents)
-            {
-                Console.WriteLine($"{matchEvent.Key}: Home - {matchEvent.Value.Item1}, Away - {matchEvent.Value.Item2}");
-            }
+            return MatchSummary;
         }
     }
 }

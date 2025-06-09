@@ -87,22 +87,21 @@ namespace FootballFormation.Classes
         public static readonly PositionInFormation CenterMidfielderLeft = new PositionInFormation(CM, SpecificType.Left);
         public static readonly PositionInFormation CenterMidfielderRight = new PositionInFormation(CM, SpecificType.Right);
         public static readonly PositionInFormation CenterMidfielderCentral = new PositionInFormation(CM, SpecificType.Central);
-        //
-        public static readonly PositionInFormation CentralDefensiveMidfielderLeft = new PositionInFormation(CDM, SpecificType.Left);
+
+        /* public static readonly PositionInFormation CentralDefensiveMidfielderLeft = new PositionInFormation(CDM, SpecificType.Left);
         public static readonly PositionInFormation CentralDefensiveMidfielderRight = new PositionInFormation(CDM, SpecificType.Right);
         public static readonly PositionInFormation CentralDefensiveMidfielder = new PositionInFormation(CDM);
-
         public static readonly PositionInFormation CentralAttackingMidfielderLeft = new PositionInFormation(CAM, SpecificType.Left);
         public static readonly PositionInFormation CentralAttackingMidfielderRight = new PositionInFormation(CAM, SpecificType.Right);
-        public static readonly PositionInFormation CentralAttackingMidfielderCentral = new PositionInFormation(CAM, SpecificType.Central);
-        //
+        public static readonly PositionInFormation CentralAttackingMidfielderCentral = new PositionInFormation(CAM, SpecificType.Central); */
+
         public static readonly PositionInFormation LeftMidfielder = new PositionInFormation(LM);
         public static readonly PositionInFormation RightMidfielder = new PositionInFormation(RM);
         public static readonly PositionInFormation LeftWinger = new PositionInFormation(LW);
         public static readonly PositionInFormation RightWinger = new PositionInFormation(RW);
-        public static readonly PositionInFormation LeftStriker = new PositionInFormation(ST, SpecificType.Left);
-        public static readonly PositionInFormation RightStriker = new PositionInFormation(ST, SpecificType.Right);
-        public static readonly PositionInFormation Striker = new PositionInFormation(ST);
+        public static readonly PositionInFormation StrikerLeft = new PositionInFormation(ST, SpecificType.Left);
+        public static readonly PositionInFormation StrikerRight = new PositionInFormation(ST, SpecificType.Right);
+        public static readonly PositionInFormation StrikerCentral = new PositionInFormation(ST);
 
         public static readonly List<PositionInFormation> AllExistingPositions = new List<PositionInFormation>
         {
@@ -119,29 +118,23 @@ namespace FootballFormation.Classes
             CenterMidfielderLeft,
             CenterMidfielderRight,
             CenterMidfielderCentral,
-            CentralDefensiveMidfielderLeft,
-            CentralDefensiveMidfielderRight,
-            CentralDefensiveMidfielder,
-            CentralAttackingMidfielderLeft,
-            CentralAttackingMidfielderRight,
-            CentralAttackingMidfielderCentral,
             LeftMidfielder,
             RightMidfielder,
 
             //Forwards
             LeftWinger,
             RightWinger,
-            LeftStriker,
-            RightStriker,
-            Striker,
+            StrikerLeft,
+            StrikerRight,
+            StrikerCentral,
         };
 
 
-        public Formation(FormationType formationName)
+        public Formation(FormationType formationName, Dictionary<PositionInFormation, Player> playersOnPositions)
         {
             FormationName = formationName;
             PositionsInFormation = SetPositionsInFormation(formationName);
-            PlayersOnPositions = new Dictionary<PositionInFormation, Player>();
+            PlayersOnPositions = playersOnPositions;
         }
 
         public void AddPlayerOnPosition(PositionInFormation position, Player player)

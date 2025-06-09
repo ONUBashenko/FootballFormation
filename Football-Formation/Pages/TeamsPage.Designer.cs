@@ -62,6 +62,7 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1074, 452);
             flowLayoutPanel1.TabIndex = 14;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint_1;
             // 
             // label1
             // 
@@ -82,6 +83,7 @@
             Controls.Add(label2);
             Name = "TeamsPage";
             Size = new Size(1072, 575);
+            Load += TeamsPage_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

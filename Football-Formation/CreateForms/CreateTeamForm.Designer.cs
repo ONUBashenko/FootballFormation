@@ -34,10 +34,10 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox4 = new TextBox();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            checkedListBox1 = new CheckedListBox();
+            textBoxCountry = new TextBox();
+            textBoxName = new TextBox();
+            comboBoxCoach = new ComboBox();
+            checkedListBoxPlayers = new CheckedListBox();
             SuspendLayout();
             // 
             // buttonSave
@@ -48,6 +48,7 @@
             buttonSave.TabIndex = 5;
             buttonSave.Text = "Save";
             buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // buttonCancel
             // 
@@ -99,46 +100,49 @@
             label4.TabIndex = 8;
             label4.Text = "Name";
             // 
-            // textBox4
+            // textBoxCountry
             // 
-            textBox4.Location = new Point(177, 207);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 13;
+            textBoxCountry.Location = new Point(177, 207);
+            textBoxCountry.Name = "textBoxCountry";
+            textBoxCountry.Size = new Size(125, 27);
+            textBoxCountry.TabIndex = 13;
+            textBoxCountry.TextChanged += textBoxCountry_TextChanged;
             // 
-            // textBox1
+            // textBoxName
             // 
-            textBox1.Location = new Point(177, 139);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 14;
-            textBox1.TextChanged += textBox1_TextChanged;
+            textBoxName.Location = new Point(177, 139);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(125, 27);
+            textBoxName.TabIndex = 14;
+            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
-            // comboBox1
+            // comboBoxCoach
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(538, 133);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 16;
+            comboBoxCoach.FormattingEnabled = true;
+            comboBoxCoach.Location = new Point(538, 133);
+            comboBoxCoach.Name = "comboBoxCoach";
+            comboBoxCoach.Size = new Size(223, 28);
+            comboBoxCoach.TabIndex = 16;
+            comboBoxCoach.SelectedIndexChanged += comboBoxCoach_SelectedIndexChanged;
             // 
-            // checkedListBox1
+            // checkedListBoxPlayers
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(538, 207);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(142, 114);
-            checkedListBox1.TabIndex = 17;
+            checkedListBoxPlayers.FormattingEnabled = true;
+            checkedListBoxPlayers.Location = new Point(538, 207);
+            checkedListBoxPlayers.Name = "checkedListBoxPlayers";
+            checkedListBoxPlayers.Size = new Size(223, 136);
+            checkedListBoxPlayers.TabIndex = 17;
+            checkedListBoxPlayers.SelectedIndexChanged += checkedListBoxPlayers_SelectedIndexChanged;
             // 
             // CreateTeamForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(checkedListBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox1);
-            Controls.Add(textBox4);
+            Controls.Add(checkedListBoxPlayers);
+            Controls.Add(comboBoxCoach);
+            Controls.Add(textBoxName);
+            Controls.Add(textBoxCountry);
             Controls.Add(label3);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -160,9 +164,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox4;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
-        private CheckedListBox checkedListBox1;
+        private TextBox textBoxCountry;
+        private TextBox textBoxName;
+        private ComboBox comboBoxCoach;
+        private CheckedListBox checkedListBoxPlayers;
     }
 }

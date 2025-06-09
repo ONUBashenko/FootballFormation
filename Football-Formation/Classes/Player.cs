@@ -23,8 +23,8 @@ namespace FootballFormation.Classes
             LM, //Left Midfielder
             RM, //Right Midfielder
             CM, //Center Midfielder
-            CDM, //Central Defensive Midfielder
-            CAM, //Central Attacking Midfielder
+           // CDM, Central Defensive Midfielder
+           // CAM, Central Attacking Midfielder
             LW, //Left Winger
             RW, //Right Winger
             ST  //Striker
@@ -33,6 +33,7 @@ namespace FootballFormation.Classes
         private int _age;
         private PositionType _position;
         private int _price;
+        public static List<Player> players = new List<Player>();
 
         /// <summary>
         /// Отримує або встановлює вік гравця.
@@ -116,6 +117,13 @@ namespace FootballFormation.Classes
         {
             Position = position;
             Price = price;
+
+            players.Add(this);
+        }
+
+        public override string ToString()
+        {
+            return $"{Position}, {Name}";
         }
     }
 }

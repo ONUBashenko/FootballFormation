@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualBasic;
+using static FootballFormation.Classes.Player;
 
 namespace FootballFormation.Classes
 {
@@ -17,6 +18,7 @@ namespace FootballFormation.Classes
         private int _age;
         private List<FormationType> _formations;
         private int _experience;
+        public static List<Coach> coaches = new List<Coach>();
 
         /// <summary>
         /// Отримує або встановлює вік тренера.
@@ -27,7 +29,7 @@ namespace FootballFormation.Classes
         /// </exception>
         public override int Age
         {
-            get {return _age;}
+            get { return _age; }
             set
             {
                 if (value < 28 || value > 80)
@@ -48,12 +50,12 @@ namespace FootballFormation.Classes
         /// </exception>
         public List<FormationType> Formations
         {
-            get {return _formations;}
+            get { return _formations; }
             set
             {
-                if(value == null)
+                if (value == null)
                 {
-                    throw new ArgumentNullException("Formations cannot be null.");
+                    throw new ArgumentNullException("Formations cannot be null");
                 }
                 _formations = value;
             }
@@ -97,11 +99,13 @@ namespace FootballFormation.Classes
         /// якщо зріст не в межах від 140 до 220 см, 
         /// або якщо досвід є від’ємним числом.
         /// </exception> 
-        public Coach(string name, int age, int height, int experience)
+        public Coach(string name, int age, int height, int experience, List<FormationType> formations = null)
             : base(name, age, height)
         {
             Experience = experience;
-            Formations = new List<FormationType>();
+            Formations = formations ?? new List<FormationType>();
+
+            coaches.Add(this);
         }
 
 
@@ -114,9 +118,9 @@ namespace FootballFormation.Classes
         /// </exception>
         public void AddFormation(FormationType formation)
         {
-            if (formation == null)
+            if (!Enum.IsDefined(typeof(FormationType), formation))
             {
-                throw new ArgumentNullException("Formation cannot be null.");
+                throw new ArgumentNullException("Invalid formation type.");
             }
             _formations.Add(formation);
         }
@@ -133,15 +137,20 @@ namespace FootballFormation.Classes
         /// </exception>
         public void RemoveFormation(FormationType formation)
         {
-            if (formation == null)
+            if (!Enum.IsDefined(typeof(FormationType), formation))
             {
-                throw new ArgumentNullException("Formation cannot be null.");
+                throw new ArgumentNullException("Invalid formation type.");
             }
             if (!_formations.Contains(formation))
             {
                 throw new ArgumentException("Formation not found in the coach's list.");
             }
             _formations.Remove(formation);
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
