@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballFormation.Classes;
 using static FootballFormation.Classes.FormationHelper;
+using static FootballFormation.Classes.PositionInFormation;
 using static FootballFormation.CreateForms.CreateMatch.CreateMatchForm;
 
 namespace FootballFormation.CreateForms.CreateMatch
@@ -83,22 +84,22 @@ namespace FootballFormation.CreateForms.CreateMatch
 
             availiblePanels = new Dictionary<PositionInFormation, Panel>
             {
-                { Formation.Goalkeeper, panelGoalkeeper },
-                { Formation.LeftBack, panelLeftBack },
-                { Formation. RightBack, panelRightBack },
-                { Formation.CenterBackLeft, panelCenterBackLeft },
-                { Formation.CenterBackCentral, panelCenterBackCentral },
-                { Formation.CenterBackRight, panelCenterBackRight },
-                { Formation.LeftMidfielder, panelLeftMidfielder },
-                { Formation.RightMidfielder, panelRightMidfielder },
-                { Formation.CenterMidfielderLeft, panelCenterMidfielderLeft },
-                { Formation.CenterMidfielderCentral, panelCenterMidfielderCentral },
-                { Formation.CenterMidfielderRight, panelCenterMidfielderRight },
-                { Formation.LeftWinger, panelLeftWinger },
-                { Formation.RightWinger, panelRightWinger },
-                { Formation.StrikerLeft, panelStrikerLeft },
-                { Formation.StrikerRight, panelStrikerRight },
-                { Formation.StrikerCentral, panelStrikerCentral }
+                { Goalkeeper, panelGoalkeeper },
+                { LeftBack, panelLeftBack },
+                { RightBack, panelRightBack },
+                { CenterBackLeft, panelCenterBackLeft },
+                { CenterBackCentral, panelCenterBackCentral },
+                { CenterBackRight, panelCenterBackRight },
+                { LeftMidfielder, panelLeftMidfielder },
+                { RightMidfielder, panelRightMidfielder },
+                { CenterMidfielderLeft, panelCenterMidfielderLeft },
+                { CenterMidfielderCentral, panelCenterMidfielderCentral },
+                { CenterMidfielderRight, panelCenterMidfielderRight },
+                { LeftWinger, panelLeftWinger },
+                { RightWinger, panelRightWinger },
+                { StrikerLeft, panelStrikerLeft },
+                { StrikerRight, panelStrikerRight },
+                { StrikerCentral, panelStrikerCentral }
             };
         }
 
@@ -119,6 +120,10 @@ namespace FootballFormation.CreateForms.CreateMatch
         {
             try
             {
+                if (comboBoxHomeFormation.SelectedItem == null)
+                {
+                    throw new InvalidOperationException("Formation type must be selected.");
+                }
                 TryParseFormation(comboBoxHomeFormation.SelectedItem.ToString(), out var formationName);
 
                 var playersOnPositions = new Dictionary<PositionInFormation, Player>();

@@ -33,53 +33,54 @@
             AwayFormation = new Label();
             comboBoxAwayFormation = new ComboBox();
             panelRightWinger = new Panel();
-            RightWinger = new Label();
+            labelRightWinger = new Label();
             comboBoxRightWinger = new ComboBox();
             panelStrikerRight = new Panel();
-            StrikerRight = new Label();
+            labelStrikerRight = new Label();
             comboBoxStrikerRight = new ComboBox();
             panelLeftWinger = new Panel();
-            LeftWinger = new Label();
+            labelLeftWinger = new Label();
             comboBoxLeftWinger = new ComboBox();
             panelLeftMidfielder = new Panel();
-            LeftMidfielder = new Label();
+            labelLeftMidfielder = new Label();
             comboBoxLeftMidfielder = new ComboBox();
             panelStrikerLeft = new Panel();
             comboBoxStrikerLeft = new ComboBox();
-            StrikerLeft = new Label();
+            labelStrikerLeft = new Label();
             panelLeftBack = new Panel();
             comboBoxLeftBack = new ComboBox();
-            LeftBack = new Label();
+            labelLeftBack = new Label();
             panelRightBack = new Panel();
             comboBoxRightBack = new ComboBox();
-            RightBack = new Label();
+            labelRightBack = new Label();
             panelRightMidfielder = new Panel();
             comboBoxRightMidfielder = new ComboBox();
-            RightMidfielder = new Label();
+            labelRightMidfielder = new Label();
             panelStrikerCentral = new Panel();
             comboBoxStrikerCentral = new ComboBox();
-            StrikerCentral = new Label();
+            labelStrikerCentral = new Label();
             panelCenterBackRight = new Panel();
             comboBoxCenterBackRight = new ComboBox();
-            CenterBackRight = new Label();
+            labelCenterBackRight = new Label();
             panelCenterBackCentral = new Panel();
             comboBoxCenterBackCentral = new ComboBox();
-            CenterBackCentral = new Label();
+            labelCenterBackCentral = new Label();
             panelCenterBackLeft = new Panel();
             comboBoxCenterBackLeft = new ComboBox();
-            CenterBackLeft = new Label();
+            labelCenterBackLeft = new Label();
             panelCenterMidfielderRight = new Panel();
             comboBoxCenterMidfielderRight = new ComboBox();
-            CenterMidfielderRight = new Label();
+            labelCenterMidfielderRight = new Label();
             panelCenterMidfielderCentral = new Panel();
             comboBoxCenterMidfielderCentral = new ComboBox();
-            CenterMidfielderCentral = new Label();
+            labelCenterMidfielderCentral = new Label();
             panelCenterMidfielderLeft = new Panel();
             comboBoxCenterMidfielderLeft = new ComboBox();
-            CenterMidfielderLeft = new Label();
+            labelCenterMidfielderLeft = new Label();
             panelGoalkeeper = new Panel();
             comboBoxGoalkeeper = new ComboBox();
-            Goalkeeper = new Label();
+            labelGoalkeeper = new Label();
+            label1 = new Label();
             panelRightWinger.SuspendLayout();
             panelStrikerRight.SuspendLayout();
             panelLeftWinger.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             // buttonBack
             // 
-            buttonBack.Location = new Point(693, 476);
+            buttonBack.Location = new Point(703, 490);
             buttonBack.Name = "buttonBack";
             buttonBack.Size = new Size(94, 29);
             buttonBack.TabIndex = 7;
@@ -110,7 +111,7 @@
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(793, 476);
+            buttonSave.Location = new Point(803, 490);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(94, 29);
             buttonSave.TabIndex = 6;
@@ -131,15 +132,15 @@
             // comboBoxAwayFormation
             // 
             comboBoxAwayFormation.FormattingEnabled = true;
-            comboBoxAwayFormation.Location = new Point(746, 44);
+            comboBoxAwayFormation.Location = new Point(774, 40);
             comboBoxAwayFormation.Name = "comboBoxAwayFormation";
-            comboBoxAwayFormation.Size = new Size(151, 28);
+            comboBoxAwayFormation.Size = new Size(123, 28);
             comboBoxAwayFormation.TabIndex = 67;
             comboBoxAwayFormation.SelectedIndexChanged += comboBoxAwayFormation_SelectedIndexChanged;
             // 
             // panelRightWinger
             // 
-            panelRightWinger.Controls.Add(RightWinger);
+            panelRightWinger.Controls.Add(labelRightWinger);
             panelRightWinger.Controls.Add(comboBoxRightWinger);
             panelRightWinger.Location = new Point(682, 115);
             panelRightWinger.Name = "panelRightWinger";
@@ -147,14 +148,14 @@
             panelRightWinger.TabIndex = 69;
             panelRightWinger.Visible = false;
             // 
-            // RightWinger
+            // labelRightWinger
             // 
-            RightWinger.AutoSize = true;
-            RightWinger.Location = new Point(61, 37);
-            RightWinger.Name = "RightWinger";
-            RightWinger.Size = new Size(32, 20);
-            RightWinger.TabIndex = 16;
-            RightWinger.Text = "RW";
+            labelRightWinger.AutoSize = true;
+            labelRightWinger.Location = new Point(61, 37);
+            labelRightWinger.Name = "labelRightWinger";
+            labelRightWinger.Size = new Size(32, 20);
+            labelRightWinger.TabIndex = 16;
+            labelRightWinger.Text = "RW";
             // 
             // comboBoxRightWinger
             // 
@@ -166,7 +167,7 @@
             // 
             // panelStrikerRight
             // 
-            panelStrikerRight.Controls.Add(StrikerRight);
+            panelStrikerRight.Controls.Add(labelStrikerRight);
             panelStrikerRight.Controls.Add(comboBoxStrikerRight);
             panelStrikerRight.Location = new Point(509, 93);
             panelStrikerRight.Name = "panelStrikerRight";
@@ -174,14 +175,14 @@
             panelStrikerRight.TabIndex = 70;
             panelStrikerRight.Visible = false;
             // 
-            // StrikerRight
+            // labelStrikerRight
             // 
-            StrikerRight.AutoSize = true;
-            StrikerRight.Location = new Point(66, 34);
-            StrikerRight.Name = "StrikerRight";
-            StrikerRight.Size = new Size(25, 20);
-            StrikerRight.TabIndex = 53;
-            StrikerRight.Text = "ST";
+            labelStrikerRight.AutoSize = true;
+            labelStrikerRight.Location = new Point(66, 34);
+            labelStrikerRight.Name = "labelStrikerRight";
+            labelStrikerRight.Size = new Size(25, 20);
+            labelStrikerRight.TabIndex = 53;
+            labelStrikerRight.Text = "ST";
             // 
             // comboBoxStrikerRight
             // 
@@ -193,7 +194,7 @@
             // 
             // panelLeftWinger
             // 
-            panelLeftWinger.Controls.Add(LeftWinger);
+            panelLeftWinger.Controls.Add(labelLeftWinger);
             panelLeftWinger.Controls.Add(comboBoxLeftWinger);
             panelLeftWinger.Location = new Point(45, 117);
             panelLeftWinger.Name = "panelLeftWinger";
@@ -201,14 +202,14 @@
             panelLeftWinger.TabIndex = 71;
             panelLeftWinger.Visible = false;
             // 
-            // LeftWinger
+            // labelLeftWinger
             // 
-            LeftWinger.AutoSize = true;
-            LeftWinger.Location = new Point(64, 37);
-            LeftWinger.Name = "LeftWinger";
-            LeftWinger.Size = new Size(29, 20);
-            LeftWinger.TabIndex = 15;
-            LeftWinger.Text = "LW";
+            labelLeftWinger.AutoSize = true;
+            labelLeftWinger.Location = new Point(64, 37);
+            labelLeftWinger.Name = "labelLeftWinger";
+            labelLeftWinger.Size = new Size(29, 20);
+            labelLeftWinger.TabIndex = 15;
+            labelLeftWinger.Text = "LW";
             // 
             // comboBoxLeftWinger
             // 
@@ -220,7 +221,7 @@
             // 
             // panelLeftMidfielder
             // 
-            panelLeftMidfielder.Controls.Add(LeftMidfielder);
+            panelLeftMidfielder.Controls.Add(labelLeftMidfielder);
             panelLeftMidfielder.Controls.Add(comboBoxLeftMidfielder);
             panelLeftMidfielder.Location = new Point(33, 196);
             panelLeftMidfielder.Name = "panelLeftMidfielder";
@@ -228,14 +229,14 @@
             panelLeftMidfielder.TabIndex = 72;
             panelLeftMidfielder.Visible = false;
             // 
-            // LeftMidfielder
+            // labelLeftMidfielder
             // 
-            LeftMidfielder.AutoSize = true;
-            LeftMidfielder.Location = new Point(64, 36);
-            LeftMidfielder.Name = "LeftMidfielder";
-            LeftMidfielder.Size = new Size(29, 20);
-            LeftMidfielder.TabIndex = 18;
-            LeftMidfielder.Text = "LM";
+            labelLeftMidfielder.AutoSize = true;
+            labelLeftMidfielder.Location = new Point(64, 36);
+            labelLeftMidfielder.Name = "labelLeftMidfielder";
+            labelLeftMidfielder.Size = new Size(29, 20);
+            labelLeftMidfielder.TabIndex = 18;
+            labelLeftMidfielder.Text = "LM";
             // 
             // comboBoxLeftMidfielder
             // 
@@ -249,7 +250,7 @@
             // 
             panelStrikerLeft.BackColor = SystemColors.Control;
             panelStrikerLeft.Controls.Add(comboBoxStrikerLeft);
-            panelStrikerLeft.Controls.Add(StrikerLeft);
+            panelStrikerLeft.Controls.Add(labelStrikerLeft);
             panelStrikerLeft.Location = new Point(216, 93);
             panelStrikerLeft.Name = "panelStrikerLeft";
             panelStrikerLeft.Size = new Size(151, 60);
@@ -264,19 +265,19 @@
             comboBoxStrikerLeft.Size = new Size(151, 28);
             comboBoxStrikerLeft.TabIndex = 36;
             // 
-            // StrikerLeft
+            // labelStrikerLeft
             // 
-            StrikerLeft.AutoSize = true;
-            StrikerLeft.Location = new Point(65, 34);
-            StrikerLeft.Name = "StrikerLeft";
-            StrikerLeft.Size = new Size(25, 20);
-            StrikerLeft.TabIndex = 12;
-            StrikerLeft.Text = "ST";
+            labelStrikerLeft.AutoSize = true;
+            labelStrikerLeft.Location = new Point(65, 34);
+            labelStrikerLeft.Name = "labelStrikerLeft";
+            labelStrikerLeft.Size = new Size(25, 20);
+            labelStrikerLeft.TabIndex = 12;
+            labelStrikerLeft.Text = "ST";
             // 
             // panelLeftBack
             // 
             panelLeftBack.Controls.Add(comboBoxLeftBack);
-            panelLeftBack.Controls.Add(LeftBack);
+            panelLeftBack.Controls.Add(labelLeftBack);
             panelLeftBack.Location = new Point(33, 308);
             panelLeftBack.Name = "panelLeftBack";
             panelLeftBack.Size = new Size(151, 60);
@@ -291,19 +292,19 @@
             comboBoxLeftBack.Size = new Size(151, 28);
             comboBoxLeftBack.TabIndex = 45;
             // 
-            // LeftBack
+            // labelLeftBack
             // 
-            LeftBack.AutoSize = true;
-            LeftBack.Location = new Point(64, 34);
-            LeftBack.Name = "LeftBack";
-            LeftBack.Size = new Size(25, 20);
-            LeftBack.TabIndex = 59;
-            LeftBack.Text = "LB";
+            labelLeftBack.AutoSize = true;
+            labelLeftBack.Location = new Point(64, 34);
+            labelLeftBack.Name = "labelLeftBack";
+            labelLeftBack.Size = new Size(25, 20);
+            labelLeftBack.TabIndex = 59;
+            labelLeftBack.Text = "LB";
             // 
             // panelRightBack
             // 
             panelRightBack.Controls.Add(comboBoxRightBack);
-            panelRightBack.Controls.Add(RightBack);
+            panelRightBack.Controls.Add(labelRightBack);
             panelRightBack.Location = new Point(686, 308);
             panelRightBack.Name = "panelRightBack";
             panelRightBack.Size = new Size(151, 60);
@@ -318,19 +319,19 @@
             comboBoxRightBack.Size = new Size(151, 28);
             comboBoxRightBack.TabIndex = 46;
             // 
-            // RightBack
+            // labelRightBack
             // 
-            RightBack.AutoSize = true;
-            RightBack.Location = new Point(66, 34);
-            RightBack.Name = "RightBack";
-            RightBack.Size = new Size(27, 20);
-            RightBack.TabIndex = 35;
-            RightBack.Text = "RB";
+            labelRightBack.AutoSize = true;
+            labelRightBack.Location = new Point(66, 34);
+            labelRightBack.Name = "labelRightBack";
+            labelRightBack.Size = new Size(27, 20);
+            labelRightBack.TabIndex = 35;
+            labelRightBack.Text = "RB";
             // 
             // panelRightMidfielder
             // 
             panelRightMidfielder.Controls.Add(comboBoxRightMidfielder);
-            panelRightMidfielder.Controls.Add(RightMidfielder);
+            panelRightMidfielder.Controls.Add(labelRightMidfielder);
             panelRightMidfielder.Location = new Point(686, 195);
             panelRightMidfielder.Name = "panelRightMidfielder";
             panelRightMidfielder.Size = new Size(151, 60);
@@ -345,20 +346,20 @@
             comboBoxRightMidfielder.Size = new Size(151, 28);
             comboBoxRightMidfielder.TabIndex = 65;
             // 
-            // RightMidfielder
+            // labelRightMidfielder
             // 
-            RightMidfielder.AutoSize = true;
-            RightMidfielder.Location = new Point(62, 36);
-            RightMidfielder.Name = "RightMidfielder";
-            RightMidfielder.Size = new Size(31, 20);
-            RightMidfielder.TabIndex = 64;
-            RightMidfielder.Text = "RM";
+            labelRightMidfielder.AutoSize = true;
+            labelRightMidfielder.Location = new Point(62, 36);
+            labelRightMidfielder.Name = "labelRightMidfielder";
+            labelRightMidfielder.Size = new Size(31, 20);
+            labelRightMidfielder.TabIndex = 64;
+            labelRightMidfielder.Text = "RM";
             // 
             // panelStrikerCentral
             // 
             panelStrikerCentral.BackColor = SystemColors.Control;
             panelStrikerCentral.Controls.Add(comboBoxStrikerCentral);
-            panelStrikerCentral.Controls.Add(StrikerCentral);
+            panelStrikerCentral.Controls.Add(labelStrikerCentral);
             panelStrikerCentral.Location = new Point(362, 82);
             panelStrikerCentral.Name = "panelStrikerCentral";
             panelStrikerCentral.Size = new Size(151, 60);
@@ -373,19 +374,19 @@
             comboBoxStrikerCentral.Size = new Size(151, 28);
             comboBoxStrikerCentral.TabIndex = 63;
             // 
-            // StrikerCentral
+            // labelStrikerCentral
             // 
-            StrikerCentral.AutoSize = true;
-            StrikerCentral.Location = new Point(63, 34);
-            StrikerCentral.Name = "StrikerCentral";
-            StrikerCentral.Size = new Size(25, 20);
-            StrikerCentral.TabIndex = 62;
-            StrikerCentral.Text = "ST";
+            labelStrikerCentral.AutoSize = true;
+            labelStrikerCentral.Location = new Point(63, 34);
+            labelStrikerCentral.Name = "labelStrikerCentral";
+            labelStrikerCentral.Size = new Size(25, 20);
+            labelStrikerCentral.TabIndex = 62;
+            labelStrikerCentral.Text = "ST";
             // 
             // panelCenterBackRight
             // 
             panelCenterBackRight.Controls.Add(comboBoxCenterBackRight);
-            panelCenterBackRight.Controls.Add(CenterBackRight);
+            panelCenterBackRight.Controls.Add(labelCenterBackRight);
             panelCenterBackRight.Location = new Point(519, 330);
             panelCenterBackRight.Name = "panelCenterBackRight";
             panelCenterBackRight.Size = new Size(151, 60);
@@ -400,19 +401,19 @@
             comboBoxCenterBackRight.Size = new Size(151, 28);
             comboBoxCenterBackRight.TabIndex = 52;
             // 
-            // CenterBackRight
+            // labelCenterBackRight
             // 
-            CenterBackRight.AutoSize = true;
-            CenterBackRight.Location = new Point(64, 36);
-            CenterBackRight.Name = "CenterBackRight";
-            CenterBackRight.Size = new Size(27, 20);
-            CenterBackRight.TabIndex = 33;
-            CenterBackRight.Text = "CB";
+            labelCenterBackRight.AutoSize = true;
+            labelCenterBackRight.Location = new Point(64, 36);
+            labelCenterBackRight.Name = "labelCenterBackRight";
+            labelCenterBackRight.Size = new Size(27, 20);
+            labelCenterBackRight.TabIndex = 33;
+            labelCenterBackRight.Text = "CB";
             // 
             // panelCenterBackCentral
             // 
             panelCenterBackCentral.Controls.Add(comboBoxCenterBackCentral);
-            panelCenterBackCentral.Controls.Add(CenterBackCentral);
+            panelCenterBackCentral.Controls.Add(labelCenterBackCentral);
             panelCenterBackCentral.Location = new Point(362, 330);
             panelCenterBackCentral.Name = "panelCenterBackCentral";
             panelCenterBackCentral.Size = new Size(151, 60);
@@ -427,19 +428,19 @@
             comboBoxCenterBackCentral.Size = new Size(151, 28);
             comboBoxCenterBackCentral.TabIndex = 51;
             // 
-            // CenterBackCentral
+            // labelCenterBackCentral
             // 
-            CenterBackCentral.AutoSize = true;
-            CenterBackCentral.Location = new Point(67, 36);
-            CenterBackCentral.Name = "CenterBackCentral";
-            CenterBackCentral.Size = new Size(27, 20);
-            CenterBackCentral.TabIndex = 34;
-            CenterBackCentral.Text = "CB";
+            labelCenterBackCentral.AutoSize = true;
+            labelCenterBackCentral.Location = new Point(67, 36);
+            labelCenterBackCentral.Name = "labelCenterBackCentral";
+            labelCenterBackCentral.Size = new Size(27, 20);
+            labelCenterBackCentral.TabIndex = 34;
+            labelCenterBackCentral.Text = "CB";
             // 
             // panelCenterBackLeft
             // 
             panelCenterBackLeft.Controls.Add(comboBoxCenterBackLeft);
-            panelCenterBackLeft.Controls.Add(CenterBackLeft);
+            panelCenterBackLeft.Controls.Add(labelCenterBackLeft);
             panelCenterBackLeft.Location = new Point(203, 330);
             panelCenterBackLeft.Name = "panelCenterBackLeft";
             panelCenterBackLeft.Size = new Size(151, 60);
@@ -454,19 +455,19 @@
             comboBoxCenterBackLeft.Size = new Size(151, 28);
             comboBoxCenterBackLeft.TabIndex = 50;
             // 
-            // CenterBackLeft
+            // labelCenterBackLeft
             // 
-            CenterBackLeft.AutoSize = true;
-            CenterBackLeft.Location = new Point(63, 36);
-            CenterBackLeft.Name = "CenterBackLeft";
-            CenterBackLeft.Size = new Size(27, 20);
-            CenterBackLeft.TabIndex = 22;
-            CenterBackLeft.Text = "CB";
+            labelCenterBackLeft.AutoSize = true;
+            labelCenterBackLeft.Location = new Point(63, 36);
+            labelCenterBackLeft.Name = "labelCenterBackLeft";
+            labelCenterBackLeft.Size = new Size(27, 20);
+            labelCenterBackLeft.TabIndex = 22;
+            labelCenterBackLeft.Text = "CB";
             // 
             // panelCenterMidfielderRight
             // 
             panelCenterMidfielderRight.Controls.Add(comboBoxCenterMidfielderRight);
-            panelCenterMidfielderRight.Controls.Add(CenterMidfielderRight);
+            panelCenterMidfielderRight.Controls.Add(labelCenterMidfielderRight);
             panelCenterMidfielderRight.Location = new Point(504, 204);
             panelCenterMidfielderRight.Name = "panelCenterMidfielderRight";
             panelCenterMidfielderRight.Size = new Size(151, 60);
@@ -481,19 +482,19 @@
             comboBoxCenterMidfielderRight.Size = new Size(151, 28);
             comboBoxCenterMidfielderRight.TabIndex = 47;
             // 
-            // CenterMidfielderRight
+            // labelCenterMidfielderRight
             // 
-            CenterMidfielderRight.AutoSize = true;
-            CenterMidfielderRight.Location = new Point(66, 37);
-            CenterMidfielderRight.Name = "CenterMidfielderRight";
-            CenterMidfielderRight.Size = new Size(31, 20);
-            CenterMidfielderRight.TabIndex = 30;
-            CenterMidfielderRight.Text = "CM";
+            labelCenterMidfielderRight.AutoSize = true;
+            labelCenterMidfielderRight.Location = new Point(66, 37);
+            labelCenterMidfielderRight.Name = "labelCenterMidfielderRight";
+            labelCenterMidfielderRight.Size = new Size(31, 20);
+            labelCenterMidfielderRight.TabIndex = 30;
+            labelCenterMidfielderRight.Text = "CM";
             // 
             // panelCenterMidfielderCentral
             // 
             panelCenterMidfielderCentral.Controls.Add(comboBoxCenterMidfielderCentral);
-            panelCenterMidfielderCentral.Controls.Add(CenterMidfielderCentral);
+            panelCenterMidfielderCentral.Controls.Add(labelCenterMidfielderCentral);
             panelCenterMidfielderCentral.Location = new Point(362, 238);
             panelCenterMidfielderCentral.Name = "panelCenterMidfielderCentral";
             panelCenterMidfielderCentral.Size = new Size(151, 60);
@@ -508,19 +509,19 @@
             comboBoxCenterMidfielderCentral.Size = new Size(151, 28);
             comboBoxCenterMidfielderCentral.TabIndex = 48;
             // 
-            // CenterMidfielderCentral
+            // labelCenterMidfielderCentral
             // 
-            CenterMidfielderCentral.AutoSize = true;
-            CenterMidfielderCentral.Location = new Point(63, 37);
-            CenterMidfielderCentral.Name = "CenterMidfielderCentral";
-            CenterMidfielderCentral.Size = new Size(31, 20);
-            CenterMidfielderCentral.TabIndex = 31;
-            CenterMidfielderCentral.Text = "CM";
+            labelCenterMidfielderCentral.AutoSize = true;
+            labelCenterMidfielderCentral.Location = new Point(63, 37);
+            labelCenterMidfielderCentral.Name = "labelCenterMidfielderCentral";
+            labelCenterMidfielderCentral.Size = new Size(31, 20);
+            labelCenterMidfielderCentral.TabIndex = 31;
+            labelCenterMidfielderCentral.Text = "CM";
             // 
             // panelCenterMidfielderLeft
             // 
             panelCenterMidfielderLeft.Controls.Add(comboBoxCenterMidfielderLeft);
-            panelCenterMidfielderLeft.Controls.Add(CenterMidfielderLeft);
+            panelCenterMidfielderLeft.Controls.Add(labelCenterMidfielderLeft);
             panelCenterMidfielderLeft.Location = new Point(227, 204);
             panelCenterMidfielderLeft.Name = "panelCenterMidfielderLeft";
             panelCenterMidfielderLeft.Size = new Size(151, 60);
@@ -535,19 +536,19 @@
             comboBoxCenterMidfielderLeft.Size = new Size(151, 28);
             comboBoxCenterMidfielderLeft.TabIndex = 49;
             // 
-            // CenterMidfielderLeft
+            // labelCenterMidfielderLeft
             // 
-            CenterMidfielderLeft.AutoSize = true;
-            CenterMidfielderLeft.Location = new Point(59, 37);
-            CenterMidfielderLeft.Name = "CenterMidfielderLeft";
-            CenterMidfielderLeft.Size = new Size(31, 20);
-            CenterMidfielderLeft.TabIndex = 19;
-            CenterMidfielderLeft.Text = "CM";
+            labelCenterMidfielderLeft.AutoSize = true;
+            labelCenterMidfielderLeft.Location = new Point(59, 37);
+            labelCenterMidfielderLeft.Name = "labelCenterMidfielderLeft";
+            labelCenterMidfielderLeft.Size = new Size(31, 20);
+            labelCenterMidfielderLeft.TabIndex = 19;
+            labelCenterMidfielderLeft.Text = "CM";
             // 
             // panelGoalkeeper
             // 
             panelGoalkeeper.Controls.Add(comboBoxGoalkeeper);
-            panelGoalkeeper.Controls.Add(Goalkeeper);
+            panelGoalkeeper.Controls.Add(labelGoalkeeper);
             panelGoalkeeper.Location = new Point(362, 423);
             panelGoalkeeper.Name = "panelGoalkeeper";
             panelGoalkeeper.Size = new Size(151, 60);
@@ -562,19 +563,30 @@
             comboBoxGoalkeeper.Size = new Size(151, 28);
             comboBoxGoalkeeper.TabIndex = 58;
             // 
-            // Goalkeeper
+            // labelGoalkeeper
             // 
-            Goalkeeper.AutoSize = true;
-            Goalkeeper.Location = new Point(63, 34);
-            Goalkeeper.Name = "Goalkeeper";
-            Goalkeeper.Size = new Size(28, 20);
-            Goalkeeper.TabIndex = 57;
-            Goalkeeper.Text = "GK";
+            labelGoalkeeper.AutoSize = true;
+            labelGoalkeeper.Location = new Point(63, 34);
+            labelGoalkeeper.Name = "labelGoalkeeper";
+            labelGoalkeeper.Size = new Size(28, 20);
+            labelGoalkeeper.TabIndex = 57;
+            labelGoalkeeper.Text = "GK";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F);
+            label1.Location = new Point(761, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(136, 25);
+            label1.TabIndex = 84;
+            label1.Text = "formation type";
             // 
             // UserControlAwayFormation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
             Controls.Add(panelCenterMidfielderCentral);
             Controls.Add(panelGoalkeeper);
             Controls.Add(comboBoxAwayFormation);
@@ -641,52 +653,53 @@
         private Label AwayFormation;
         private ComboBox comboBoxAwayFormation;
         private Panel panelRightWinger;
-        private Label RightWinger;
+        private Label labelRightWinger;
         private ComboBox comboBoxRightWinger;
         private Panel panelStrikerRight;
-        private Label StrikerRight;
+        private Label labelStrikerRight;
         private ComboBox comboBoxStrikerRight;
         private Panel panelLeftWinger;
-        private Label LeftWinger;
+        private Label labelLeftWinger;
         private ComboBox comboBoxLeftWinger;
         private Panel panelLeftMidfielder;
-        private Label LeftMidfielder;
+        private Label labelLeftMidfielder;
         private ComboBox comboBoxLeftMidfielder;
         private Panel panelStrikerLeft;
         private ComboBox comboBoxStrikerLeft;
-        private Label StrikerLeft;
+        private Label labelStrikerLeft;
         private Panel panelLeftBack;
         private ComboBox comboBoxLeftBack;
-        private Label LeftBack;
+        private Label labelLeftBack;
         private Panel panelRightBack;
         private ComboBox comboBoxRightBack;
-        private Label RightBack;
+        private Label labelRightBack;
         private Panel panelRightMidfielder;
         private ComboBox comboBoxRightMidfielder;
-        private Label RightMidfielder;
+        private Label labelRightMidfielder;
         private Panel panelStrikerCentral;
         private ComboBox comboBoxStrikerCentral;
-        private Label StrikerCentral;
+        private Label labelStrikerCentral;
         private Panel panelCenterBackRight;
         private ComboBox comboBoxCenterBackRight;
-        private Label CenterBackRight;
+        private Label labelCenterBackRight;
         private Panel panelCenterBackCentral;
         private ComboBox comboBoxCenterBackCentral;
-        private Label CenterBackCentral;
+        private Label labelCenterBackCentral;
         private Panel panelCenterBackLeft;
         private ComboBox comboBoxCenterBackLeft;
-        private Label CenterBackLeft;
+        private Label labelCenterBackLeft;
         private Panel panelCenterMidfielderRight;
         private ComboBox comboBoxCenterMidfielderRight;
-        private Label CenterMidfielderRight;
+        private Label labelCenterMidfielderRight;
         private Panel panelCenterMidfielderCentral;
         private ComboBox comboBoxCenterMidfielderCentral;
-        private Label CenterMidfielderCentral;
+        private Label labelCenterMidfielderCentral;
         private Panel panelCenterMidfielderLeft;
         private ComboBox comboBoxCenterMidfielderLeft;
-        private Label CenterMidfielderLeft;
+        private Label labelCenterMidfielderLeft;
         private Panel panelGoalkeeper;
         private ComboBox comboBoxGoalkeeper;
-        private Label Goalkeeper;
+        private Label labelGoalkeeper;
+        private Label label1;
     }
 }

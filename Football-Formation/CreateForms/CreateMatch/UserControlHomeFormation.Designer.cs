@@ -32,22 +32,22 @@
             buttonNext = new Button();
             HomeFormation = new Label();
             comboBoxHomeFormation = new ComboBox();
-            StrikerLeft = new Label();
-            LeftWinger = new Label();
-            RightWinger = new Label();
-            LeftMidfielder = new Label();
-            CenterMidfielderLeft = new Label();
-            CenterBackLeft = new Label();
-            CenterMidfielderRight = new Label();
-            CenterMidfielderCentral = new Label();
-            CenterBackRight = new Label();
-            CenterBackCentral = new Label();
-            RightBack = new Label();
+            labelStrikerLeft = new Label();
+            labelLeftWinger = new Label();
+            labelRightWinger = new Label();
+            labelLeftMidfielder = new Label();
+            labelCenterMidfielderLeft = new Label();
+            labelCenterBackLeft = new Label();
+            labelCenterMidfielderRight = new Label();
+            labelCenterMidfielderCentral = new Label();
+            labelCenterBackRight = new Label();
+            labelCenterBackCentral = new Label();
+            labelRightBack = new Label();
             comboBoxStrikerLeft = new ComboBox();
             comboBoxRightWinger = new ComboBox();
             panelStrikerLeft = new Panel();
             panelStrikerRight = new Panel();
-            StrikerRight = new Label();
+            labelStrikerRight = new Label();
             comboBoxStrikerRight = new ComboBox();
             panelRightWinger = new Panel();
             comboBoxLeftWinger = new ComboBox();
@@ -61,14 +61,14 @@
             comboBoxCenterBackCentral = new ComboBox();
             comboBoxCenterBackRight = new ComboBox();
             comboBoxGoalkeeper = new ComboBox();
-            Goalkeeper = new Label();
-            LeftBack = new Label();
+            labelGoalkeeper = new Label();
+            labelLeftBack = new Label();
             panelLeftMidfielder = new Panel();
             panelLeftWinger = new Panel();
             comboBoxStrikerCentral = new ComboBox();
-            StrikerCentral = new Label();
+            labelStrikerCentral = new Label();
             comboBoxRightMidfielder = new ComboBox();
-            RightMidfielder = new Label();
+            labelRightMidfielder = new Label();
             panelStrikerCentral = new Panel();
             panelRightMidfielder = new Panel();
             panelRightBack = new Panel();
@@ -80,6 +80,7 @@
             panelCenterMidfielderLeft = new Panel();
             panelCenterMidfielderCentral = new Panel();
             panelCenterMidfielderRight = new Panel();
+            label1 = new Label();
             panelStrikerLeft.SuspendLayout();
             panelStrikerRight.SuspendLayout();
             panelRightWinger.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             // buttonBack
             // 
-            buttonBack.Location = new Point(691, 457);
+            buttonBack.Location = new Point(704, 490);
             buttonBack.Name = "buttonBack";
             buttonBack.Size = new Size(94, 29);
             buttonBack.TabIndex = 9;
@@ -110,7 +111,7 @@
             // 
             // buttonNext
             // 
-            buttonNext.Location = new Point(791, 457);
+            buttonNext.Location = new Point(804, 490);
             buttonNext.Name = "buttonNext";
             buttonNext.Size = new Size(94, 29);
             buttonNext.TabIndex = 8;
@@ -130,110 +131,110 @@
             // comboBoxHomeFormation
             // 
             comboBoxHomeFormation.FormattingEnabled = true;
-            comboBoxHomeFormation.Location = new Point(747, 44);
+            comboBoxHomeFormation.Location = new Point(775, 40);
             comboBoxHomeFormation.Name = "comboBoxHomeFormation";
-            comboBoxHomeFormation.Size = new Size(151, 28);
+            comboBoxHomeFormation.Size = new Size(123, 28);
             comboBoxHomeFormation.TabIndex = 11;
             comboBoxHomeFormation.SelectedIndexChanged += comboBoxHomeFormation_SelectedIndexChanged;
             // 
-            // StrikerLeft
+            // labelStrikerLeft
             // 
-            StrikerLeft.AutoSize = true;
-            StrikerLeft.Location = new Point(65, 34);
-            StrikerLeft.Name = "StrikerLeft";
-            StrikerLeft.Size = new Size(25, 20);
-            StrikerLeft.TabIndex = 12;
-            StrikerLeft.Text = "ST";
+            labelStrikerLeft.AutoSize = true;
+            labelStrikerLeft.Location = new Point(65, 34);
+            labelStrikerLeft.Name = "labelStrikerLeft";
+            labelStrikerLeft.Size = new Size(25, 20);
+            labelStrikerLeft.TabIndex = 12;
+            labelStrikerLeft.Text = "ST";
             // 
-            // LeftWinger
+            // labelLeftWinger
             // 
-            LeftWinger.AutoSize = true;
-            LeftWinger.Location = new Point(64, 37);
-            LeftWinger.Name = "LeftWinger";
-            LeftWinger.Size = new Size(29, 20);
-            LeftWinger.TabIndex = 15;
-            LeftWinger.Text = "LW";
+            labelLeftWinger.AutoSize = true;
+            labelLeftWinger.Location = new Point(64, 37);
+            labelLeftWinger.Name = "labelLeftWinger";
+            labelLeftWinger.Size = new Size(29, 20);
+            labelLeftWinger.TabIndex = 15;
+            labelLeftWinger.Text = "LW";
             // 
-            // RightWinger
+            // labelRightWinger
             // 
-            RightWinger.AutoSize = true;
-            RightWinger.Location = new Point(61, 37);
-            RightWinger.Name = "RightWinger";
-            RightWinger.Size = new Size(32, 20);
-            RightWinger.TabIndex = 16;
-            RightWinger.Text = "RW";
+            labelRightWinger.AutoSize = true;
+            labelRightWinger.Location = new Point(61, 37);
+            labelRightWinger.Name = "labelRightWinger";
+            labelRightWinger.Size = new Size(32, 20);
+            labelRightWinger.TabIndex = 16;
+            labelRightWinger.Text = "RW";
             // 
-            // LeftMidfielder
+            // labelLeftMidfielder
             // 
-            LeftMidfielder.AutoSize = true;
-            LeftMidfielder.Location = new Point(64, 36);
-            LeftMidfielder.Name = "LeftMidfielder";
-            LeftMidfielder.Size = new Size(29, 20);
-            LeftMidfielder.TabIndex = 18;
-            LeftMidfielder.Text = "LM";
+            labelLeftMidfielder.AutoSize = true;
+            labelLeftMidfielder.Location = new Point(64, 36);
+            labelLeftMidfielder.Name = "labelLeftMidfielder";
+            labelLeftMidfielder.Size = new Size(29, 20);
+            labelLeftMidfielder.TabIndex = 18;
+            labelLeftMidfielder.Text = "LM";
             // 
-            // CenterMidfielderLeft
+            // labelCenterMidfielderLeft
             // 
-            CenterMidfielderLeft.AutoSize = true;
-            CenterMidfielderLeft.Location = new Point(59, 37);
-            CenterMidfielderLeft.Name = "CenterMidfielderLeft";
-            CenterMidfielderLeft.Size = new Size(31, 20);
-            CenterMidfielderLeft.TabIndex = 19;
-            CenterMidfielderLeft.Text = "CM";
+            labelCenterMidfielderLeft.AutoSize = true;
+            labelCenterMidfielderLeft.Location = new Point(59, 37);
+            labelCenterMidfielderLeft.Name = "labelCenterMidfielderLeft";
+            labelCenterMidfielderLeft.Size = new Size(31, 20);
+            labelCenterMidfielderLeft.TabIndex = 19;
+            labelCenterMidfielderLeft.Text = "CM";
             // 
-            // CenterBackLeft
+            // labelCenterBackLeft
             // 
-            CenterBackLeft.AutoSize = true;
-            CenterBackLeft.Location = new Point(63, 36);
-            CenterBackLeft.Name = "CenterBackLeft";
-            CenterBackLeft.Size = new Size(27, 20);
-            CenterBackLeft.TabIndex = 22;
-            CenterBackLeft.Text = "CB";
+            labelCenterBackLeft.AutoSize = true;
+            labelCenterBackLeft.Location = new Point(63, 36);
+            labelCenterBackLeft.Name = "labelCenterBackLeft";
+            labelCenterBackLeft.Size = new Size(27, 20);
+            labelCenterBackLeft.TabIndex = 22;
+            labelCenterBackLeft.Text = "CB";
             // 
-            // CenterMidfielderRight
+            // labelCenterMidfielderRight
             // 
-            CenterMidfielderRight.AutoSize = true;
-            CenterMidfielderRight.Location = new Point(66, 37);
-            CenterMidfielderRight.Name = "CenterMidfielderRight";
-            CenterMidfielderRight.Size = new Size(31, 20);
-            CenterMidfielderRight.TabIndex = 30;
-            CenterMidfielderRight.Text = "CM";
+            labelCenterMidfielderRight.AutoSize = true;
+            labelCenterMidfielderRight.Location = new Point(66, 37);
+            labelCenterMidfielderRight.Name = "labelCenterMidfielderRight";
+            labelCenterMidfielderRight.Size = new Size(31, 20);
+            labelCenterMidfielderRight.TabIndex = 30;
+            labelCenterMidfielderRight.Text = "CM";
             // 
-            // CenterMidfielderCentral
+            // labelCenterMidfielderCentral
             // 
-            CenterMidfielderCentral.AutoSize = true;
-            CenterMidfielderCentral.Location = new Point(63, 37);
-            CenterMidfielderCentral.Name = "CenterMidfielderCentral";
-            CenterMidfielderCentral.Size = new Size(31, 20);
-            CenterMidfielderCentral.TabIndex = 31;
-            CenterMidfielderCentral.Text = "CM";
+            labelCenterMidfielderCentral.AutoSize = true;
+            labelCenterMidfielderCentral.Location = new Point(63, 37);
+            labelCenterMidfielderCentral.Name = "labelCenterMidfielderCentral";
+            labelCenterMidfielderCentral.Size = new Size(31, 20);
+            labelCenterMidfielderCentral.TabIndex = 31;
+            labelCenterMidfielderCentral.Text = "CM";
             // 
-            // CenterBackRight
+            // labelCenterBackRight
             // 
-            CenterBackRight.AutoSize = true;
-            CenterBackRight.Location = new Point(64, 36);
-            CenterBackRight.Name = "CenterBackRight";
-            CenterBackRight.Size = new Size(27, 20);
-            CenterBackRight.TabIndex = 33;
-            CenterBackRight.Text = "CB";
+            labelCenterBackRight.AutoSize = true;
+            labelCenterBackRight.Location = new Point(64, 36);
+            labelCenterBackRight.Name = "labelCenterBackRight";
+            labelCenterBackRight.Size = new Size(27, 20);
+            labelCenterBackRight.TabIndex = 33;
+            labelCenterBackRight.Text = "CB";
             // 
-            // CenterBackCentral
+            // labelCenterBackCentral
             // 
-            CenterBackCentral.AutoSize = true;
-            CenterBackCentral.Location = new Point(67, 36);
-            CenterBackCentral.Name = "CenterBackCentral";
-            CenterBackCentral.Size = new Size(27, 20);
-            CenterBackCentral.TabIndex = 34;
-            CenterBackCentral.Text = "CB";
+            labelCenterBackCentral.AutoSize = true;
+            labelCenterBackCentral.Location = new Point(67, 36);
+            labelCenterBackCentral.Name = "labelCenterBackCentral";
+            labelCenterBackCentral.Size = new Size(27, 20);
+            labelCenterBackCentral.TabIndex = 34;
+            labelCenterBackCentral.Text = "CB";
             // 
-            // RightBack
+            // labelRightBack
             // 
-            RightBack.AutoSize = true;
-            RightBack.Location = new Point(66, 34);
-            RightBack.Name = "RightBack";
-            RightBack.Size = new Size(27, 20);
-            RightBack.TabIndex = 35;
-            RightBack.Text = "RB";
+            labelRightBack.AutoSize = true;
+            labelRightBack.Location = new Point(66, 34);
+            labelRightBack.Name = "labelRightBack";
+            labelRightBack.Size = new Size(27, 20);
+            labelRightBack.TabIndex = 35;
+            labelRightBack.Text = "RB";
             // 
             // comboBoxStrikerLeft
             // 
@@ -255,7 +256,7 @@
             // 
             panelStrikerLeft.BackColor = SystemColors.Control;
             panelStrikerLeft.Controls.Add(comboBoxStrikerLeft);
-            panelStrikerLeft.Controls.Add(StrikerLeft);
+            panelStrikerLeft.Controls.Add(labelStrikerLeft);
             panelStrikerLeft.Location = new Point(216, 93);
             panelStrikerLeft.Name = "panelStrikerLeft";
             panelStrikerLeft.Size = new Size(151, 60);
@@ -264,7 +265,7 @@
             // 
             // panelStrikerRight
             // 
-            panelStrikerRight.Controls.Add(StrikerRight);
+            panelStrikerRight.Controls.Add(labelStrikerRight);
             panelStrikerRight.Controls.Add(comboBoxStrikerRight);
             panelStrikerRight.Location = new Point(509, 93);
             panelStrikerRight.Name = "panelStrikerRight";
@@ -272,14 +273,14 @@
             panelStrikerRight.TabIndex = 61;
             panelStrikerRight.Visible = false;
             // 
-            // StrikerRight
+            // labelStrikerRight
             // 
-            StrikerRight.AutoSize = true;
-            StrikerRight.Location = new Point(66, 34);
-            StrikerRight.Name = "StrikerRight";
-            StrikerRight.Size = new Size(25, 20);
-            StrikerRight.TabIndex = 53;
-            StrikerRight.Text = "ST";
+            labelStrikerRight.AutoSize = true;
+            labelStrikerRight.Location = new Point(66, 34);
+            labelStrikerRight.Name = "labelStrikerRight";
+            labelStrikerRight.Size = new Size(25, 20);
+            labelStrikerRight.TabIndex = 53;
+            labelStrikerRight.Text = "ST";
             // 
             // comboBoxStrikerRight
             // 
@@ -291,7 +292,7 @@
             // 
             // panelRightWinger
             // 
-            panelRightWinger.Controls.Add(RightWinger);
+            panelRightWinger.Controls.Add(labelRightWinger);
             panelRightWinger.Controls.Add(comboBoxRightWinger);
             panelRightWinger.Location = new Point(682, 115);
             panelRightWinger.Name = "panelRightWinger";
@@ -387,27 +388,27 @@
             comboBoxGoalkeeper.Size = new Size(151, 28);
             comboBoxGoalkeeper.TabIndex = 58;
             // 
-            // Goalkeeper
+            // labelGoalkeeper
             // 
-            Goalkeeper.AutoSize = true;
-            Goalkeeper.Location = new Point(63, 34);
-            Goalkeeper.Name = "Goalkeeper";
-            Goalkeeper.Size = new Size(28, 20);
-            Goalkeeper.TabIndex = 57;
-            Goalkeeper.Text = "GK";
+            labelGoalkeeper.AutoSize = true;
+            labelGoalkeeper.Location = new Point(63, 34);
+            labelGoalkeeper.Name = "labelGoalkeeper";
+            labelGoalkeeper.Size = new Size(28, 20);
+            labelGoalkeeper.TabIndex = 57;
+            labelGoalkeeper.Text = "GK";
             // 
-            // LeftBack
+            // labelLeftBack
             // 
-            LeftBack.AutoSize = true;
-            LeftBack.Location = new Point(64, 34);
-            LeftBack.Name = "LeftBack";
-            LeftBack.Size = new Size(25, 20);
-            LeftBack.TabIndex = 59;
-            LeftBack.Text = "LB";
+            labelLeftBack.AutoSize = true;
+            labelLeftBack.Location = new Point(64, 34);
+            labelLeftBack.Name = "labelLeftBack";
+            labelLeftBack.Size = new Size(25, 20);
+            labelLeftBack.TabIndex = 59;
+            labelLeftBack.Text = "LB";
             // 
             // panelLeftMidfielder
             // 
-            panelLeftMidfielder.Controls.Add(LeftMidfielder);
+            panelLeftMidfielder.Controls.Add(labelLeftMidfielder);
             panelLeftMidfielder.Controls.Add(comboBoxLeftMidfielder);
             panelLeftMidfielder.Location = new Point(33, 196);
             panelLeftMidfielder.Name = "panelLeftMidfielder";
@@ -417,7 +418,7 @@
             // 
             // panelLeftWinger
             // 
-            panelLeftWinger.Controls.Add(LeftWinger);
+            panelLeftWinger.Controls.Add(labelLeftWinger);
             panelLeftWinger.Controls.Add(comboBoxLeftWinger);
             panelLeftWinger.Location = new Point(45, 117);
             panelLeftWinger.Name = "panelLeftWinger";
@@ -433,14 +434,14 @@
             comboBoxStrikerCentral.Size = new Size(151, 28);
             comboBoxStrikerCentral.TabIndex = 63;
             // 
-            // StrikerCentral
+            // labelStrikerCentral
             // 
-            StrikerCentral.AutoSize = true;
-            StrikerCentral.Location = new Point(63, 34);
-            StrikerCentral.Name = "StrikerCentral";
-            StrikerCentral.Size = new Size(25, 20);
-            StrikerCentral.TabIndex = 62;
-            StrikerCentral.Text = "ST";
+            labelStrikerCentral.AutoSize = true;
+            labelStrikerCentral.Location = new Point(63, 34);
+            labelStrikerCentral.Name = "labelStrikerCentral";
+            labelStrikerCentral.Size = new Size(25, 20);
+            labelStrikerCentral.TabIndex = 62;
+            labelStrikerCentral.Text = "ST";
             // 
             // comboBoxRightMidfielder
             // 
@@ -450,20 +451,20 @@
             comboBoxRightMidfielder.Size = new Size(151, 28);
             comboBoxRightMidfielder.TabIndex = 65;
             // 
-            // RightMidfielder
+            // labelRightMidfielder
             // 
-            RightMidfielder.AutoSize = true;
-            RightMidfielder.Location = new Point(62, 36);
-            RightMidfielder.Name = "RightMidfielder";
-            RightMidfielder.Size = new Size(31, 20);
-            RightMidfielder.TabIndex = 64;
-            RightMidfielder.Text = "RM";
+            labelRightMidfielder.AutoSize = true;
+            labelRightMidfielder.Location = new Point(62, 36);
+            labelRightMidfielder.Name = "labelRightMidfielder";
+            labelRightMidfielder.Size = new Size(31, 20);
+            labelRightMidfielder.TabIndex = 64;
+            labelRightMidfielder.Text = "RM";
             // 
             // panelStrikerCentral
             // 
             panelStrikerCentral.BackColor = SystemColors.Control;
             panelStrikerCentral.Controls.Add(comboBoxStrikerCentral);
-            panelStrikerCentral.Controls.Add(StrikerCentral);
+            panelStrikerCentral.Controls.Add(labelStrikerCentral);
             panelStrikerCentral.Location = new Point(362, 82);
             panelStrikerCentral.Name = "panelStrikerCentral";
             panelStrikerCentral.Size = new Size(151, 60);
@@ -473,7 +474,7 @@
             // panelRightMidfielder
             // 
             panelRightMidfielder.Controls.Add(comboBoxRightMidfielder);
-            panelRightMidfielder.Controls.Add(RightMidfielder);
+            panelRightMidfielder.Controls.Add(labelRightMidfielder);
             panelRightMidfielder.Location = new Point(686, 195);
             panelRightMidfielder.Name = "panelRightMidfielder";
             panelRightMidfielder.Size = new Size(151, 60);
@@ -483,7 +484,7 @@
             // panelRightBack
             // 
             panelRightBack.Controls.Add(comboBoxRightBack);
-            panelRightBack.Controls.Add(RightBack);
+            panelRightBack.Controls.Add(labelRightBack);
             panelRightBack.Location = new Point(686, 308);
             panelRightBack.Name = "panelRightBack";
             panelRightBack.Size = new Size(151, 60);
@@ -493,7 +494,7 @@
             // panelLeftBack
             // 
             panelLeftBack.Controls.Add(comboBoxLeftBack);
-            panelLeftBack.Controls.Add(LeftBack);
+            panelLeftBack.Controls.Add(labelLeftBack);
             panelLeftBack.Location = new Point(33, 308);
             panelLeftBack.Name = "panelLeftBack";
             panelLeftBack.Size = new Size(151, 60);
@@ -503,7 +504,7 @@
             // panelGoalkeeper
             // 
             panelGoalkeeper.Controls.Add(comboBoxGoalkeeper);
-            panelGoalkeeper.Controls.Add(Goalkeeper);
+            panelGoalkeeper.Controls.Add(labelGoalkeeper);
             panelGoalkeeper.Location = new Point(362, 422);
             panelGoalkeeper.Name = "panelGoalkeeper";
             panelGoalkeeper.Size = new Size(151, 60);
@@ -513,7 +514,7 @@
             // panelCenterBackLeft
             // 
             panelCenterBackLeft.Controls.Add(comboBoxCenterBackLeft);
-            panelCenterBackLeft.Controls.Add(CenterBackLeft);
+            panelCenterBackLeft.Controls.Add(labelCenterBackLeft);
             panelCenterBackLeft.Location = new Point(203, 330);
             panelCenterBackLeft.Name = "panelCenterBackLeft";
             panelCenterBackLeft.Size = new Size(151, 60);
@@ -523,7 +524,7 @@
             // panelCenterBackCentral
             // 
             panelCenterBackCentral.Controls.Add(comboBoxCenterBackCentral);
-            panelCenterBackCentral.Controls.Add(CenterBackCentral);
+            panelCenterBackCentral.Controls.Add(labelCenterBackCentral);
             panelCenterBackCentral.Location = new Point(362, 330);
             panelCenterBackCentral.Name = "panelCenterBackCentral";
             panelCenterBackCentral.Size = new Size(151, 60);
@@ -533,7 +534,7 @@
             // panelCenterBackRight
             // 
             panelCenterBackRight.Controls.Add(comboBoxCenterBackRight);
-            panelCenterBackRight.Controls.Add(CenterBackRight);
+            panelCenterBackRight.Controls.Add(labelCenterBackRight);
             panelCenterBackRight.Location = new Point(519, 330);
             panelCenterBackRight.Name = "panelCenterBackRight";
             panelCenterBackRight.Size = new Size(151, 60);
@@ -543,7 +544,7 @@
             // panelCenterMidfielderLeft
             // 
             panelCenterMidfielderLeft.Controls.Add(comboBoxCenterMidfielderLeft);
-            panelCenterMidfielderLeft.Controls.Add(CenterMidfielderLeft);
+            panelCenterMidfielderLeft.Controls.Add(labelCenterMidfielderLeft);
             panelCenterMidfielderLeft.Location = new Point(227, 204);
             panelCenterMidfielderLeft.Name = "panelCenterMidfielderLeft";
             panelCenterMidfielderLeft.Size = new Size(151, 60);
@@ -553,7 +554,7 @@
             // panelCenterMidfielderCentral
             // 
             panelCenterMidfielderCentral.Controls.Add(comboBoxCenterMidfielderCentral);
-            panelCenterMidfielderCentral.Controls.Add(CenterMidfielderCentral);
+            panelCenterMidfielderCentral.Controls.Add(labelCenterMidfielderCentral);
             panelCenterMidfielderCentral.Location = new Point(362, 238);
             panelCenterMidfielderCentral.Name = "panelCenterMidfielderCentral";
             panelCenterMidfielderCentral.Size = new Size(151, 60);
@@ -563,17 +564,28 @@
             // panelCenterMidfielderRight
             // 
             panelCenterMidfielderRight.Controls.Add(comboBoxCenterMidfielderRight);
-            panelCenterMidfielderRight.Controls.Add(CenterMidfielderRight);
+            panelCenterMidfielderRight.Controls.Add(labelCenterMidfielderRight);
             panelCenterMidfielderRight.Location = new Point(504, 204);
             panelCenterMidfielderRight.Name = "panelCenterMidfielderRight";
             panelCenterMidfielderRight.Size = new Size(151, 60);
             panelCenterMidfielderRight.TabIndex = 61;
             panelCenterMidfielderRight.Visible = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F);
+            label1.Location = new Point(762, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(136, 25);
+            label1.TabIndex = 67;
+            label1.Text = "formation type";
+            // 
             // UserControlHomeFormation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
             Controls.Add(panelCenterMidfielderCentral);
             Controls.Add(HomeFormation);
             Controls.Add(comboBoxHomeFormation);
@@ -595,7 +607,7 @@
             Controls.Add(panelCenterMidfielderRight);
             Controls.Add(panelCenterMidfielderLeft);
             Name = "UserControlHomeFormation";
-            Size = new Size(901, 505);
+            Size = new Size(901, 522);
             Load += UserControlHomeFormation_Load;
             panelStrikerLeft.ResumeLayout(false);
             panelStrikerLeft.PerformLayout();
@@ -639,17 +651,17 @@
         private Button buttonNext;
         private Label HomeFormation;
         private ComboBox comboBoxHomeFormation;
-        private Label StrikerLeft;
-        private Label LeftWinger;
-        private Label RightWinger;
-        private Label LeftMidfielder;
-        private Label CenterMidfielderLeft;
-        private Label CenterBackLeft;
-        private Label CenterMidfielderRight;
-        private Label CenterMidfielderCentral;
-        private Label CenterBackRight;
-        private Label CenterBackCentral;
-        private Label RightBack;
+        private Label labelStrikerLeft;
+        private Label labelLeftWinger;
+        private Label labelRightWinger;
+        private Label labelLeftMidfielder;
+        private Label labelCenterMidfielderLeft;
+        private Label labelCenterBackLeft;
+        private Label labelCenterMidfielderRight;
+        private Label labelCenterMidfielderCentral;
+        private Label labelCenterBackRight;
+        private Label labelCenterBackCentral;
+        private Label labelRightBack;
         private ComboBox comboBoxStrikerLeft;
         private ComboBox comboBoxRightWinger;
         private Panel panelStrikerLeft;
@@ -664,18 +676,18 @@
         private ComboBox comboBoxCenterBackCentral;
         private ComboBox comboBoxCenterBackRight;
         private ComboBox comboBoxStrikerRight;
-        private Label StrikerRight;
+        private Label labelStrikerRight;
         private ComboBox comboBoxGoalkeeper;
-        private Label Goalkeeper;
-        private Label LeftBack;
+        private Label labelGoalkeeper;
+        private Label labelLeftBack;
         private Panel panelStrikerRight;
         private Panel panelRightWinger;
         private Panel panelLeftMidfielder;
         private Panel panelLeftWinger;
         private ComboBox comboBoxStrikerCentral;
-        private Label StrikerCentral;
+        private Label labelStrikerCentral;
         private ComboBox comboBoxRightMidfielder;
-        private Label RightMidfielder;
+        private Label labelRightMidfielder;
         private Panel panelStrikerCentral;
         private Panel panelRightMidfielder;
         private Panel panelRightBack;
@@ -687,5 +699,6 @@
         private Panel panelCenterMidfielderLeft;
         private Panel panelCenterMidfielderCentral;
         private Panel panelCenterMidfielderRight;
+        private Label label1;
     }
 }

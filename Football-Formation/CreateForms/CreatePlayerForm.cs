@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballFormation.Classes;
-using static FootballFormation.Classes.Player.PositionType;
+using static FootballFormation.Classes.PositionType;
 
 namespace FootballFormation
 {
@@ -22,7 +22,7 @@ namespace FootballFormation
         private void CreatePlayerForm_Load(object sender, EventArgs e)
         {
             comboBoxPosition.Items.Clear();
-            Array Positions = Enum.GetValues(typeof(Player.PositionType));
+            Array Positions = Enum.GetValues(typeof(PositionType));
             foreach (var position in Positions)
             {
                 comboBoxPosition.Items.Add(position);
@@ -39,10 +39,15 @@ namespace FootballFormation
         {
             try 
             {
+                if (comboBoxPosition.SelectedItem == null)
+                {
+                    throw new ArgumentException("Position cannot be empty.");
+                }
+
                 new Player(textBoxName.Text,
                 (int)numericUpDownAge.Value,
                 (int)numericUpDownHeight.Value,
-                (Player.PositionType)comboBoxPosition.SelectedItem,
+                (PositionType)comboBoxPosition.SelectedItem,
                 (int)numericUpDownPrice.Value);
 
                 this.Close();

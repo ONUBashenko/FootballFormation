@@ -7,6 +7,20 @@ using System.Xml.Linq;
 
 namespace FootballFormation.Classes
 {
+    public enum PositionType
+    {
+        GK, //Goalkeeper
+        LB, //Left Back
+        RB, //Right Back
+        CB, //Center Back
+        LM, //Left Midfielder
+        RM, //Right Midfielder
+        CM, //Center Midfielder
+        LW, //Left Winger
+        RW, //Right Winger
+        ST  //Striker
+    }
+
     /// <summary>
     /// Клас, що представляє гравця у футбольній моделі.
     /// Наслідує властивості класу <see cref="Person"/>.
@@ -14,26 +28,11 @@ namespace FootballFormation.Classes
     /// </summary>
     public class Player : Person
     {
-        public enum PositionType
-        {
-            GK, //Goalkeeper
-            LB, //Left Back
-            RB, //Right Back
-            CB, //Center Back
-            LM, //Left Midfielder
-            RM, //Right Midfielder
-            CM, //Center Midfielder
-           // CDM, Central Defensive Midfielder
-           // CAM, Central Attacking Midfielder
-            LW, //Left Winger
-            RW, //Right Winger
-            ST  //Striker
-        }
-
         private int _age;
         private PositionType _position;
         private int _price;
-        public static List<Player> players = new List<Player>();
+        public Team Team { get; set; }
+        private static List<Player> players = new List<Player>();
 
         /// <summary>
         /// Отримує або встановлює вік гравця.
@@ -124,6 +123,20 @@ namespace FootballFormation.Classes
         public override string ToString()
         {
             return $"{Position}, {Name}";
+        }
+
+        public void Delete()
+        {
+            if (Team != null)
+            {
+                throw new InvalidOperationException("Cannot delete player who is assigned to a team.");
+            }
+            players.Remove(this);
+        }
+
+        public static List<Player> GetAllPlayers()
+        {
+            return players;
         }
     }
 }

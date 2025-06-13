@@ -20,6 +20,7 @@ namespace FootballFormation.CreateForms.CreateMatch
             public Formation HomeFormation { get; set; }
             public Formation AwayFormation { get; set; }
             public Match Match { get; set; }
+
         }
 
         public CreateMatchForm()

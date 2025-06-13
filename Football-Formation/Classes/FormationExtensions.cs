@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static FootballFormation.Classes.Formation;
+using static FootballFormation.Classes.PositionInFormation;
 using static FootballFormation.Classes.FormationHelper;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FootballFormation.Classes
 {
@@ -49,20 +48,22 @@ namespace FootballFormation.Classes
 
         public static void SetDefenders(Dictionary<PositionInFormation, bool> PositionsInFormation, FormationType formationName)
         {
-            if (HowManyDefenders(GetNumberOfPlayersInLine(formationName)) == 3)
+            int defendersCount = HowManyDefenders(GetNumberOfPlayersInLine(formationName));
+
+            if (defendersCount == 3)
             {
                 PositionsInFormation[CenterBackLeft] = true; //left
                 PositionsInFormation[CenterBackCentral] = true; //central
                 PositionsInFormation[CenterBackRight] = true; //right
             }
-            else if (HowManyDefenders(GetNumberOfPlayersInLine(formationName)) == 4)
+            else if (defendersCount == 4)
             {
                 PositionsInFormation[LeftBack] = true;
                 PositionsInFormation[CenterBackLeft] = true; //left
                 PositionsInFormation[CenterBackRight] = true; //right
                 PositionsInFormation[RightBack] = true;
             }
-            else if (HowManyDefenders(GetNumberOfPlayersInLine(formationName)) == 5)
+            else if (defendersCount == 5)
             {
                 PositionsInFormation[LeftBack] = true;
                 PositionsInFormation[CenterBackLeft] = true;
@@ -74,25 +75,27 @@ namespace FootballFormation.Classes
 
         public static void SetMidfielders(Dictionary<PositionInFormation, bool> PositionsInFormation, FormationType formationName)
         {
-            if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 2)
+            int midfieldersCount = HowManyMidfielders(GetNumberOfPlayersInLine(formationName));
+
+            if (midfieldersCount == 2)
             {
                 PositionsInFormation[CenterMidfielderLeft] = true;
                 PositionsInFormation[CenterMidfielderRight] = true;
             }
-            else if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 3)
+            else if (midfieldersCount == 3)
             {
                 PositionsInFormation[CenterMidfielderLeft] = true; //left
                 PositionsInFormation[CenterMidfielderCentral] = true; //central
                 PositionsInFormation[CenterMidfielderRight] = true; //right
             }
-            else if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 4)
+            else if (midfieldersCount == 4)
             {
                 PositionsInFormation[LeftMidfielder] = true;
                 PositionsInFormation[CenterMidfielderLeft] = true; //left
                 PositionsInFormation[CenterMidfielderRight] = true; //right
                 PositionsInFormation[RightMidfielder] = true;
             }
-            else if (HowManyMidfielders(GetNumberOfPlayersInLine(formationName)) == 5)
+            else if (midfieldersCount == 5)
             {
                 PositionsInFormation[LeftMidfielder] = true;
                 PositionsInFormation[CenterMidfielderLeft] = true; //left
@@ -103,22 +106,24 @@ namespace FootballFormation.Classes
 
         public static void SetForwards(Dictionary<PositionInFormation, bool> PositionsInFormation, FormationType formationName)
         {
-            if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 1)
+            int forwardsCount = HowManyForwards(GetNumberOfPlayersInLine(formationName));
+
+            if (forwardsCount == 1)
             {
                 PositionsInFormation[StrikerCentral] = true;
             }
-            else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 2)
+            else if (forwardsCount == 2)
             {
                 PositionsInFormation[StrikerLeft] = true; //left
                 PositionsInFormation[StrikerRight] = true; //right
             }
-            else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 3)
+            else if (forwardsCount == 3)
             {
                 PositionsInFormation[LeftWinger] = true;
                 PositionsInFormation[StrikerCentral] = true;
                 PositionsInFormation[RightWinger] = true;
             }
-            else if (HowManyForwards(GetNumberOfPlayersInLine(formationName)) == 4)
+            else if (forwardsCount == 4)
             {
                 PositionsInFormation[LeftWinger] = true;
                 PositionsInFormation[StrikerLeft] = true; //left

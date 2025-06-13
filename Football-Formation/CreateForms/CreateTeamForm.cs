@@ -21,17 +21,17 @@ namespace FootballFormation.CreateForms
         private void CreateTeamForm_Load(object sender, EventArgs e)
         {
             comboBoxCoach.Items.Clear();
-            foreach (var coach in Coach.coaches)
+            foreach (var coach in Coach.GetAllCoaches())
             {
-                //if(coach.Team != null) continue;
-                comboBoxCoach.Items.Add(coach);
+                if(coach.Team == null)
+                    comboBoxCoach.Items.Add(coach);
             }
 
             checkedListBoxPlayers.Items.Clear();
-            foreach (var player in Player.players)
+            foreach (var player in Player.GetAllPlayers())
             {
-                //if(player.Team != null) continue;
-                checkedListBoxPlayers.Items.Add(player, false);
+                if(player.Team == null)
+                    checkedListBoxPlayers.Items.Add(player, false);
             }
         }
 
@@ -43,18 +43,17 @@ namespace FootballFormation.CreateForms
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-
-            var selectedPlayers = new List<Player>();
-            foreach (var item in checkedListBoxPlayers.CheckedItems)
-            {
-                if (item is Player player)
-                {
-                    selectedPlayers.Add(player);
-                }
-            }
- 
             try
             {
+                var selectedPlayers = new List<Player>();
+                foreach (var item in checkedListBoxPlayers.CheckedItems)
+                {
+                    if (item is Player player)
+                    {
+                        selectedPlayers.Add(player);
+                    }
+                }
+
                 new Team(textBoxName.Text,
                 textBoxCountry.Text,
                 (Coach)comboBoxCoach.SelectedItem,

@@ -18,7 +18,8 @@ namespace FootballFormation.Classes
         private int _age;
         private List<FormationType> _formations;
         private int _experience;
-        public static List<Coach> coaches = new List<Coach>();
+        public Team Team { get; set; }
+        private static List<Coach> coaches = new List<Coach>();
 
         /// <summary>
         /// Отримує або встановлює вік тренера.
@@ -57,6 +58,10 @@ namespace FootballFormation.Classes
                 {
                     throw new ArgumentNullException("Formations cannot be null");
                 }
+                if (value.Count == 0)
+                {
+                    throw new ArgumentException("Formations cannot be empty.");
+                }
                 _formations = value;
             }
         }
@@ -77,6 +82,10 @@ namespace FootballFormation.Classes
                 if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Experience cannot be negative.");
+                }
+                if (value > (_age - 28))
+                {
+                    throw new ArgumentOutOfRangeException($"Experience cannot be more than {_age - 28} years.");
                 }
                 _experience = value;
             }
@@ -99,11 +108,11 @@ namespace FootballFormation.Classes
         /// якщо зріст не в межах від 140 до 220 см, 
         /// або якщо досвід є від’ємним числом.
         /// </exception> 
-        public Coach(string name, int age, int height, int experience, List<FormationType> formations = null)
+        public Coach(string name, int age, int height, int experience, List<FormationType> formations)
             : base(name, age, height)
         {
             Experience = experience;
-            Formations = formations ?? new List<FormationType>();
+            Formations = formations;
 
             coaches.Add(this);
         }
@@ -151,6 +160,20 @@ namespace FootballFormation.Classes
         public override string ToString()
         {
             return Name;
+        }
+
+        public void Delete()
+        {
+            if (Team != null)
+            {
+                throw new InvalidOperationException("Coach cannot be deleted while assigned to a team.");
+            }
+            coaches.Remove(this);
+        }
+
+        public static List<Coach> GetAllCoaches()
+        {
+            return coaches;
         }
     }
 }

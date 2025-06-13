@@ -54,11 +54,14 @@
             label17 = new Label();
             AwayTeamGoals = new Label();
             label25 = new Label();
+            label1 = new Label();
+            HomeTeamPossession = new Label();
+            AwayTeamPossession = new Label();
             SuspendLayout();
             // 
             // buttonExit
             // 
-            buttonExit.Location = new Point(777, 487);
+            buttonExit.Location = new Point(803, 491);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(94, 29);
             buttonExit.TabIndex = 4;
@@ -70,7 +73,7 @@
             // 
             MatchSummary.AutoSize = true;
             MatchSummary.Font = new Font("Segoe UI", 16F);
-            MatchSummary.Location = new Point(338, 26);
+            MatchSummary.Location = new Point(339, 26);
             MatchSummary.Name = "MatchSummary";
             MatchSummary.Size = new Size(209, 37);
             MatchSummary.TabIndex = 11;
@@ -80,7 +83,7 @@
             // 
             HomeTeam.AutoSize = true;
             HomeTeam.Font = new Font("Segoe UI", 16F);
-            HomeTeam.Location = new Point(52, 97);
+            HomeTeam.Location = new Point(58, 97);
             HomeTeam.Name = "HomeTeam";
             HomeTeam.Size = new Size(0, 37);
             HomeTeam.TabIndex = 12;
@@ -89,7 +92,7 @@
             // 
             AwayTeam.AutoSize = true;
             AwayTeam.Font = new Font("Segoe UI", 16F);
-            AwayTeam.Location = new Point(657, 97);
+            AwayTeam.Location = new Point(663, 97);
             AwayTeam.Name = "AwayTeam";
             AwayTeam.Size = new Size(0, 37);
             AwayTeam.TabIndex = 13;
@@ -98,7 +101,7 @@
             // 
             HomeTeamGoals.AutoSize = true;
             HomeTeamGoals.Font = new Font("Segoe UI", 16F);
-            HomeTeamGoals.Location = new Point(360, 97);
+            HomeTeamGoals.Location = new Point(366, 97);
             HomeTeamGoals.Name = "HomeTeamGoals";
             HomeTeamGoals.Size = new Size(39, 37);
             HomeTeamGoals.TabIndex = 14;
@@ -108,7 +111,7 @@
             // 
             ShotsOnTarget.AutoSize = true;
             ShotsOnTarget.Font = new Font("Segoe UI", 14F);
-            ShotsOnTarget.Location = new Point(345, 215);
+            ShotsOnTarget.Location = new Point(351, 239);
             ShotsOnTarget.Name = "ShotsOnTarget";
             ShotsOnTarget.Size = new Size(178, 32);
             ShotsOnTarget.TabIndex = 16;
@@ -118,7 +121,7 @@
             // 
             Fouls.AutoSize = true;
             Fouls.Font = new Font("Segoe UI", 14F);
-            Fouls.Location = new Point(395, 320);
+            Fouls.Location = new Point(401, 321);
             Fouls.Name = "Fouls";
             Fouls.Size = new Size(70, 32);
             Fouls.TabIndex = 17;
@@ -128,7 +131,7 @@
             // 
             Corners.AutoSize = true;
             Corners.Font = new Font("Segoe UI", 14F);
-            Corners.Location = new Point(380, 268);
+            Corners.Location = new Point(386, 280);
             Corners.Name = "Corners";
             Corners.Size = new Size(96, 32);
             Corners.TabIndex = 18;
@@ -138,7 +141,7 @@
             // 
             YellowCards.AutoSize = true;
             YellowCards.Font = new Font("Segoe UI", 14F);
-            YellowCards.Location = new Point(357, 372);
+            YellowCards.Location = new Point(363, 363);
             YellowCards.Name = "YellowCards";
             YellowCards.Size = new Size(143, 32);
             YellowCards.TabIndex = 19;
@@ -148,7 +151,7 @@
             // 
             Shots.AutoSize = true;
             Shots.Font = new Font("Segoe UI", 14F);
-            Shots.Location = new Point(394, 167);
+            Shots.Location = new Point(400, 196);
             Shots.Name = "Shots";
             Shots.Size = new Size(73, 32);
             Shots.TabIndex = 20;
@@ -158,7 +161,7 @@
             // 
             RedCards.AutoSize = true;
             RedCards.Font = new Font("Segoe UI", 14F);
-            RedCards.Location = new Point(370, 426);
+            RedCards.Location = new Point(376, 405);
             RedCards.Name = "RedCards";
             RedCards.Size = new Size(116, 32);
             RedCards.TabIndex = 25;
@@ -168,7 +171,7 @@
             // 
             HomeTeamRedCards.AutoSize = true;
             HomeTeamRedCards.Font = new Font("Segoe UI", 14F);
-            HomeTeamRedCards.Location = new Point(104, 426);
+            HomeTeamRedCards.Location = new Point(110, 405);
             HomeTeamRedCards.Name = "HomeTeamRedCards";
             HomeTeamRedCards.Size = new Size(34, 32);
             HomeTeamRedCards.TabIndex = 33;
@@ -178,7 +181,7 @@
             // 
             HomeTeamYellowCards.AutoSize = true;
             HomeTeamYellowCards.Font = new Font("Segoe UI", 14F);
-            HomeTeamYellowCards.Location = new Point(104, 372);
+            HomeTeamYellowCards.Location = new Point(110, 363);
             HomeTeamYellowCards.Name = "HomeTeamYellowCards";
             HomeTeamYellowCards.Size = new Size(34, 32);
             HomeTeamYellowCards.TabIndex = 32;
@@ -188,7 +191,7 @@
             // 
             HomeTeamCorners.AutoSize = true;
             HomeTeamCorners.Font = new Font("Segoe UI", 14F);
-            HomeTeamCorners.Location = new Point(104, 268);
+            HomeTeamCorners.Location = new Point(110, 280);
             HomeTeamCorners.Name = "HomeTeamCorners";
             HomeTeamCorners.Size = new Size(34, 32);
             HomeTeamCorners.TabIndex = 31;
@@ -198,7 +201,7 @@
             // 
             HomeTeamFouls.AutoSize = true;
             HomeTeamFouls.Font = new Font("Segoe UI", 14F);
-            HomeTeamFouls.Location = new Point(104, 320);
+            HomeTeamFouls.Location = new Point(110, 321);
             HomeTeamFouls.Name = "HomeTeamFouls";
             HomeTeamFouls.Size = new Size(34, 32);
             HomeTeamFouls.TabIndex = 30;
@@ -208,7 +211,7 @@
             // 
             HomeTeamShotsOnTarget.AutoSize = true;
             HomeTeamShotsOnTarget.Font = new Font("Segoe UI", 14F);
-            HomeTeamShotsOnTarget.Location = new Point(104, 215);
+            HomeTeamShotsOnTarget.Location = new Point(110, 239);
             HomeTeamShotsOnTarget.Name = "HomeTeamShotsOnTarget";
             HomeTeamShotsOnTarget.Size = new Size(34, 32);
             HomeTeamShotsOnTarget.TabIndex = 29;
@@ -218,7 +221,7 @@
             // 
             HomeTeamShots.AutoSize = true;
             HomeTeamShots.Font = new Font("Segoe UI", 14F);
-            HomeTeamShots.Location = new Point(104, 167);
+            HomeTeamShots.Location = new Point(110, 196);
             HomeTeamShots.Name = "HomeTeamShots";
             HomeTeamShots.Size = new Size(34, 32);
             HomeTeamShots.TabIndex = 28;
@@ -228,7 +231,7 @@
             // 
             AwayTeamRedCards.AutoSize = true;
             AwayTeamRedCards.Font = new Font("Segoe UI", 14F);
-            AwayTeamRedCards.Location = new Point(715, 426);
+            AwayTeamRedCards.Location = new Point(721, 405);
             AwayTeamRedCards.Name = "AwayTeamRedCards";
             AwayTeamRedCards.Size = new Size(34, 32);
             AwayTeamRedCards.TabIndex = 39;
@@ -238,7 +241,7 @@
             // 
             AwayTeamYellowCards.AutoSize = true;
             AwayTeamYellowCards.Font = new Font("Segoe UI", 14F);
-            AwayTeamYellowCards.Location = new Point(715, 372);
+            AwayTeamYellowCards.Location = new Point(721, 363);
             AwayTeamYellowCards.Name = "AwayTeamYellowCards";
             AwayTeamYellowCards.Size = new Size(34, 32);
             AwayTeamYellowCards.TabIndex = 38;
@@ -248,7 +251,7 @@
             // 
             AwayTeamCorners.AutoSize = true;
             AwayTeamCorners.Font = new Font("Segoe UI", 14F);
-            AwayTeamCorners.Location = new Point(715, 268);
+            AwayTeamCorners.Location = new Point(721, 280);
             AwayTeamCorners.Name = "AwayTeamCorners";
             AwayTeamCorners.Size = new Size(34, 32);
             AwayTeamCorners.TabIndex = 37;
@@ -258,7 +261,7 @@
             // 
             AwayTeamFouls.AutoSize = true;
             AwayTeamFouls.Font = new Font("Segoe UI", 14F);
-            AwayTeamFouls.Location = new Point(715, 320);
+            AwayTeamFouls.Location = new Point(721, 321);
             AwayTeamFouls.Name = "AwayTeamFouls";
             AwayTeamFouls.Size = new Size(34, 32);
             AwayTeamFouls.TabIndex = 36;
@@ -268,7 +271,7 @@
             // 
             AwayTeamShotsOnTarget.AutoSize = true;
             AwayTeamShotsOnTarget.Font = new Font("Segoe UI", 14F);
-            AwayTeamShotsOnTarget.Location = new Point(715, 215);
+            AwayTeamShotsOnTarget.Location = new Point(721, 239);
             AwayTeamShotsOnTarget.Name = "AwayTeamShotsOnTarget";
             AwayTeamShotsOnTarget.Size = new Size(34, 32);
             AwayTeamShotsOnTarget.TabIndex = 35;
@@ -278,7 +281,7 @@
             // 
             AwayTeamShots.AutoSize = true;
             AwayTeamShots.Font = new Font("Segoe UI", 14F);
-            AwayTeamShots.Location = new Point(715, 167);
+            AwayTeamShots.Location = new Point(721, 196);
             AwayTeamShots.Name = "AwayTeamShots";
             AwayTeamShots.Size = new Size(34, 32);
             AwayTeamShots.TabIndex = 34;
@@ -289,7 +292,7 @@
             label17.BackColor = SystemColors.ActiveCaptionText;
             label17.Location = new Point(0, 135);
             label17.Name = "label17";
-            label17.Size = new Size(885, 4);
+            label17.Size = new Size(903, 4);
             label17.TabIndex = 40;
             label17.Text = "label17";
             // 
@@ -297,7 +300,7 @@
             // 
             AwayTeamGoals.AutoSize = true;
             AwayTeamGoals.Font = new Font("Segoe UI", 16F);
-            AwayTeamGoals.Location = new Point(474, 97);
+            AwayTeamGoals.Location = new Point(480, 97);
             AwayTeamGoals.Name = "AwayTeamGoals";
             AwayTeamGoals.Size = new Size(39, 37);
             AwayTeamGoals.TabIndex = 41;
@@ -307,16 +310,49 @@
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 16F);
-            label25.Location = new Point(421, 98);
+            label25.Location = new Point(427, 98);
             label25.Name = "label25";
             label25.Size = new Size(28, 37);
             label25.TabIndex = 42;
             label25.Text = "-";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F);
+            label1.Location = new Point(376, 155);
+            label1.Name = "label1";
+            label1.Size = new Size(127, 32);
+            label1.TabIndex = 43;
+            label1.Text = "Possession";
+            // 
+            // HomeTeamPossession
+            // 
+            HomeTeamPossession.AutoSize = true;
+            HomeTeamPossession.Font = new Font("Segoe UI", 14F);
+            HomeTeamPossession.Location = new Point(110, 155);
+            HomeTeamPossession.Name = "HomeTeamPossession";
+            HomeTeamPossession.Size = new Size(34, 32);
+            HomeTeamPossession.TabIndex = 44;
+            HomeTeamPossession.Text = "0 ";
+            // 
+            // AwayTeamPossession
+            // 
+            AwayTeamPossession.AutoSize = true;
+            AwayTeamPossession.Font = new Font("Segoe UI", 14F);
+            AwayTeamPossession.Location = new Point(721, 155);
+            AwayTeamPossession.Name = "AwayTeamPossession";
+            AwayTeamPossession.Size = new Size(34, 32);
+            AwayTeamPossession.TabIndex = 45;
+            AwayTeamPossession.Text = "0 ";
+            // 
             // UserControlMatchSummary
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(AwayTeamPossession);
+            Controls.Add(HomeTeamPossession);
+            Controls.Add(label1);
             Controls.Add(label25);
             Controls.Add(AwayTeamGoals);
             Controls.Add(label17);
@@ -344,7 +380,7 @@
             Controls.Add(MatchSummary);
             Controls.Add(buttonExit);
             Name = "UserControlMatchSummary";
-            Size = new Size(883, 531);
+            Size = new Size(900, 523);
             Load += UserControlMatchSummary_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -378,5 +414,8 @@
         private Label label17;
         private Label AwayTeamGoals;
         private Label label25;
+        private Label label1;
+        private Label HomeTeamPossession;
+        private Label AwayTeamPossession;
     }
 }

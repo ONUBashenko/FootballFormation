@@ -39,7 +39,7 @@
             // comboBoxHomeTeam
             // 
             comboBoxHomeTeam.FormattingEnabled = true;
-            comboBoxHomeTeam.Location = new Point(147, 264);
+            comboBoxHomeTeam.Location = new Point(184, 263);
             comboBoxHomeTeam.Name = "comboBoxHomeTeam";
             comboBoxHomeTeam.Size = new Size(151, 28);
             comboBoxHomeTeam.TabIndex = 0;
@@ -48,7 +48,7 @@
             // comboBoxAwayTeam
             // 
             comboBoxAwayTeam.FormattingEnabled = true;
-            comboBoxAwayTeam.Location = new Point(559, 264);
+            comboBoxAwayTeam.Location = new Point(596, 263);
             comboBoxAwayTeam.Name = "comboBoxAwayTeam";
             comboBoxAwayTeam.Size = new Size(151, 28);
             comboBoxAwayTeam.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(773, 484);
+            buttonCancel.Location = new Point(805, 490);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(94, 29);
             buttonCancel.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // buttonNext
             // 
-            buttonNext.Location = new Point(673, 484);
+            buttonNext.Location = new Point(705, 490);
             buttonNext.Name = "buttonNext";
             buttonNext.Size = new Size(94, 29);
             buttonNext.TabIndex = 3;
@@ -77,20 +77,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16F);
-            label1.Location = new Point(144, 224);
+            label1.Font = new Font("Segoe UI", 18F);
+            label1.Location = new Point(174, 219);
             label1.Name = "label1";
-            label1.Size = new Size(156, 37);
+            label1.Size = new Size(174, 41);
             label1.TabIndex = 12;
             label1.Text = "Home team";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 16F);
-            label2.Location = new Point(561, 224);
+            label2.Font = new Font("Segoe UI", 18F);
+            label2.Location = new Point(591, 219);
             label2.Name = "label2";
-            label2.Size = new Size(147, 37);
+            label2.Size = new Size(163, 41);
             label2.TabIndex = 13;
             label2.Text = "Away team";
             // 
@@ -105,7 +105,7 @@
             Controls.Add(comboBoxAwayTeam);
             Controls.Add(comboBoxHomeTeam);
             Name = "UserControlSelectTeams";
-            Size = new Size(873, 524);
+            Size = new Size(902, 522);
             Load += UserControlSelectTeams_Load;
             ResumeLayout(false);
             PerformLayout();

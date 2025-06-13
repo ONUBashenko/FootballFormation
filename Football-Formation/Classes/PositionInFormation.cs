@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FootballFormation.Classes.PositionType;
 
 namespace FootballFormation.Classes
 {
@@ -20,7 +21,7 @@ namespace FootballFormation.Classes
             Central
         }
 
-        private Player.PositionType _positionName;
+        private PositionType _positionName;
         private SpecificType _positionSpecific;
 
         /// <summary>
@@ -30,12 +31,12 @@ namespace FootballFormation.Classes
         /// <exception cref="ArgumentOutOfRangeException">
         /// Виникає, якщо позиція не є дійсним значенням з перерахування PositionType.
         /// </exception>
-        public Player.PositionType PositionName
+        public PositionType PositionName
         {
             get {return _positionName;}
             set 
             {
-                if (!Enum.IsDefined(typeof(Player.PositionType), value))
+                if (!Enum.IsDefined(typeof(PositionType), value))
                 {
                     throw new ArgumentOutOfRangeException("Invalid position type.");
                 }
@@ -59,9 +60,13 @@ namespace FootballFormation.Classes
                 {
                     throw new ArgumentOutOfRangeException("Invalid specific position type.");
                 }
-                /*if(value == SpecificType.Left || value == SpecificType.Right)
+                if(value != SpecificType.None)
                 {
-                }*/
+                    if(_positionName != PositionType.CB && _positionName != PositionType.CM && _positionName != PositionType.ST)
+                    {
+                        throw new ArgumentOutOfRangeException("Specific type can only be used with CB, CM, or ST positions.");
+                    }
+                }
                 _positionSpecific = value;
             }
         }
@@ -74,10 +79,27 @@ namespace FootballFormation.Classes
         /// <exception cref="ArgumentOutOfRangeException">
         /// Виникає, якщо позиція або специфіка недійсна.
         /// </exception>
-        public PositionInFormation(Player.PositionType positionName, SpecificType positionSpecific = SpecificType.None)
+        private PositionInFormation(PositionType positionName, SpecificType positionSpecific = SpecificType.None)
         {
             PositionName = positionName;
             PositionSpecific = positionSpecific;
         }
+
+        public static readonly PositionInFormation Goalkeeper = new PositionInFormation(GK);
+        public static readonly PositionInFormation LeftBack = new PositionInFormation(LB);
+        public static readonly PositionInFormation RightBack = new PositionInFormation(RB);
+        public static readonly PositionInFormation CenterBackLeft = new PositionInFormation(CB, SpecificType.Left);
+        public static readonly PositionInFormation CenterBackRight = new PositionInFormation(CB, SpecificType.Right);
+        public static readonly PositionInFormation CenterBackCentral = new PositionInFormation(CB, SpecificType.Central);
+        public static readonly PositionInFormation CenterMidfielderLeft = new PositionInFormation(CM, SpecificType.Left);
+        public static readonly PositionInFormation CenterMidfielderRight = new PositionInFormation(CM, SpecificType.Right);
+        public static readonly PositionInFormation CenterMidfielderCentral = new PositionInFormation(CM, SpecificType.Central);
+        public static readonly PositionInFormation LeftMidfielder = new PositionInFormation(LM);
+        public static readonly PositionInFormation RightMidfielder = new PositionInFormation(RM);
+        public static readonly PositionInFormation LeftWinger = new PositionInFormation(LW);
+        public static readonly PositionInFormation RightWinger = new PositionInFormation(RW);
+        public static readonly PositionInFormation StrikerLeft = new PositionInFormation(ST, SpecificType.Left);
+        public static readonly PositionInFormation StrikerRight = new PositionInFormation(ST, SpecificType.Right);
+        public static readonly PositionInFormation StrikerCentral = new PositionInFormation(ST, SpecificType.Central);
     }
 }

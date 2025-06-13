@@ -44,7 +44,7 @@ namespace FootballFormation
         {
             flowLayoutPanel1.Controls.Clear();
 
-            foreach (var player in Player.players)
+            foreach (var player in Player.GetAllPlayers())
             {
                 Panel panel = new Panel();
                 panel.Width = 1000;
@@ -70,11 +70,18 @@ namespace FootballFormation
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            if (button?.Tag is Player playerToRemove)
+            try
             {
-                Player.players.Remove(playerToRemove);
-                RenderPlayers();
+                Button button = sender as Button;
+                if (button?.Tag is Player playerToRemove)
+                {
+                    playerToRemove.Delete();
+                    RenderPlayers();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.ShowError(ex);
             }
         }
 
