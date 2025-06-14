@@ -1,6 +1,6 @@
 ﻿namespace FootballFormation
 {
-    partial class CoachesPage
+    partial class UserControlMatchesPage
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,70 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            CreateCoach = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             label1 = new Label();
+            CreateMatch = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            label2 = new Label();
             SuspendLayout();
             // 
-            // label2
+            // label1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 22F);
-            label2.Location = new Point(8, 25);
-            label2.Name = "label2";
-            label2.Size = new Size(164, 42);
-            label2.TabIndex = 6;
-            label2.Text = "Coaches";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 22F);
+            label1.Location = new Point(8, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(157, 42);
+            label1.TabIndex = 6;
+            label1.Text = "Matches";
             // 
-            // CreateCoach
+            // CreateMatch
             // 
-            CreateCoach.BackColor = SystemColors.Control;
-            CreateCoach.Location = new Point(950, 74);
-            CreateCoach.Name = "CreateCoach";
-            CreateCoach.Size = new Size(118, 30);
-            CreateCoach.TabIndex = 8;
-            CreateCoach.Text = "Create coach";
-            CreateCoach.UseVisualStyleBackColor = false;
-            CreateCoach.Click += CreateCoach_Click;
+            CreateMatch.BackColor = SystemColors.Control;
+            CreateMatch.Location = new Point(949, 74);
+            CreateMatch.Name = "CreateMatch";
+            CreateMatch.Size = new Size(118, 30);
+            CreateMatch.TabIndex = 8;
+            CreateMatch.Text = "Create match";
+            CreateMatch.UseVisualStyleBackColor = false;
+            CreateMatch.Click += CreateMatch_Click;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = SystemColors.ControlDark;
-            flowLayoutPanel1.Location = new Point(0, 123);
+            flowLayoutPanel1.Location = new Point(-1, 123);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1071, 454);
+            flowLayoutPanel1.Size = new Size(1070, 437);
             flowLayoutPanel1.TabIndex = 14;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
-            // label1
+            // label2
             // 
-            label1.BackColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(0, 67);
-            label1.Name = "label1";
-            label1.Size = new Size(1070, 4);
-            label1.TabIndex = 15;
-            label1.Text = "label1";
+            label2.BackColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(-1, 67);
+            label2.Name = "label2";
+            label2.Size = new Size(1073, 4);
+            label2.TabIndex = 16;
+            label2.Text = "label1";
             // 
-            // CoachesPage
+            // UserControlMatchesPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(CreateCoach);
             Controls.Add(label2);
-            Name = "CoachesPage";
-            Size = new Size(1071, 576);
-            Load += CoachesPage_Load;
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(CreateMatch);
+            Controls.Add(label1);
+            Name = "UserControlMatchesPage";
+            Size = new Size(1070, 561);
+            Load += MatchesPage_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label2;
-        private Button CreateCoach;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Label label1;
+        private Button CreateMatch;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label2;
     }
 }

@@ -12,15 +12,15 @@ using FootballFormation.Classes;
 
 namespace FootballFormation
 {
-    public partial class PlayersPage : UserControl
+    public partial class UserControlPlayersPage : UserControl
     {
-        public PlayersPage()
+        public UserControlPlayersPage()
         {
             InitializeComponent();
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            flowLayoutPanelPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            CreatePlayer.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         }
 
         private void CreatePlayer_Click(object sender, EventArgs e)
@@ -31,18 +31,19 @@ namespace FootballFormation
 
         private void PlayersPage_Load(object sender, EventArgs e)
         {
+            flowLayoutPanelPlayers.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanelPlayers.WrapContents = false;
+            flowLayoutPanelPlayers.AutoScroll = true;
+
             RenderPlayers();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void flowLayoutPanelPlayers_Paint(object sender, PaintEventArgs e)
         {
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.WrapContents = false;
-            flowLayoutPanel1.AutoScroll = true;
         }
         private void RenderPlayers()
         {
-            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanelPlayers.Controls.Clear();
 
             foreach (var player in Player.GetAllPlayers())
             {
@@ -52,7 +53,7 @@ namespace FootballFormation
 
                 Label label = new Label();
                 label.Text = player.Name;
-                label.Width = 150;
+                label.Width = 250;
                 label.Location = new Point(5, 5);
 
                 Button deleteButton = new Button();
@@ -65,7 +66,7 @@ namespace FootballFormation
 
                 panel.Controls.Add(label);
                 panel.Controls.Add(deleteButton);
-                flowLayoutPanel1.Controls.Add(panel);
+                flowLayoutPanelPlayers.Controls.Add(panel);
             }
         }
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -83,11 +84,6 @@ namespace FootballFormation
             {
                 ErrorHandler.ShowError(ex);
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

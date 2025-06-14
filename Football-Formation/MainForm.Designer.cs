@@ -56,6 +56,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(140, -1);
             label1.Name = "label1";

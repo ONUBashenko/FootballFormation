@@ -1,6 +1,6 @@
 ﻿namespace FootballFormation
 {
-    partial class TeamsPage
+    partial class UserControlCoachesPage
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,71 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            CreateTeam = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             label1 = new Label();
+            CreateCoach = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            label2 = new Label();
             SuspendLayout();
             // 
-            // label2
+            // label1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 22F);
-            label2.Location = new Point(8, 25);
-            label2.Name = "label2";
-            label2.Size = new Size(126, 42);
-            label2.TabIndex = 2;
-            label2.Text = "Teams";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 22F);
+            label1.Location = new Point(8, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(164, 42);
+            label1.TabIndex = 6;
+            label1.Text = "Coaches";
             // 
-            // CreateTeam
+            // CreateCoach
             // 
-            CreateTeam.BackColor = SystemColors.Control;
-            CreateTeam.Location = new Point(951, 74);
-            CreateTeam.Name = "CreateTeam";
-            CreateTeam.Size = new Size(118, 30);
-            CreateTeam.TabIndex = 6;
-            CreateTeam.Text = "Create team";
-            CreateTeam.UseVisualStyleBackColor = false;
-            CreateTeam.Click += CreateTeam_Click;
+            CreateCoach.BackColor = SystemColors.Control;
+            CreateCoach.Location = new Point(949, 74);
+            CreateCoach.Name = "CreateCoach";
+            CreateCoach.Size = new Size(118, 30);
+            CreateCoach.TabIndex = 8;
+            CreateCoach.Text = "Create coach";
+            CreateCoach.UseVisualStyleBackColor = false;
+            CreateCoach.Click += CreateCoach_Click;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = SystemColors.ControlDark;
-            flowLayoutPanel1.Location = new Point(-1, 123);
+            flowLayoutPanel1.Location = new Point(0, 123);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1074, 452);
+            flowLayoutPanel1.Size = new Size(1070, 437);
             flowLayoutPanel1.TabIndex = 14;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint_1;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
-            // label1
+            // label2
             // 
-            label1.BackColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(-1, 67);
-            label1.Name = "label1";
-            label1.Size = new Size(1073, 4);
-            label1.TabIndex = 15;
-            label1.Text = "label1";
+            label2.BackColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(0, 67);
+            label2.Name = "label2";
+            label2.Size = new Size(1070, 4);
+            label2.TabIndex = 15;
+            label2.Text = "label1";
             // 
-            // TeamsPage
+            // UserControlCoachesPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(CreateTeam);
             Controls.Add(label2);
-            Name = "TeamsPage";
-            Size = new Size(1072, 575);
-            Load += TeamsPage_Load_1;
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(CreateCoach);
+            Controls.Add(label1);
+            Name = "UserControlCoachesPage";
+            Size = new Size(1070, 561);
+            Load += CoachesPage_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label2;
-        private Button CreateTeam;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Label label1;
+        private Button CreateCoach;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label2;
     }
 }

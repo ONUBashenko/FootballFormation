@@ -1,6 +1,6 @@
 ﻿namespace FootballFormation
 {
-    partial class PlayersPage
+    partial class UserControlTeamsPage
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            CreatePlayer = new Button();
+            CreateTeam = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             label2 = new Label();
             SuspendLayout();
@@ -40,52 +40,50 @@
             label1.Font = new Font("Arial", 22F);
             label1.Location = new Point(8, 25);
             label1.Name = "label1";
-            label1.Size = new Size(137, 42);
-            label1.TabIndex = 1;
-            label1.Text = "Players";
-            label1.Click += label1_Click;
+            label1.Size = new Size(126, 42);
+            label1.TabIndex = 2;
+            label1.Text = "Teams";
             // 
-            // CreatePlayer
+            // CreateTeam
             // 
-            CreatePlayer.BackColor = SystemColors.Control;
-            CreatePlayer.Location = new Point(949, 74);
-            CreatePlayer.Name = "CreatePlayer";
-            CreatePlayer.Size = new Size(118, 30);
-            CreatePlayer.TabIndex = 4;
-            CreatePlayer.Text = "Create player";
-            CreatePlayer.UseVisualStyleBackColor = false;
-            CreatePlayer.Click += CreatePlayer_Click;
+            CreateTeam.BackColor = SystemColors.Control;
+            CreateTeam.Location = new Point(949, 74);
+            CreateTeam.Name = "CreateTeam";
+            CreateTeam.Size = new Size(118, 30);
+            CreateTeam.TabIndex = 6;
+            CreateTeam.Text = "Create team";
+            CreateTeam.UseVisualStyleBackColor = false;
+            CreateTeam.Click += CreateTeam_Click;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = SystemColors.ControlDark;
-            flowLayoutPanel1.Location = new Point(0, 123);
+            flowLayoutPanel1.Location = new Point(-1, 123);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1070, 465);
-            flowLayoutPanel1.TabIndex = 13;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            flowLayoutPanel1.Size = new Size(1070, 437);
+            flowLayoutPanel1.TabIndex = 14;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint_1;
             // 
             // label2
             // 
             label2.BackColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(0, 67);
+            label2.Location = new Point(-1, 67);
             label2.Name = "label2";
-            label2.Size = new Size(1070, 4);
-            label2.TabIndex = 14;
-            label2.Text = "label2";
-            label2.Click += label2_Click;
+            label2.Size = new Size(1073, 4);
+            label2.TabIndex = 15;
+            label2.Text = "label1";
             // 
-            // PlayersPage
+            // UserControlTeamsPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label2);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(CreatePlayer);
+            Controls.Add(CreateTeam);
             Controls.Add(label1);
-            Name = "PlayersPage";
-            Size = new Size(1070, 587);
-            Load += PlayersPage_Load;
+            Name = "UserControlTeamsPage";
+            Size = new Size(1070, 561);
+            Load += TeamsPage_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -93,7 +91,7 @@
         #endregion
 
         private Label label1;
-        private Button CreatePlayer;
+        private Button CreateTeam;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label2;
     }

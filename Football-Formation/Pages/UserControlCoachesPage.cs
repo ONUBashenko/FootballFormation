@@ -12,11 +12,15 @@ using FootballFormation.CreateForms;
 
 namespace FootballFormation
 {
-    public partial class CoachesPage : UserControl
+    public partial class UserControlCoachesPage : UserControl
     {
-        public CoachesPage()
+        public UserControlCoachesPage()
         {
             InitializeComponent();
+
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            CreateCoach.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -26,6 +30,10 @@ namespace FootballFormation
 
         private void CoachesPage_Load(object sender, EventArgs e)
         {
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.WrapContents = false;
+            flowLayoutPanel1.AutoScroll = true;
+
             RenderCoaches();
         }
 
@@ -37,9 +45,6 @@ namespace FootballFormation
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.WrapContents = false;
-            flowLayoutPanel1.AutoScroll = true;
         }
         private void RenderCoaches()
         {

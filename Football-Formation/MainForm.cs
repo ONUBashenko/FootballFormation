@@ -7,6 +7,11 @@ namespace FootballFormation
         public MainForm()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -18,16 +23,16 @@ namespace FootballFormation
             switch (listBox1.SelectedItem.ToString())
             {
                 case "Players":
-                    LoadPage(new PlayersPage());
+                    LoadPage(new UserControlPlayersPage());
                     break;
                 case "Coaches":
-                    LoadPage(new CoachesPage());
+                    LoadPage(new UserControlCoachesPage());
                     break;
                 case "Teams":
-                    LoadPage(new TeamsPage());
+                    LoadPage(new UserControlTeamsPage());
                     break;
                 case "Matches":
-                    LoadPage(new MatchesPage());
+                    LoadPage(new UserControlMatchesPage());
                     break;
             }
         }
