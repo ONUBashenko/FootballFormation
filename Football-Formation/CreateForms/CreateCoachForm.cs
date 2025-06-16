@@ -37,18 +37,18 @@ namespace FootballFormation.CreateForms
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var selectedFormations = new List<FormationType>();
-            foreach (var item in checkedListBoxFormations.CheckedItems)
-            {
-                if (item is string formationString &&
-                    TryParseFormation(formationString, out var formation))
-                {
-                    selectedFormations.Add(formation);
-                }
-            }
-
             try
             {
+                var selectedFormations = new List<FormationType>();
+                foreach (var item in checkedListBoxFormations.CheckedItems)
+                {
+                    if (item is string formationString &&
+                        TryParseFormation(formationString, out var formation))
+                    {
+                        selectedFormations.Add(formation);
+                    }
+                }
+
                 new Coach(
                 textBoxName.Text,
                 (int)numericUpDownAge.Value,
@@ -56,33 +56,13 @@ namespace FootballFormation.CreateForms
                 (int)numericUpDownExperience.Value,
                 selectedFormations);
 
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
                 ErrorHandler.ShowError(ex);
             }            
-        }
-
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void numericUpDownHeight_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void numericUpDownExperience_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void checkedListBoxFormations_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }

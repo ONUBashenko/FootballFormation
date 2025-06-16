@@ -122,7 +122,6 @@
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(150, 27);
             textBoxName.TabIndex = 9;
-            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
             // comboBoxPosition
             // 
@@ -131,7 +130,6 @@
             comboBoxPosition.Name = "comboBoxPosition";
             comboBoxPosition.Size = new Size(150, 28);
             comboBoxPosition.TabIndex = 14;
-            comboBoxPosition.SelectedIndexChanged += comboBoxPosition_SelectedIndexChanged;
             // 
             // numericUpDownAge
             // 
@@ -139,7 +137,6 @@
             numericUpDownAge.Name = "numericUpDownAge";
             numericUpDownAge.Size = new Size(150, 27);
             numericUpDownAge.TabIndex = 15;
-            numericUpDownAge.ValueChanged += numericUpDownAge_ValueChanged;
             // 
             // numericUpDownHeight
             // 
@@ -148,7 +145,6 @@
             numericUpDownHeight.Name = "numericUpDownHeight";
             numericUpDownHeight.Size = new Size(150, 27);
             numericUpDownHeight.TabIndex = 16;
-            numericUpDownHeight.ValueChanged += numericUpDownHeight_ValueChanged;
             // 
             // numericUpDownPrice
             // 
@@ -156,7 +152,6 @@
             numericUpDownPrice.Name = "numericUpDownPrice";
             numericUpDownPrice.Size = new Size(150, 27);
             numericUpDownPrice.TabIndex = 17;
-            numericUpDownPrice.ValueChanged += numericUpDownPrice_ValueChanged;
             // 
             // CreatePlayerForm
             // 

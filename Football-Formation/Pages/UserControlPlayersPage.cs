@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballFormation.CreateForms;
 using FootballFormation.Classes;
+using FootballFormation.InfoPages;
 
 namespace FootballFormation
 {
@@ -23,12 +24,6 @@ namespace FootballFormation
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         }
 
-        private void CreatePlayer_Click(object sender, EventArgs e)
-        {
-            CreatePlayerForm createForm = new CreatePlayerForm();
-            createForm.ShowDialog();
-        }
-
         private void PlayersPage_Load(object sender, EventArgs e)
         {
             flowLayoutPanelPlayers.FlowDirection = FlowDirection.TopDown;
@@ -38,9 +33,17 @@ namespace FootballFormation
             RenderPlayers();
         }
 
-        private void flowLayoutPanelPlayers_Paint(object sender, PaintEventArgs e)
+        private void CreatePlayer_Click(object sender, EventArgs e)
         {
+            CreatePlayerForm createForm = new CreatePlayerForm();
+            var result = createForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                RenderPlayers();
+            }
         }
+
         private void RenderPlayers()
         {
             flowLayoutPanelPlayers.Controls.Clear();
@@ -51,10 +54,12 @@ namespace FootballFormation
                 panel.Width = 1000;
                 panel.Height = 30;
 
-                Label label = new Label();
-                label.Text = player.Name;
-                label.Width = 250;
-                label.Location = new Point(5, 5);
+                Label linkLabel = new Label();
+                linkLabel.Text = player.Name;
+                linkLabel.Width = 250;
+                linkLabel.Location = new Point(5, 5);
+                linkLabel.Tag = player;
+                linkLabel.Click += LinkLabel_LinkClicked;
 
                 Button deleteButton = new Button();
                 deleteButton.Text = "Delete";
@@ -64,7 +69,7 @@ namespace FootballFormation
                 deleteButton.Tag = player;
                 deleteButton.Click += DeleteButton_Click;
 
-                panel.Controls.Add(label);
+                panel.Controls.Add(linkLabel);
                 panel.Controls.Add(deleteButton);
                 flowLayoutPanelPlayers.Controls.Add(panel);
             }
@@ -78,6 +83,23 @@ namespace FootballFormation
                 {
                     playerToRemove.Delete();
                     RenderPlayers();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.ShowError(ex);
+            }
+        }
+
+        private void LinkLabel_LinkClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Label label = sender as Label;
+                if (label?.Tag is Player player)
+                {
+                    PlayerInfoForm infoForm = new PlayerInfoForm(player);
+                    infoForm.ShowDialog();
                 }
             }
             catch (Exception ex)

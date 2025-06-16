@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballFormation.Classes;
 using FootballFormation.CreateForms;
+using FootballFormation.InfoPages;
 
 namespace FootballFormation
 {
@@ -35,12 +36,14 @@ namespace FootballFormation
         private void CreateTeam_Click(object sender, EventArgs e)
         {
             CreateTeamForm createForm = new CreateTeamForm();
-            createForm.ShowDialog();
+            var result = createForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                RenderTeams();
+            }
         }
 
-        private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-        }
         private void RenderTeams()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -51,10 +54,12 @@ namespace FootballFormation
                 panel.Width = 1000;
                 panel.Height = 30;
 
-                Label label = new Label();
-                label.Text = team.Name;
-                label.Width = 150;
-                label.Location = new Point(5, 5);
+                Label linkLabel = new Label();
+                linkLabel.Text = team.Name;
+                linkLabel.Width = 250;
+                linkLabel.Location = new Point(5, 5);
+                linkLabel.Tag = team;
+                linkLabel.Click += LinkLabel_LinkClicked;
 
                 Button deleteButton = new Button();
                 deleteButton.Text = "Delete";
@@ -64,7 +69,7 @@ namespace FootballFormation
                 deleteButton.Tag = team;
                 deleteButton.Click += DeleteButton_Click;
 
-                panel.Controls.Add(label);
+                panel.Controls.Add(linkLabel);
                 panel.Controls.Add(deleteButton);
                 flowLayoutPanel1.Controls.Add(panel);
             }
@@ -78,6 +83,23 @@ namespace FootballFormation
                 {
                     teamToRemove.Delete();
                     RenderTeams();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.ShowError(ex);
+            }
+        }
+
+        private void LinkLabel_LinkClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Label label = sender as Label;
+                if (label?.Tag is Team team)
+                {
+                    TeamInfoForm infoForm = new TeamInfoForm(team);
+                    infoForm.ShowDialog();
                 }
             }
             catch (Exception ex)

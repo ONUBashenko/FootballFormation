@@ -50,33 +50,13 @@ namespace FootballFormation
                 (PositionType)comboBoxPosition.SelectedItem,
                 (int)numericUpDownPrice.Value);
 
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
                 ErrorHandler.ShowError(ex);
             }
-            //PlayersPage.RenderPlayers();
-        }
-
-        private void comboBoxPosition_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void numericUpDownHeight_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void numericUpDownPrice_ValueChanged(object sender, EventArgs e)
-        {
         }
     }
 }

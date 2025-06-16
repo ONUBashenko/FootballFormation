@@ -106,7 +106,6 @@
             textBoxCountry.Name = "textBoxCountry";
             textBoxCountry.Size = new Size(125, 27);
             textBoxCountry.TabIndex = 13;
-            textBoxCountry.TextChanged += textBoxCountry_TextChanged;
             // 
             // textBoxName
             // 
@@ -114,7 +113,6 @@
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(125, 27);
             textBoxName.TabIndex = 14;
-            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
             // comboBoxCoach
             // 
@@ -123,7 +121,6 @@
             comboBoxCoach.Name = "comboBoxCoach";
             comboBoxCoach.Size = new Size(223, 28);
             comboBoxCoach.TabIndex = 16;
-            comboBoxCoach.SelectedIndexChanged += comboBoxCoach_SelectedIndexChanged;
             // 
             // checkedListBoxPlayers
             // 
@@ -132,7 +129,6 @@
             checkedListBoxPlayers.Name = "checkedListBoxPlayers";
             checkedListBoxPlayers.Size = new Size(223, 136);
             checkedListBoxPlayers.TabIndex = 17;
-            checkedListBoxPlayers.SelectedIndexChanged += checkedListBoxPlayers_SelectedIndexChanged;
             // 
             // CreateTeamForm
             // 

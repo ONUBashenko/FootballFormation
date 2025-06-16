@@ -62,7 +62,6 @@
             flowLayoutPanelPlayers.Name = "flowLayoutPanelPlayers";
             flowLayoutPanelPlayers.Size = new Size(1070, 437);
             flowLayoutPanelPlayers.TabIndex = 13;
-            flowLayoutPanelPlayers.Paint += flowLayoutPanelPlayers_Paint;
             // 
             // label2
             // 

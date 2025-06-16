@@ -59,28 +59,13 @@ namespace FootballFormation.CreateForms
                 (Coach)comboBoxCoach.SelectedItem,
                 selectedPlayers);
 
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
                 ErrorHandler.ShowError(ex);
             }
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBoxCountry_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void comboBoxCoach_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void checkedListBoxPlayers_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }

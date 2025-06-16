@@ -33,8 +33,13 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            label1 = new Label();
+            labelCoachName = new Label();
             label6 = new Label();
+            labelCoachTeam = new Label();
+            labelCoachExperiance = new Label();
+            labelCoachHeight = new Label();
+            labelCoachAge = new Label();
+            listBoxFormations = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoach).BeginInit();
             SuspendLayout();
             // 
@@ -50,7 +55,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F);
-            label5.Location = new Point(257, 315);
+            label5.Location = new Point(286, 262);
             label5.Name = "label5";
             label5.Size = new Size(71, 32);
             label5.TabIndex = 10;
@@ -60,7 +65,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14F);
-            label4.Location = new Point(257, 208);
+            label4.Location = new Point(502, 98);
             label4.Name = "label4";
             label4.Size = new Size(133, 32);
             label4.TabIndex = 9;
@@ -70,7 +75,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F);
-            label3.Location = new Point(257, 150);
+            label3.Location = new Point(271, 154);
             label3.Name = "label3";
             label3.Size = new Size(86, 32);
             label3.TabIndex = 8;
@@ -80,46 +85,102 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(257, 94);
+            label2.Location = new Point(301, 98);
             label2.Name = "label2";
             label2.Size = new Size(56, 32);
             label2.TabIndex = 7;
             label2.Text = "Age";
             // 
-            // label1
+            // labelCoachName
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(215, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(78, 32);
-            label1.TabIndex = 6;
-            label1.Text = "Name";
+            labelCoachName.AutoSize = true;
+            labelCoachName.Font = new Font("Segoe UI", 14F);
+            labelCoachName.Location = new Point(215, 25);
+            labelCoachName.Name = "labelCoachName";
+            labelCoachName.Size = new Size(78, 32);
+            labelCoachName.TabIndex = 6;
+            labelCoachName.Text = "Name";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14F);
-            label6.Location = new Point(257, 261);
+            label6.Location = new Point(228, 204);
             label6.Name = "label6";
             label6.Size = new Size(129, 32);
             label6.TabIndex = 12;
             label6.Text = "Experience";
+            // 
+            // labelCoachTeam
+            // 
+            labelCoachTeam.AutoSize = true;
+            labelCoachTeam.Font = new Font("Segoe UI", 14F);
+            labelCoachTeam.Location = new Point(374, 262);
+            labelCoachTeam.Name = "labelCoachTeam";
+            labelCoachTeam.Size = new Size(27, 32);
+            labelCoachTeam.TabIndex = 17;
+            labelCoachTeam.Text = "0";
+            // 
+            // labelCoachExperiance
+            // 
+            labelCoachExperiance.AutoSize = true;
+            labelCoachExperiance.Font = new Font("Segoe UI", 14F);
+            labelCoachExperiance.Location = new Point(374, 209);
+            labelCoachExperiance.Name = "labelCoachExperiance";
+            labelCoachExperiance.Size = new Size(27, 32);
+            labelCoachExperiance.TabIndex = 16;
+            labelCoachExperiance.Text = "0";
+            // 
+            // labelCoachHeight
+            // 
+            labelCoachHeight.AutoSize = true;
+            labelCoachHeight.Font = new Font("Segoe UI", 14F);
+            labelCoachHeight.Location = new Point(374, 154);
+            labelCoachHeight.Name = "labelCoachHeight";
+            labelCoachHeight.Size = new Size(27, 32);
+            labelCoachHeight.TabIndex = 14;
+            labelCoachHeight.Text = "0";
+            // 
+            // labelCoachAge
+            // 
+            labelCoachAge.AutoSize = true;
+            labelCoachAge.Font = new Font("Segoe UI", 14F);
+            labelCoachAge.Location = new Point(374, 98);
+            labelCoachAge.Name = "labelCoachAge";
+            labelCoachAge.Size = new Size(27, 32);
+            labelCoachAge.TabIndex = 13;
+            labelCoachAge.Text = "0";
+            // 
+            // listBoxFormations
+            // 
+            listBoxFormations.BackColor = SystemColors.Window;
+            listBoxFormations.FormattingEnabled = true;
+            listBoxFormations.Location = new Point(659, 83);
+            listBoxFormations.Name = "listBoxFormations";
+            listBoxFormations.SelectionMode = SelectionMode.None;
+            listBoxFormations.Size = new Size(93, 104);
+            listBoxFormations.TabIndex = 18;
             // 
             // CoachInfoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listBoxFormations);
+            Controls.Add(labelCoachTeam);
+            Controls.Add(labelCoachExperiance);
+            Controls.Add(labelCoachHeight);
+            Controls.Add(labelCoachAge);
             Controls.Add(label6);
             Controls.Add(pictureBoxCoach);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(labelCoachName);
             Name = "CoachInfoForm";
             Text = "CoachInfoForm";
+            Load += CoachInfoForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoach).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -132,7 +193,12 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Label label1;
+        private Label labelCoachName;
         private Label label6;
+        private Label labelCoachTeam;
+        private Label labelCoachExperiance;
+        private Label labelCoachHeight;
+        private Label labelCoachAge;
+        private ListBox listBoxFormations;
     }
 }

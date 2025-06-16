@@ -188,6 +188,14 @@ namespace FootballFormation.CreateForms.CreateMatch
                         panel.Visible = true;
                     }
                 }
+
+                foreach (var panel in availiblePanels.Values)
+                {
+                    foreach (var comboBox in panel.Controls.OfType<ComboBox>())
+                    {
+                        comboBox.SelectedItem = null;
+                    }
+                }
             }
         }
 

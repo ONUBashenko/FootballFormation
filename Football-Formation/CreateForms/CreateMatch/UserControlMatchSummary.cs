@@ -25,26 +25,16 @@ namespace FootballFormation.CreateForms.CreateMatch
 
         private void UserControlMatchSummary_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            var parent = this.Parent;
-
-            if (parent != null)
-            {
-                parent.Controls.Clear();
-                var uc3 = new UserControlAwayFormation(matchData);
-                parent.Controls.Add(uc3);
-                uc3.Dock = DockStyle.Fill;
-            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Form parentForm = this.FindForm();
-            parentForm.Close();
+            if (parentForm != null)
+            {
+                parentForm.DialogResult = DialogResult.OK;
+                parentForm.Close();
+            }
         }
 
         public void LoadMatchSummary()

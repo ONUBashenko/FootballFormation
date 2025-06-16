@@ -91,7 +91,6 @@
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(125, 27);
             textBoxName.TabIndex = 17;
-            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
             // label6
             // 
@@ -131,7 +130,6 @@
             checkedListBoxFormations.Name = "checkedListBoxFormations";
             checkedListBoxFormations.Size = new Size(142, 114);
             checkedListBoxFormations.TabIndex = 21;
-            checkedListBoxFormations.SelectedIndexChanged += checkedListBoxFormations_SelectedIndexChanged;
             // 
             // numericUpDownAge
             // 
@@ -140,7 +138,6 @@
             numericUpDownAge.Name = "numericUpDownAge";
             numericUpDownAge.Size = new Size(125, 27);
             numericUpDownAge.TabIndex = 22;
-            numericUpDownAge.ValueChanged += numericUpDownAge_ValueChanged;
             // 
             // numericUpDownHeight
             // 
@@ -149,7 +146,6 @@
             numericUpDownHeight.Name = "numericUpDownHeight";
             numericUpDownHeight.Size = new Size(125, 27);
             numericUpDownHeight.TabIndex = 23;
-            numericUpDownHeight.ValueChanged += numericUpDownHeight_ValueChanged;
             // 
             // numericUpDownExperience
             // 
@@ -157,7 +153,6 @@
             numericUpDownExperience.Name = "numericUpDownExperience";
             numericUpDownExperience.Size = new Size(125, 27);
             numericUpDownExperience.TabIndex = 24;
-            numericUpDownExperience.ValueChanged += numericUpDownExperience_ValueChanged;
             // 
             // CreateCoachForm
             // 

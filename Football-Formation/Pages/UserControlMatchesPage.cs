@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using FootballFormation.CreateForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,8 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballFormation.Classes;
-using FootballFormation.CreateForms;
 using FootballFormation.CreateForms.CreateMatch;
+using FootballFormation.InfoPages;
 
 namespace FootballFormation
 {
@@ -36,12 +38,14 @@ namespace FootballFormation
         private void CreateMatch_Click(object sender, EventArgs e)
         {
             CreateMatchForm createForm = new CreateMatchForm();
-            createForm.ShowDialog();
+            var result = createForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                RenderMatches();
+            }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
         private void RenderMatches()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -52,10 +56,13 @@ namespace FootballFormation
                 panel.Width = 1000;
                 panel.Height = 30;
 
-                Label label = new Label();
-                label.Text = match.HomeTeam.Name + " : " + match.AwayTeam.Name;
-                label.Width = 150;
-                label.Location = new Point(5, 5);
+                Label linkLabel = new Label();
+                linkLabel.Text = $"{match.HomeTeam.Name} {match.MatchEvents["Goals"].Item1.ToString()} " +
+                    $": {match.MatchEvents["Goals"].Item2.ToString()} {match.AwayTeam.Name}";
+                linkLabel.Width = 250;
+                linkLabel.Location = new Point(5, 5);
+                linkLabel.Tag = match;
+                linkLabel.Click += LinkLabel_LinkClicked;
 
                 Button deleteButton = new Button();
                 deleteButton.Text = "Delete";
@@ -65,7 +72,7 @@ namespace FootballFormation
                 deleteButton.Tag = match;
                 deleteButton.Click += DeleteButton_Click;
 
-                panel.Controls.Add(label);
+                panel.Controls.Add(linkLabel);
                 panel.Controls.Add(deleteButton);
                 flowLayoutPanel1.Controls.Add(panel);
             }
@@ -79,6 +86,23 @@ namespace FootballFormation
                 {
                     matchToRemove.Delete();
                     RenderMatches();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.ShowError(ex);
+            }
+        }
+
+        private void LinkLabel_LinkClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Label linkLabel = sender as Label;
+                if (linkLabel?.Tag is Match match)
+                {
+                    MatchInfoForm infoForm = new MatchInfoForm(match);
+                    infoForm.ShowDialog();
                 }
             }
             catch (Exception ex)

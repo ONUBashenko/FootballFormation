@@ -7,14 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FootballFormation.Classes;
 
 namespace FootballFormation.InfoPages
 {
     public partial class PlayerInfoForm : Form
     {
-        public PlayerInfoForm()
+        private Player player;
+
+        public PlayerInfoForm(Player player) //player
         {
             InitializeComponent();
+
+            this.player = player;
+            SetPlayerInfo();
+        }
+
+        private void PlayerInfoForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        public void SetPlayerInfo()
+        {
+            labelPlayerName.Text = player.Name;
+            labelPlayerAge.Text = player.Age.ToString();
+            labelPlayerHeight.Text = player.Height.ToString("F2") + " m";
+            labelPlayerPosition.Text = player.Position.ToString();
+            labelPlayerPrice.Text = player.Price.ToString();
+            labelPlayerTeam.Text = player.Team == null ? "Free agent" : player.Team.Name;
         }
     }
 }
