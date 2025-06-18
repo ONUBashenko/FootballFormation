@@ -40,9 +40,11 @@
             numericUpDownAge = new NumericUpDown();
             numericUpDownHeight = new NumericUpDown();
             numericUpDownExperience = new NumericUpDown();
+            pictureBoxCoach = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAge).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownExperience).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCoach).BeginInit();
             SuspendLayout();
             // 
             // buttonSave
@@ -69,7 +71,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F);
-            label5.Location = new Point(427, 113);
+            label5.Location = new Point(203, 188);
             label5.Name = "label5";
             label5.Size = new Size(129, 32);
             label5.TabIndex = 13;
@@ -79,7 +81,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(423, 201);
+            label2.Location = new Point(199, 251);
             label2.Name = "label2";
             label2.Size = new Size(133, 32);
             label2.TabIndex = 10;
@@ -87,7 +89,7 @@
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(137, 119);
+            textBoxName.Location = new Point(290, 23);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(125, 27);
             textBoxName.TabIndex = 17;
@@ -96,7 +98,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14F);
-            label6.Location = new Point(75, 156);
+            label6.Location = new Point(276, 79);
             label6.Name = "label6";
             label6.Size = new Size(56, 32);
             label6.TabIndex = 16;
@@ -106,7 +108,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14F);
-            label7.Location = new Point(44, 207);
+            label7.Location = new Point(245, 130);
             label7.Name = "label7";
             label7.Size = new Size(87, 32);
             label7.TabIndex = 15;
@@ -117,7 +119,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14F);
             label8.ImageAlign = ContentAlignment.MiddleRight;
-            label8.Location = new Point(53, 113);
+            label8.Location = new Point(206, 17);
             label8.Name = "label8";
             label8.Size = new Size(78, 32);
             label8.TabIndex = 14;
@@ -126,14 +128,14 @@
             // checkedListBoxFormations
             // 
             checkedListBoxFormations.FormattingEnabled = true;
-            checkedListBoxFormations.Location = new Point(562, 207);
+            checkedListBoxFormations.Location = new Point(338, 257);
             checkedListBoxFormations.Name = "checkedListBoxFormations";
-            checkedListBoxFormations.Size = new Size(142, 114);
+            checkedListBoxFormations.Size = new Size(125, 114);
             checkedListBoxFormations.TabIndex = 21;
             // 
             // numericUpDownAge
             // 
-            numericUpDownAge.Location = new Point(137, 163);
+            numericUpDownAge.Location = new Point(338, 86);
             numericUpDownAge.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownAge.Name = "numericUpDownAge";
             numericUpDownAge.Size = new Size(125, 27);
@@ -141,7 +143,7 @@
             // 
             // numericUpDownHeight
             // 
-            numericUpDownHeight.Location = new Point(137, 214);
+            numericUpDownHeight.Location = new Point(338, 137);
             numericUpDownHeight.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownHeight.Name = "numericUpDownHeight";
             numericUpDownHeight.Size = new Size(125, 27);
@@ -149,16 +151,29 @@
             // 
             // numericUpDownExperience
             // 
-            numericUpDownExperience.Location = new Point(562, 120);
+            numericUpDownExperience.Location = new Point(338, 195);
             numericUpDownExperience.Name = "numericUpDownExperience";
             numericUpDownExperience.Size = new Size(125, 27);
             numericUpDownExperience.TabIndex = 24;
+            // 
+            // pictureBoxCoach
+            // 
+            pictureBoxCoach.BackColor = SystemColors.ButtonFace;
+            pictureBoxCoach.BackgroundImage = Properties.Resources.CoachIcon;
+            pictureBoxCoach.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBoxCoach.Location = new Point(-1, 0);
+            pictureBoxCoach.Name = "pictureBoxCoach";
+            pictureBoxCoach.Size = new Size(194, 186);
+            pictureBoxCoach.TabIndex = 25;
+            pictureBoxCoach.TabStop = false;
             // 
             // CreateCoachForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBoxCoach);
             Controls.Add(numericUpDownExperience);
             Controls.Add(numericUpDownHeight);
             Controls.Add(numericUpDownAge);
@@ -177,6 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownAge).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownExperience).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCoach).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +211,6 @@
         private NumericUpDown numericUpDownAge;
         private NumericUpDown numericUpDownHeight;
         private NumericUpDown numericUpDownExperience;
+        private PictureBox pictureBoxCoach;
     }
 }

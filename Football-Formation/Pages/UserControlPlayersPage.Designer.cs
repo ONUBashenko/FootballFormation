@@ -57,10 +57,10 @@
             // 
             // flowLayoutPanelPlayers
             // 
-            flowLayoutPanelPlayers.BackColor = SystemColors.ControlDark;
-            flowLayoutPanelPlayers.Location = new Point(0, 123);
+            flowLayoutPanelPlayers.BackColor = SystemColors.ControlDarkDark;
+            flowLayoutPanelPlayers.Location = new Point(0, 116);
             flowLayoutPanelPlayers.Name = "flowLayoutPanelPlayers";
-            flowLayoutPanelPlayers.Size = new Size(1070, 437);
+            flowLayoutPanelPlayers.Size = new Size(1070, 445);
             flowLayoutPanelPlayers.TabIndex = 13;
             // 
             // label2

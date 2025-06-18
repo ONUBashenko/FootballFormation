@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerInfoForm));
             labelPlayerName = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -47,10 +46,10 @@
             // labelPlayerName
             // 
             labelPlayerName.AutoSize = true;
-            labelPlayerName.Font = new Font("Segoe UI", 14F);
-            labelPlayerName.Location = new Point(217, 25);
+            labelPlayerName.Font = new Font("Segoe UI", 16F);
+            labelPlayerName.Location = new Point(208, 9);
             labelPlayerName.Name = "labelPlayerName";
-            labelPlayerName.Size = new Size(78, 32);
+            labelPlayerName.Size = new Size(88, 37);
             labelPlayerName.TabIndex = 0;
             labelPlayerName.Text = "Name";
             // 
@@ -58,45 +57,45 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(301, 94);
+            label2.Location = new Point(252, 77);
             label2.Name = "label2";
-            label2.Size = new Size(56, 32);
+            label2.Size = new Size(61, 32);
             label2.TabIndex = 1;
-            label2.Text = "Age";
+            label2.Text = "Age:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F);
-            label3.Location = new Point(271, 150);
+            label3.Location = new Point(222, 130);
             label3.Name = "label3";
-            label3.Size = new Size(86, 32);
+            label3.Size = new Size(91, 32);
             label3.TabIndex = 2;
-            label3.Text = "Height";
+            label3.Text = "Height:";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14F);
-            label4.Location = new Point(259, 208);
+            label4.Location = new Point(210, 181);
             label4.Name = "label4";
-            label4.Size = new Size(98, 32);
+            label4.Size = new Size(103, 32);
             label4.TabIndex = 3;
-            label4.Text = "Position";
+            label4.Text = "Position:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F);
-            label5.Location = new Point(286, 313);
+            label5.Location = new Point(237, 275);
             label5.Name = "label5";
-            label5.Size = new Size(71, 32);
+            label5.Size = new Size(76, 32);
             label5.TabIndex = 4;
-            label5.Text = "Team";
+            label5.Text = "Team:";
             // 
             // pictureBoxPlayer
             // 
-            pictureBoxPlayer.BackgroundImage = (Image)resources.GetObject("pictureBoxPlayer.BackgroundImage");
+            pictureBoxPlayer.BackgroundImage = Properties.Resources.PlayerIcon;
             pictureBoxPlayer.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBoxPlayer.Location = new Point(0, 0);
             pictureBoxPlayer.Name = "pictureBoxPlayer";
@@ -108,17 +107,17 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14F);
-            label6.Location = new Point(292, 260);
+            label6.Location = new Point(243, 229);
             label6.Name = "label6";
-            label6.Size = new Size(65, 32);
+            label6.Size = new Size(70, 32);
             label6.TabIndex = 6;
-            label6.Text = "Price";
+            label6.Text = "Price:";
             // 
             // labelPlayerAge
             // 
             labelPlayerAge.AutoSize = true;
             labelPlayerAge.Font = new Font("Segoe UI", 14F);
-            labelPlayerAge.Location = new Point(377, 94);
+            labelPlayerAge.Location = new Point(320, 77);
             labelPlayerAge.Name = "labelPlayerAge";
             labelPlayerAge.Size = new Size(27, 32);
             labelPlayerAge.TabIndex = 7;
@@ -128,7 +127,7 @@
             // 
             labelPlayerHeight.AutoSize = true;
             labelPlayerHeight.Font = new Font("Segoe UI", 14F);
-            labelPlayerHeight.Location = new Point(377, 150);
+            labelPlayerHeight.Location = new Point(320, 130);
             labelPlayerHeight.Name = "labelPlayerHeight";
             labelPlayerHeight.Size = new Size(27, 32);
             labelPlayerHeight.TabIndex = 8;
@@ -138,7 +137,7 @@
             // 
             labelPlayerPosition.AutoSize = true;
             labelPlayerPosition.Font = new Font("Segoe UI", 14F);
-            labelPlayerPosition.Location = new Point(377, 208);
+            labelPlayerPosition.Location = new Point(320, 181);
             labelPlayerPosition.Name = "labelPlayerPosition";
             labelPlayerPosition.Size = new Size(27, 32);
             labelPlayerPosition.TabIndex = 9;
@@ -148,7 +147,7 @@
             // 
             labelPlayerTeam.AutoSize = true;
             labelPlayerTeam.Font = new Font("Segoe UI", 14F);
-            labelPlayerTeam.Location = new Point(377, 313);
+            labelPlayerTeam.Location = new Point(320, 275);
             labelPlayerTeam.Name = "labelPlayerTeam";
             labelPlayerTeam.Size = new Size(27, 32);
             labelPlayerTeam.TabIndex = 11;
@@ -158,7 +157,7 @@
             // 
             labelPlayerPrice.AutoSize = true;
             labelPlayerPrice.Font = new Font("Segoe UI", 14F);
-            labelPlayerPrice.Location = new Point(377, 260);
+            labelPlayerPrice.Location = new Point(320, 229);
             labelPlayerPrice.Name = "labelPlayerPrice";
             labelPlayerPrice.Size = new Size(27, 32);
             labelPlayerPrice.TabIndex = 10;
@@ -168,6 +167,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(800, 450);
             Controls.Add(labelPlayerTeam);
             Controls.Add(labelPlayerPrice);

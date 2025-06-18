@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FootballFormation.Classes
 {
+    /// <summary>
+    /// Представляє футбольний матч між двома командами з відповідними схемами та статистикою.
+    /// </summary>
     public class Match
     {
         private Team _homeTeam;
@@ -17,6 +20,15 @@ namespace FootballFormation.Classes
 
         Random random = new Random();
 
+        /// <summary>
+        /// Отримує або встановлює домашню команду.
+        /// </summary>
+        /// <exception cref="ArgumentNullException"> 
+        /// Виникає якщо значення null.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Виникає якщо домашня і виїзна команда однакові.
+        /// </exception>
         public Team HomeTeam
         {
             get { return _homeTeam; }
@@ -34,6 +46,15 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює виїзну команду.
+        /// </summary>
+        /// <exception cref="ArgumentNullException"> 
+        /// Виникає якщо значення null.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Виникає якщо домашня і виїзна команда однакові.
+        /// </exception>
         public Team AwayTeam
         {
             get { return _awayTeam; }
@@ -51,6 +72,12 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює схему домашньої команди.
+        /// </summary>
+        /// <exception cref="ArgumentNullException">
+        /// Виникає якщо значення null.
+        /// </exception> 
         public Formation HomeFormation
         {
             get { return _homeFormation; }
@@ -64,6 +91,12 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює схему виїзної команди.
+        /// </summary>
+        /// <exception cref="ArgumentNullException">
+        /// Виникає якщо значення null.
+        /// </exception>
         public Formation AwayFormation
         {
             get { return _awayFormation; }
@@ -77,6 +110,13 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює словник статистики матчу.
+        /// Ключ — назва події, значення — кортеж (домашня, виїзна команда).
+        /// </summary>
+        /// <exception cref="ArgumentNullException">
+        /// Виникає якщо словник подій null.
+        /// </exception>
         public Dictionary<string, Tuple<int, int>> MatchEvents
         {
             get { return _matchEvents; }
@@ -89,6 +129,17 @@ namespace FootballFormation.Classes
                 _matchEvents = value;
             }
         }
+
+        /// <summary>
+        /// Створює новий екземпляр матчу з вказаними командами та схемами.
+        /// </summary>
+        /// <param name="homeTeam"> домашня команда.</param>
+        /// <param name="awayTeam"> виїзна команда.</param>
+        /// <param name="homeFormation"> схема домашньої команди.</param>
+        /// <param name="awayFormation"> схема виїзної команди.</param>
+        /// <exception cref="ArgumentException">
+        /// Виникає якщо команди однакові або дані некоректні.
+        /// </exception>
         public Match(Team homeTeam, Team awayTeam, Formation homeFormation, Formation awayFormation)
         {
             HomeTeam = homeTeam;
@@ -100,7 +151,11 @@ namespace FootballFormation.Classes
             matches.Add(this);
         }
 
-
+        /// <summary>
+        /// Генерує випадкову статистику для матчу.
+        /// </summary>
+        /// <returns> словник з ключами — назви подій (голи, удари, володіння тощо),
+        /// та значеннями — кортежі (домашня, виїзна команда).</returns>
         public Dictionary<string, Tuple<int, int>> GetMatchSummary()
         {
             var summary = new Dictionary<string, Tuple<int, int>>();
@@ -108,14 +163,14 @@ namespace FootballFormation.Classes
             int homePossession = random.Next(30, 70);
             int awayPossession = 100 - homePossession;
 
-            var homeShots = random.Next(0, 30);
-            var awayShots = random.Next(0, 30);
+            var homeShots = random.Next(0, 25);
+            var awayShots = random.Next(0, 25);
 
             var homeShotsOnTarget = homeShots == 0 ? 0 : random.Next(homeShots / 4, homeShots + 1);
             var awayShotsOnTarget = awayShots == 0 ? 0 : random.Next(awayShots / 4, awayShots + 1);
 
-            var homeGoals = random.Next(0, Math.Min(homeShotsOnTarget + 1, 6));
-            var awayGoals = random.Next(0, Math.Min(awayShotsOnTarget + 1, 6));
+            var homeGoals = random.Next(0, homeShotsOnTarget + 1);
+            var awayGoals = random.Next(0, awayShotsOnTarget + 1);
 
             var homeCorners = random.Next(0, 10);
             var awayCorners = random.Next(0, 10);
@@ -123,8 +178,8 @@ namespace FootballFormation.Classes
             var homeFouls = random.Next(5, 25);
             var awayFouls = random.Next(5, 25);
 
-            var homeYellows = random.Next(0, Math.Min(homeFouls / 2 + 1, 6));
-            var awayYellows = random.Next(0, Math.Min(awayFouls / 2 + 1, 6));
+            var homeYellows = random.Next(0, homeFouls / 2 + 1);
+            var awayYellows = random.Next(0, awayFouls / 2 + 1);
 
             var homeReds = random.Next(0, homeYellows > 3 ? 2 : 1);
             var awayReds = random.Next(0, awayYellows > 3 ? 2 : 1);
@@ -141,11 +196,18 @@ namespace FootballFormation.Classes
             return summary;
         }
 
+        /// <summary>
+        /// Видаляє матч зі списку матчів.
+        /// </summary>
         public void Delete()
         {
             matches.Remove(this);
         }
 
+        /// <summary>
+        /// Повертає список усіх створених матчів.
+        /// </summary>
+        /// <returns> список об'єктів <see cref="Match"/>.</returns>
         public static List<Match> GetAllMatches()
         {
             return matches;

@@ -41,9 +41,11 @@
             // 
             // pictureBoxTeam
             // 
+            pictureBoxTeam.BackgroundImage = Properties.Resources.TeamIcon;
+            pictureBoxTeam.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBoxTeam.Location = new Point(1, -4);
             pictureBoxTeam.Name = "pictureBoxTeam";
-            pictureBoxTeam.Size = new Size(182, 158);
+            pictureBoxTeam.Size = new Size(197, 197);
             pictureBoxTeam.TabIndex = 16;
             pictureBoxTeam.TabStop = false;
             // 
@@ -51,39 +53,39 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14F);
-            label4.Location = new Point(240, 194);
+            label4.Location = new Point(232, 182);
             label4.Name = "label4";
-            label4.Size = new Size(88, 32);
+            label4.Size = new Size(93, 32);
             label4.TabIndex = 15;
-            label4.Text = "Players";
+            label4.Text = "Players:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F);
-            label3.Location = new Point(253, 122);
+            label3.Location = new Point(240, 127);
             label3.Name = "label3";
-            label3.Size = new Size(80, 32);
+            label3.Size = new Size(85, 32);
             label3.TabIndex = 14;
-            label3.Text = "Coach";
+            label3.Text = "Coach:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(234, 71);
+            label2.Location = new Point(221, 76);
             label2.Name = "label2";
-            label2.Size = new Size(99, 32);
+            label2.Size = new Size(104, 32);
             label2.TabIndex = 13;
-            label2.Text = "Country";
+            label2.Text = "Country:";
             // 
             // labelTeamName
             // 
             labelTeamName.AutoSize = true;
-            labelTeamName.Font = new Font("Segoe UI", 14F);
-            labelTeamName.Location = new Point(189, 9);
+            labelTeamName.Font = new Font("Segoe UI", 16F);
+            labelTeamName.Location = new Point(204, 9);
             labelTeamName.Name = "labelTeamName";
-            labelTeamName.Size = new Size(78, 32);
+            labelTeamName.Size = new Size(88, 37);
             labelTeamName.TabIndex = 12;
             labelTeamName.Text = "Name";
             // 
@@ -91,7 +93,7 @@
             // 
             labelTeamCoach.AutoSize = true;
             labelTeamCoach.Font = new Font("Segoe UI", 14F);
-            labelTeamCoach.Location = new Point(344, 122);
+            labelTeamCoach.Location = new Point(331, 127);
             labelTeamCoach.Name = "labelTeamCoach";
             labelTeamCoach.Size = new Size(27, 32);
             labelTeamCoach.TabIndex = 18;
@@ -101,7 +103,7 @@
             // 
             labelTeamCountry.AutoSize = true;
             labelTeamCountry.Font = new Font("Segoe UI", 14F);
-            labelTeamCountry.Location = new Point(344, 71);
+            labelTeamCountry.Location = new Point(331, 76);
             labelTeamCountry.Name = "labelTeamCountry";
             labelTeamCountry.Size = new Size(27, 32);
             labelTeamCountry.TabIndex = 17;
@@ -110,9 +112,9 @@
             // listBoxPlayers
             // 
             listBoxPlayers.FormattingEnabled = true;
-            listBoxPlayers.Location = new Point(344, 194);
+            listBoxPlayers.Location = new Point(271, 217);
             listBoxPlayers.Name = "listBoxPlayers";
-            listBoxPlayers.Size = new Size(201, 244);
+            listBoxPlayers.Size = new Size(413, 224);
             listBoxPlayers.TabIndex = 19;
             listBoxPlayers.SelectedIndexChanged += listBoxPlayers_SelectedIndexChanged;
             // 
@@ -120,6 +122,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(800, 450);
             Controls.Add(listBoxPlayers);
             Controls.Add(labelTeamCoach);

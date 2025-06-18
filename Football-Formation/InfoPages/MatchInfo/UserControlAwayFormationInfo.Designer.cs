@@ -270,7 +270,7 @@
             // 
             // panelStrikerLeft
             // 
-            panelStrikerLeft.BackColor = SystemColors.Control;
+            panelStrikerLeft.BackColor = SystemColors.ButtonShadow;
             panelStrikerLeft.Controls.Add(textBoxStrikerLeft);
             panelStrikerLeft.Controls.Add(labelStrikerLeft);
             panelStrikerLeft.Location = new Point(184, 72);
@@ -401,7 +401,7 @@
             // 
             // panelStrikerCentral
             // 
-            panelStrikerCentral.BackColor = SystemColors.Control;
+            panelStrikerCentral.BackColor = SystemColors.ButtonShadow;
             panelStrikerCentral.Controls.Add(textBoxStrikerCentral);
             panelStrikerCentral.Controls.Add(labelStrikerCentral);
             panelStrikerCentral.Location = new Point(329, 61);
@@ -560,6 +560,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
+            Controls.Add(panelStrikerCentral);
             Controls.Add(labelAwayFormationType);
             Controls.Add(label1);
             Controls.Add(panelCenterMidfielderCentral);
@@ -573,7 +575,6 @@
             Controls.Add(panelRightBack);
             Controls.Add(panelRightMidfielder);
             Controls.Add(panelGoalkeeper);
-            Controls.Add(panelStrikerCentral);
             Controls.Add(panelCenterBackRight);
             Controls.Add(panelCenterBackCentral);
             Controls.Add(panelCenterBackLeft);

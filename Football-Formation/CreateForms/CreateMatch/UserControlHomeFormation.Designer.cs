@@ -254,7 +254,7 @@
             // 
             // panelStrikerLeft
             // 
-            panelStrikerLeft.BackColor = SystemColors.Control;
+            panelStrikerLeft.BackColor = SystemColors.ButtonShadow;
             panelStrikerLeft.Controls.Add(comboBoxStrikerLeft);
             panelStrikerLeft.Controls.Add(labelStrikerLeft);
             panelStrikerLeft.Location = new Point(216, 93);
@@ -462,7 +462,7 @@
             // 
             // panelStrikerCentral
             // 
-            panelStrikerCentral.BackColor = SystemColors.Control;
+            panelStrikerCentral.BackColor = SystemColors.ButtonShadow;
             panelStrikerCentral.Controls.Add(comboBoxStrikerCentral);
             panelStrikerCentral.Controls.Add(labelStrikerCentral);
             panelStrikerCentral.Location = new Point(362, 82);
@@ -585,6 +585,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
             Controls.Add(label1);
             Controls.Add(panelCenterMidfielderCentral);
             Controls.Add(HomeFormation);

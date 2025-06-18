@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FootballFormation.Classes
 {
+    /// <summary>
+    /// Представляє футбольну команду, яка містить гравців та тренера.
+    /// </summary>
     public class Team
     {
         private string _name;
@@ -14,6 +17,12 @@ namespace FootballFormation.Classes
         private List<Player> _players;
         private static List<Team> teams = new List<Team>();
 
+        /// <summary>
+        /// Отримує або встановлює назву команди.
+        /// </summary>
+        /// <exception cref="ArgumentException">
+        /// Виникає, якщо значення є порожнім або складається лише з пробілів.
+        /// </exception>
         public string Name
         {
             get {return _name;}
@@ -27,6 +36,12 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює країну команди.
+        /// </summary>
+        /// <exception cref="ArgumentException">
+        /// Виникає, якщо значення є порожнім або складається лише з пробілів.
+        /// </exception>
         public string Country
         {
             get {return _country;}
@@ -40,6 +55,15 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює головного тренера команди.
+        /// </summary>
+        /// <exception cref="ArgumentNullException"> 
+        /// Виникає якщо тренер null. 
+        /// </exception>
+        /// <exception cref="ArgumentException"> 
+        /// Виникає якщо тренер вже закріплений за іншою командою.
+        /// </exception>
         public Coach TeamCoach
         {
             get {return _teamCoach;}
@@ -57,6 +81,16 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює список гравців команди.
+        /// </summary>
+        /// <exception cref="ArgumentNullException">
+        /// Виникає якщо список гравців null.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Виникає якщо кількість гравців менша 11 або більша 25, 
+        /// або якщо будь-який гравець вже закріплений за іншою командою.
+        /// </exception>
         public List<Player> Players
         {
             get {return _players;}
@@ -81,6 +115,19 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Ініціалізує новий екземпляр класу <see cref="Team"/>.
+        /// </summary>
+        /// <param name="name"> назва команди.</param>
+        /// <param name="country"> країна команди.</param>
+        /// <param name="teamCoach"> головний тренер команди.</param>
+        /// <param name="players"> список гравців команди.</param>
+        /// <exception cref="ArgumentException">
+        /// Виникає якщо вхідні значення некоректні. 
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// Виниає якщо тренер або гравці вже закріплені за іншою командою.
+        /// </exception>
         public Team(string name, string country, Coach teamCoach, List<Player> players)
         {
             Name = name;
@@ -93,6 +140,12 @@ namespace FootballFormation.Classes
             teams.Add(this);
         }
 
+        /// <summary>
+        /// Призначає тренера та гравців до цієї команди.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Виникає якщо тренер або гравець вже має команду.
+        /// </exception>
         private void Assign()
         {
             if (TeamCoach.Team != null)
@@ -111,11 +164,18 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Повертає назву команди у вигляді рядка.
+        /// </summary>
+        /// <returns> назва команди у вигляді рядка.</returns>
         public override string ToString()
         {
             return Name;
         }
 
+        /// <summary>
+        /// Видаляє команду, відв'язуючи її тренера та гравців.
+        /// </summary>
         public void Delete()
         {
             if (TeamCoach != null)
@@ -129,6 +189,10 @@ namespace FootballFormation.Classes
             teams.Remove(this);
         }
 
+        /// <summary>
+        /// Повертає список усіх створених команд.
+        /// </summary>
+        /// <returns> список об'єктів <see cref="Team"/>.</returns>
         public static List<Team> GetAllTeams()
         {
             return teams;

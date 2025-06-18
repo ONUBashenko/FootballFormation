@@ -30,10 +30,10 @@ namespace FootballFormation.InfoPages
         public void SetPlayerInfo()
         {
             labelPlayerName.Text = player.Name;
-            labelPlayerAge.Text = player.Age.ToString();
-            labelPlayerHeight.Text = player.Height.ToString("F2") + " m";
+            labelPlayerAge.Text = $"{player.Age} y.o.";
+            labelPlayerHeight.Text = $"{player.Height / 100.0:F2} m";
             labelPlayerPosition.Text = player.Position.ToString();
-            labelPlayerPrice.Text = player.Price.ToString();
+            labelPlayerPrice.Text = $"{player.Price} mln $";
             labelPlayerTeam.Text = player.Team == null ? "Free agent" : player.Team.Name;
         }
     }

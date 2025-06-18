@@ -40,9 +40,11 @@
             numericUpDownAge = new NumericUpDown();
             numericUpDownHeight = new NumericUpDown();
             numericUpDownPrice = new NumericUpDown();
+            pictureBoxPlayer = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAge).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlayer).BeginInit();
             SuspendLayout();
             // 
             // buttonCancel
@@ -70,7 +72,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
             label1.ImageAlign = ContentAlignment.MiddleRight;
-            label1.Location = new Point(22, 119);
+            label1.Location = new Point(211, 21);
             label1.Name = "label1";
             label1.Size = new Size(78, 32);
             label1.TabIndex = 4;
@@ -80,7 +82,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(348, 141);
+            label2.Location = new Point(211, 191);
             label2.Name = "label2";
             label2.Size = new Size(98, 32);
             label2.TabIndex = 5;
@@ -90,7 +92,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F);
-            label3.Location = new Point(13, 213);
+            label3.Location = new Point(222, 137);
             label3.Name = "label3";
             label3.Size = new Size(87, 32);
             label3.TabIndex = 6;
@@ -100,7 +102,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14F);
-            label4.Location = new Point(44, 162);
+            label4.Location = new Point(253, 84);
             label4.Name = "label4";
             label4.Size = new Size(56, 32);
             label4.TabIndex = 7;
@@ -110,7 +112,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F);
-            label5.Location = new Point(381, 194);
+            label5.Location = new Point(244, 240);
             label5.Name = "label5";
             label5.Size = new Size(65, 32);
             label5.TabIndex = 8;
@@ -118,7 +120,7 @@
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(106, 125);
+            textBoxName.Location = new Point(295, 27);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(150, 27);
             textBoxName.TabIndex = 9;
@@ -126,21 +128,21 @@
             // comboBoxPosition
             // 
             comboBoxPosition.FormattingEnabled = true;
-            comboBoxPosition.Location = new Point(452, 145);
+            comboBoxPosition.Location = new Point(315, 195);
             comboBoxPosition.Name = "comboBoxPosition";
             comboBoxPosition.Size = new Size(150, 28);
             comboBoxPosition.TabIndex = 14;
             // 
             // numericUpDownAge
             // 
-            numericUpDownAge.Location = new Point(106, 169);
+            numericUpDownAge.Location = new Point(315, 91);
             numericUpDownAge.Name = "numericUpDownAge";
             numericUpDownAge.Size = new Size(150, 27);
             numericUpDownAge.TabIndex = 15;
             // 
             // numericUpDownHeight
             // 
-            numericUpDownHeight.Location = new Point(106, 220);
+            numericUpDownHeight.Location = new Point(315, 144);
             numericUpDownHeight.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownHeight.Name = "numericUpDownHeight";
             numericUpDownHeight.Size = new Size(150, 27);
@@ -148,16 +150,28 @@
             // 
             // numericUpDownPrice
             // 
-            numericUpDownPrice.Location = new Point(452, 201);
+            numericUpDownPrice.Location = new Point(315, 247);
             numericUpDownPrice.Name = "numericUpDownPrice";
             numericUpDownPrice.Size = new Size(150, 27);
             numericUpDownPrice.TabIndex = 17;
+            // 
+            // pictureBoxPlayer
+            // 
+            pictureBoxPlayer.BackgroundImage = Properties.Resources.PlayerIcon;
+            pictureBoxPlayer.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBoxPlayer.Location = new Point(0, 0);
+            pictureBoxPlayer.Name = "pictureBoxPlayer";
+            pictureBoxPlayer.Size = new Size(202, 188);
+            pictureBoxPlayer.TabIndex = 18;
+            pictureBoxPlayer.TabStop = false;
             // 
             // CreatePlayerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBoxPlayer);
             Controls.Add(numericUpDownPrice);
             Controls.Add(numericUpDownHeight);
             Controls.Add(numericUpDownAge);
@@ -176,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownAge).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHeight).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlayer).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,5 +208,6 @@
         private NumericUpDown numericUpDownAge;
         private NumericUpDown numericUpDownHeight;
         private NumericUpDown numericUpDownPrice;
+        private PictureBox pictureBoxPlayer;
     }
 }

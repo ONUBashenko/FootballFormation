@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static FootballFormation.Classes.Player;
 
 namespace FootballFormation.Classes
 {
@@ -16,9 +15,9 @@ namespace FootballFormation.Classes
     public class Coach : Person
     {
         private int _age;
-        private List<FormationType> _formations;
+        private List<FormationType> _formations = new List<FormationType>();
         private int _experience;
-        public Team Team { get; set; }
+        public Team? Team { get; set; }
         private static List<Coach> coaches = new List<Coach>();
 
         /// <summary>
@@ -100,6 +99,7 @@ namespace FootballFormation.Classes
         /// <param name="age"> вік тренера (від 28 до 80 років).</param>
         /// <param name="height"> зріст у сантиметрах (від 140 до 220).</param>
         /// <param name="experience"> досвід у роках. Не може бути від’ємним.</param>
+        /// <param name="formations"> список доступних схем. Не може бути null.</param>
         /// <exception cref="ArgumentException">
         /// Виникає, якщо ім’я є недійсним (null, порожнє або складається лише з пробілів).
         /// </exception>
@@ -117,51 +117,21 @@ namespace FootballFormation.Classes
             coaches.Add(this);
         }
 
-
         /// <summary>
-        /// Додає тактичну схему до списку формацій тренера.
+        /// Повертає рядкове представлення тренера (його ім’я).
         /// </summary>
-        /// <param name="formation"> формація, яку потрібно додати.</param>
-        /// <exception cref="ArgumentNullException">
-        /// Виникає, якщо <paramref name="formation"/> дорівнює null.
-        /// </exception>
-        public void AddFormation(FormationType formation)
-        {
-            if (!Enum.IsDefined(typeof(FormationType), formation))
-            {
-                throw new ArgumentNullException("Invalid formation type.");
-            }
-            _formations.Add(formation);
-        }
-
-        /// <summary>
-        /// Видаляє тактичну схему зі списку формацій тренера.
-        /// </summary>
-        /// <param name="formation"> формація, яку потрібно видалити.</param>
-        /// <exception cref="ArgumentNullException">
-        /// Виникає, якщо <paramref name="formation"/> дорівнює null.
-        /// </exception>
-        /// <exception cref="ArgumentException">
-        /// Виникає, якщо формація не знайдена у списку тренера.
-        /// </exception>
-        public void RemoveFormation(FormationType formation)
-        {
-            if (!Enum.IsDefined(typeof(FormationType), formation))
-            {
-                throw new ArgumentNullException("Invalid formation type.");
-            }
-            if (!_formations.Contains(formation))
-            {
-                throw new ArgumentException("Formation not found in the coach's list.");
-            }
-            _formations.Remove(formation);
-        }
-
+        /// <returns> ім’я тренера у вигляді рядка.</returns>
         public override string ToString()
         {
             return Name;
         }
 
+        /// <summary>
+        /// Видаляє поточного тренера зі списку тренерів, якщо він не закріплений за жодною командою.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Виникає, якщо тренер вже прикріплений до команди (Team не є null).
+        /// </exception>
         public void Delete()
         {
             if (Team != null)
@@ -171,9 +141,14 @@ namespace FootballFormation.Classes
             coaches.Remove(this);
         }
 
+        /// <summary>
+        /// Повертає список усіх створених тренерів.
+        /// </summary>
+        /// <returns> список об'єктів <see cref="Coach"/>.</returns>
         public static List<Coach> GetAllCoaches()
         {
             return coaches;
         }
+
     }
 }

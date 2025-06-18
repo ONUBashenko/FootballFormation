@@ -350,6 +350,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
             Controls.Add(AwayTeamPossession);
             Controls.Add(HomeTeamPossession);
             Controls.Add(label1);

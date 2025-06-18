@@ -47,7 +47,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Orange;
+            panel1.BackColor = Color.DarkOrange;
             panel1.Location = new Point(148, -1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1070, 560);

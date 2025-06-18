@@ -74,7 +74,7 @@ namespace FootballFormation.Classes
         /// <summary>
         /// Ініціалізує новий екземпляр класу <see cref="PositionInFormation"/> з указаною позицією та її специфікою.
         /// </summary>
-        /// <param name="positionName"> позиція гравця (одне з допустимих значень <see cref="Player.PositionType"/>).</param>
+        /// <param name="positionName"> позиція гравця (одне з допустимих значень <see cref="PositionType"/>).</param>
         /// <param name="positionSpecific"> специфіка позиції (одне з допустимих значень <see cref="SpecificType"/>; за замовчуванням — <see cref="SpecificType.None"/>).</param>
         /// <exception cref="ArgumentOutOfRangeException">
         /// Виникає, якщо позиція або специфіка недійсна.

@@ -32,9 +32,9 @@ namespace FootballFormation.InfoPages
         public void SetCoachInfo()
         {
             labelCoachName.Text = coach.Name;
-            labelCoachAge.Text = coach.Age.ToString();
-            labelCoachHeight.Text = coach.Height.ToString("F2") + " m";
-            labelCoachExperiance.Text = coach.Experience.ToString();
+            labelCoachAge.Text = $"{coach.Age} y.o.";
+            labelCoachHeight.Text = $"{coach.Height / 100.0:F2} m";
+            labelCoachExperience.Text = coach.Experience == 1? "1 year" : $"{coach.Experience} years";
             labelCoachTeam.Text = coach.Team == null ? "Free agent" : coach.Team.Name;
 
             foreach (var formation in coach.Formations)

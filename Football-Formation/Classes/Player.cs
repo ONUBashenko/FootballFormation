@@ -7,6 +7,9 @@ using System.Xml.Linq;
 
 namespace FootballFormation.Classes
 {
+    /// <summary>
+    /// Перелічення можливих позицій гравців.
+    /// </summary>
     public enum PositionType
     {
         GK, //Goalkeeper
@@ -43,7 +46,7 @@ namespace FootballFormation.Classes
         /// </exception>
         public override int Age
         {
-            get {return _age;}
+            get { return _age; }
             set
             {
                 if (value < 16 || value > 60)
@@ -64,8 +67,8 @@ namespace FootballFormation.Classes
         /// </exception>
         public PositionType Position
         {
-            get {return _position;}
-            set 
+            get { return _position; }
+            set
             {
                 if (!Enum.IsDefined(typeof(PositionType), value))
                 {
@@ -84,7 +87,7 @@ namespace FootballFormation.Classes
         /// </exception>
         public int Price
         {
-            get {return _price;}
+            get { return _price; }
             set
             {
                 if (value < 0)
@@ -120,11 +123,21 @@ namespace FootballFormation.Classes
             players.Add(this);
         }
 
+        /// <summary>
+        /// Повертає рядкове представлення гравця, яке включає його позицію та ім’я.
+        /// </summary>
+        /// <returns> рядок у форматі "Позиція, Ім’я".</returns>
         public override string ToString()
         {
             return $"{Position}, {Name}";
         }
 
+        /// <summary>
+        /// Видаляє поточного гравця зі списку гравців, якщо він не закріплений за жодною командою.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Виникає, якщо гравець вже прикріплений до команди (Team не є null).
+        /// </exception>
         public void Delete()
         {
             if (Team != null)
@@ -134,6 +147,10 @@ namespace FootballFormation.Classes
             players.Remove(this);
         }
 
+        /// <summary>
+        /// Повертає список усіх створених гравців.
+        /// </summary>
+        /// <returns> список об'єктів <see cref="Player"/>.</returns>
         public static List<Player> GetAllPlayers()
         {
             return players;

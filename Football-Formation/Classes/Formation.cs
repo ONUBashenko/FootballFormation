@@ -4,12 +4,13 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
-using static FootballFormation.Classes.PositionType;
-using static FootballFormation.Classes.PositionInFormation;
 using static FootballFormation.Classes.FormationExtensions;
 
 namespace FootballFormation.Classes
 {
+    /// <summary>
+    /// Перелічення можливих типів футбольних формацій.
+    /// </summary>
     public enum FormationType
     {
         //3-4-3
@@ -31,12 +32,22 @@ namespace FootballFormation.Classes
         //5-4-1
         FiveFourOne
     }
+
+    /// <summary>
+    /// Представляє футбольну формацію, яка містить тип, список позицій та гравців на позиціях.
+    /// </summary>
     public class Formation
     {
         private FormationType _formationName;
-        private Dictionary<PositionInFormation, bool> _positionsInFormation;
-        private Dictionary<PositionInFormation, Player> _playersOnPositions;
+        private Dictionary<PositionInFormation, bool> _positionsInFormation = new Dictionary<PositionInFormation, bool>();
+        private Dictionary<PositionInFormation, Player> _playersOnPositions = new Dictionary<PositionInFormation, Player>();
 
+        /// <summary>
+        /// Отримує або встановлює тип формації (наприклад, 4-4-2).
+        /// </summary>
+        /// <exception cref="ArgumentException">
+        /// Виникає, якщо передано неіснуючий тип формації.
+        /// </exception>
         public FormationType FormationName
         {
             get {return _formationName;}
@@ -50,6 +61,13 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює позиції у формації.
+        /// Ключ — позиція, значення — активність позиції (true — використовується).
+        /// </summary>
+        /// <exception cref="ArgumentException">
+        /// Виникає, якщо словник порожній або null.
+        /// </exception>
         public Dictionary<PositionInFormation, bool> PositionsInFormation
         {
             get {return _positionsInFormation;}
@@ -63,6 +81,15 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Отримує або встановлює гравців, призначених на конкретні позиції у формації.
+        /// </summary>
+        /// <exception cref="ArgumentException">
+        /// Виникає, якщо:
+        /// - Словник null;
+        /// - Кількість гравців не дорівнює 11;
+        /// - Позиція, вказана у словнику, не існує у PositionsInFormation.
+        /// </exception>
         public Dictionary<PositionInFormation, Player> PlayersOnPositions
         {
             get { return _playersOnPositions; }
@@ -87,6 +114,11 @@ namespace FootballFormation.Classes
             }
         }
 
+        /// <summary>
+        /// Ініціалізує нову формацію з відповідним типом та розподілом гравців.
+        /// </summary>
+        /// <param name="formationName"> тип формації (наприклад, 4-4-2).</param>
+        /// <param name="playersOnPositions"> гравці, розміщені по позиціях.</param>
         public Formation(FormationType formationName, Dictionary<PositionInFormation, Player> playersOnPositions)
         {
             FormationName = formationName;
